@@ -1,4 +1,3 @@
-
 /**********************************************
  * SECTION 1 — FILTER REVIEWS
  **********************************************/
@@ -50,84 +49,155 @@ if (mobileToggle) {
  * SECTION 4 — PACKAGE & PROMO CODE SYSTEM
  **********************************************/
 
-// Package data
 const packages = {
     'standard': { name: 'الباقة الأساسية', price: 599 },
     'pro': { name: 'باقة PRO', price: 749 },
     'vip': { name: 'الباقة المميزة VIP', price: 899 }
 };
 
-// Promo codes
 const promoCodes = {
-    'RAMADAN2026': { discount: 40, description: 'عرض رمضان المبارك 🌙', applicable: ['standard', 'pro', 'vip'] },
-    'PRO30': { discount: 30, description: 'خصم 30% لباقة PRO', applicable: ['pro'] },
-    'VIP25': { discount: 25, description: 'خصم 25% للباقة VIP', applicable: ['vip'] },
-    'STANDARD35': { discount: 35, description: 'خصم 35% للباقة STANDARD', applicable: ['standard'] }
+    'EIDFIT35': { 
+        discount: 35, 
+        description: 'عرض العيد المبارك 🎉', 
+        applicable: ['standard', 'pro', 'vip'],
+        endDate: new Date('2026-03-25')
+    },
+    // 'PRO30': { 
+    //     discount: 30, 
+    //     description: 'خصم 30% لباقة PRO', 
+    //     applicable: ['pro'] 
+    // },
+    // 'VIP25': { 
+    //     discount: 25, 
+    //     description: 'خصم 25% للباقة VIP', 
+    //     applicable: ['vip'] 
+    // },
+    // 'STANDARD35': { 
+    //     discount: 35, 
+    //     description: 'خصم 35% للباقة STANDARD', 
+    //     applicable: ['standard'] 
+    // }
 };
 
-// Global variables
 let selectedPackage = 'pro';
 let appliedDiscount = null;
 
-// Elements
 const promoInput = document.getElementById('promoInput');
 const applyBtn = document.getElementById('applyBtn');
 const message = document.getElementById('message');
 const btnText = applyBtn ? applyBtn.querySelector('.btn-text') : null;
 const codesGrid = document.getElementById('codesGrid');
 
-// Check if it's Ramadan month
-function isRamadanMonth() {
+/**********************************************
+ * SECTION 4.1 — SPECIAL OCCASION BANNERS
+ **********************************************/
+
+function isEidPeriod() {
     const now = new Date();
-    const month = now.getMonth() + 1; // JavaScript months are 0-indexed
-    const year = now.getFullYear();
-    
-    // Ramadan 2026 is approximately February 28 - March 29
-    // Adjust these dates as needed
-    if (year === 2026 && (month === 2 || month === 3)) {
-        const day = now.getDate();
-        if (month === 2 && day >= 28) return true;
-        if (month === 3 && day <= 29) return true;
-    }
-    
-    return false;
+    const eidStart = new Date('2026-03-11');
+    const eidEnd = new Date('2026-03-25');
+    return now >= eidStart && now <= eidEnd;
 }
 
-// Show Ramadan banner
-function showRamadanBanner() {
+function getActiveOccasion() {
+    if (isEidPeriod()) return 'eid';
+    if (isRamadanMonth()) return 'ramadan';
+    return null;
+}
+
+function showSpecialBanner() {
+    const occasion = getActiveOccasion();
+    if (!occasion) return;
+
     const promoSection = document.querySelector('.promo-section');
-    if (promoSection) {
-        const banner = document.createElement('div');
-        banner.className = 'ramadan-banner';
-        banner.innerHTML = `
-            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-                        padding: 1rem; 
-                        border-radius: 12px; 
-                        text-align: center; 
-                        margin-bottom: 2rem;
-                        animation: pulse 2s infinite;">
-                <h3 style="color: #fff; margin: 0; font-size: 1.5rem;">
-                    🌙 عرض رمضان الكريم 🌙
-                </h3>
-                <p style="color: rgba(255,255,255,0.9); margin: 0.5rem 0 0 0;">
-                    استخدم كود <strong>RAMADAN2026</strong> للحصول على خصم 40% على جميع الباقات
-                </p>
+    if (!promoSection) return;
+
+    const bannerConfig = {
+        eid: {
+            gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            icon: '🎉',
+            title: 'عيد الفطر المبارك',
+            code: 'EIDFIT35',
+            discount: 35,
+            endDate: new Date('2026-03-25')
+        },
+    };
+
+    const config = bannerConfig[occasion];
+    
+    const banner = document.createElement('div');
+    banner.className = 'special-banner';
+    banner.innerHTML = `
+        <div class="banner-content" style="background: ${config.gradient};">
+            <div class="banner-icon">${config.icon}</div>
+            <h3 class="banner-title">${config.title}</h3>
+            <p class="banner-subtitle">استخدم كود <strong>${config.code}</strong> للحصول على خصم ${config.discount}%</p>
+            <div class="countdown-timer" id="countdownTimer"></div>
+            <div class="banner-badge">عرض محدود</div>
+        </div>
+    `;
+    
+    promoSection.querySelector('.container').prepend(banner);
+    
+    startCountdown(config.endDate);
+}
+
+function startCountdown(endDate) {
+    const timerElement = document.getElementById('countdownTimer');
+    if (!timerElement) return;
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = endDate.getTime() - now;
+
+        if (distance < 0) {
+            timerElement.innerHTML = '<span class="expired">انتهى العرض</span>';
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        timerElement.innerHTML = `
+            <div class="countdown-grid">
+                <div class="countdown-item">
+                    <span class="countdown-number">${days}</span>
+                    <span class="countdown-label">يوم</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <span class="countdown-number">${hours}</span>
+                    <span class="countdown-label">ساعة</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <span class="countdown-number">${minutes}</span>
+                    <span class="countdown-label">دقيقة</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <span class="countdown-number">${seconds}</span>
+                    <span class="countdown-label">ثانية</span>
+                </div>
             </div>
         `;
-        promoSection.querySelector('.container').prepend(banner);
     }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
 }
 
-// Initialize
+/**********************************************
+ * SECTION 4.2 — PACKAGE SELECTION & CODES
+ **********************************************/
+
 document.addEventListener('DOMContentLoaded', () => {
     updateAvailableCodes();
-    
-    if (isRamadanMonth()) {
-        showRamadanBanner();
-    }
+    showSpecialBanner();
 });
 
-// Select package
 function selectPackage(packageType) {
     selectedPackage = packageType;
 
@@ -144,30 +214,44 @@ function selectPackage(packageType) {
     updateAvailableCodes();
 }
 
-// Update available promo codes
 function updateAvailableCodes() {
     if (!codesGrid) return;
     
     codesGrid.innerHTML = '';
+    const now = new Date();
 
     Object.entries(promoCodes).forEach(([code, data]) => {
+        const isExpired = data.endDate && now > data.endDate;
         const applicable = data.applicable.includes(selectedPackage);
 
         const card = document.createElement('div');
-        card.className = `code-card ${!applicable ? 'disabled' : ''}`;
-        card.innerHTML = `
+        card.className = `code-card ${!applicable ? 'disabled' : ''} ${isExpired ? 'expired' : ''}`;
+        
+        let cardHTML = `
             <div class="code-name">${code}</div>
             <div class="code-discount">${data.discount}% خصم</div>
             <div class="code-description">${data.description}</div>
         `;
+        
+        if (isExpired) {
+            cardHTML += '<div class="expired-badge">منتهي</div>';
+        } else if (data.endDate) {
+            const daysLeft = Math.ceil((data.endDate - now) / (1000 * 60 * 60 * 24));
+            if (daysLeft <= 7) {
+                cardHTML += `<div class="urgency-badge">باقي ${daysLeft} ${daysLeft === 1 ? 'يوم' : 'أيام'}</div>`;
+            }
+        }
+        
+        card.innerHTML = cardHTML;
 
-        if (applicable) card.onclick = () => applyCode(code);
+        if (applicable && !isExpired) {
+            card.onclick = () => applyCode(code);
+        }
 
         codesGrid.appendChild(card);
     });
 }
 
-// Apply promo code
 function applyPromoCode() {
     const code = promoInput.value.trim().toUpperCase();
 
@@ -186,10 +270,13 @@ function applyPromoCode() {
     setTimeout(() => {
         if (promoCodes[code]) {
             const promo = promoCodes[code];
-
-            if (promo.applicable.includes(selectedPackage)) {
+            
+            if (promo.endDate && new Date() > promo.endDate) {
+                showMessage('هذا الكود منتهي الصلاحية', 'error');
+            } else if (promo.applicable.includes(selectedPackage)) {
                 showMessage(`تم تطبيق الكود! خصم ${promo.discount}%`, 'success');
                 applyDiscount(promo.discount, code);
+                createConfetti();
             } else {
                 showMessage('هذا الكود غير صالح لهذه الباقة', 'error');
             }
@@ -206,7 +293,6 @@ function applyPromoCode() {
     }, 1200);
 }
 
-// Apply discount
 function applyDiscount(percent, code) {
     const price = packages[selectedPackage].price;
     const amount = Math.round(price * (percent / 100));
@@ -231,27 +317,20 @@ function applyDiscount(percent, code) {
         })
     );
 
-    // Scroll to the selected package card
     scrollToPackage(selectedPackage);
 }
 
-// Scroll to selected package with smooth animation
 function scrollToPackage(packageType) {
     setTimeout(() => {
-        // Find the package card in the packages section (not the promo section)
         const packagesSection = document.querySelector('.packages-section');
         if (!packagesSection) return;
         
         const packageCard = packagesSection.querySelector(`.package-card[data-package="${packageType}"]`);
         
         if (packageCard) {
-            // Add highlight effect
-            packageCard.style.transition = 'all 0.3s ease';
-            packageCard.style.transform = 'scale(1.05)';
-            packageCard.style.boxShadow = '0 20px 60px rgba(102, 126, 234, 0.4)';
+            packageCard.classList.add('highlight-pulse');
             
-            // Scroll to package with offset for better visibility
-            const yOffset = -100; // Offset from top
+            const yOffset = -100;
             const y = packageCard.getBoundingClientRect().top + window.pageYOffset + yOffset;
             
             window.scrollTo({
@@ -259,16 +338,31 @@ function scrollToPackage(packageType) {
                 behavior: 'smooth'
             });
             
-            // Remove highlight after animation
             setTimeout(() => {
-                packageCard.style.transform = 'scale(1)';
-                packageCard.style.boxShadow = '';
-            }, 1500);
+                packageCard.classList.remove('highlight-pulse');
+            }, 2000);
         }
-    }, 600); // Delay to allow success message to show first
+    }, 600);
 }
 
-// Update package UI discount display
+function createConfetti() {
+    const colors = ['#f093fb', '#f5576c', '#667eea', '#764ba2', '#fbbf24', '#10b981'];
+    const confettiCount = 50;
+    
+    for (let i = 0; i < confettiCount; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDelay = Math.random() * 0.5 + 's';
+        confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+        
+        document.body.appendChild(confetti);
+        
+        setTimeout(() => confetti.remove(), 4000);
+    }
+}
+
 function updatePackageCardDiscount() {
     if (!appliedDiscount) return;
 
@@ -281,7 +375,6 @@ function updatePackageCardDiscount() {
     }
 }
 
-// Clear discount
 function clearDiscount() {
     appliedDiscount = null;
     sessionStorage.removeItem('appliedDiscount');
@@ -289,13 +382,11 @@ function clearDiscount() {
     document.querySelectorAll('.price-discount').forEach(el => el.classList.remove('show'));
 }
 
-// Apply code from clicking card
 function applyCode(code) {
     promoInput.value = code;
     applyPromoCode();
 }
 
-// WhatsApp message with selection
 function contactWithCurrentSelection() {
     let msg = `السلام عليكم، اريد الاشتراك ب${packages[selectedPackage].name} بسعر ${packages[selectedPackage].price} جنيه`;
 
@@ -308,7 +399,6 @@ function contactWithCurrentSelection() {
     window.open(`https://wa.me/201093191277?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
-// Contact specific package
 function contactPackage(packageType) {
     const packageData = packages[packageType];
     let message = `السلام عليكم، أريد الاستفسار عن ${packageData.name} بسعر ${packageData.price} جنيه شهرياً`;
@@ -332,6 +422,7 @@ function contactPackage(packageType) {
 /**********************************************
  * SECTION 5 — INPUT FORMATTING & AUTO-LOAD
  **********************************************/
+
 if (applyBtn) {
     applyBtn.addEventListener('click', applyPromoCode);
 }
@@ -346,7 +437,6 @@ if (promoInput) {
     });
 }
 
-// Restore discount on page load
 window.addEventListener('load', () => {
     const saved = sessionStorage.getItem('appliedDiscount');
     if (!saved) return;
@@ -377,6 +467,7 @@ window.addEventListener('load', () => {
 /**********************************************
  * SECTION 6 — MESSAGE ALERTS
  **********************************************/
+
 function showMessage(text, type) {
     if (!message) return;
     
