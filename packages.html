@@ -209,8 +209,79 @@
             </div>
         </div>
     </section>
-    
-    <div class="promo-section">
+    <!-- 
+===============================================
+🎡 SPIN WHEEL SECTION - Add this BEFORE promo-section
+===============================================
+Place this section RIGHT BEFORE <div class="promo-section">
+-->
+
+<section class="spin-wheel-section" id="spinWheelSection">
+    <div class="container">
+        <div class="spin-wheel-container">
+            <!-- Fireworks Background -->
+            <div class="fireworks-bg"></div>
+            
+            <!-- Header -->
+            <div class="spin-header">
+                <div class="spin-badge">🎁 مسابقة خاصة</div>
+                <h1 class="spin-title">اكسب خصم حتى 40%!</h1>
+                <p class="spin-subtitle">Spin Now</p>
+            </div>
+
+            <!-- Spin Wheel Canvas -->
+            <div class="wheel-wrapper">
+                <div class="wheel-container" id="wheelContainer">
+                    <canvas id="wheelCanvas" width="400" height="400"></canvas>
+                    
+                    <!-- Spin Button -->
+                    <button class="spin-button" id="spinButton">
+                        <!-- <span class="spin-button-text">Spin Now</span> -->
+                        <span class="spin-button-icon">🎯</span>
+                    </button>
+                    
+                    <!-- Arrow Pointer -->
+                    <div class="wheel-arrow"></div>
+                </div>
+                
+                <!-- Instructions -->
+                <!-- <div class="wheel-instructions">
+                    <div class="instruction-item">
+                        <span class="instruction-icon">1️⃣</span>
+                        <span>اضغط على زر الدوران</span>
+                    </div>
+                    <div class="instruction-item">
+                        <span class="instruction-icon">2️⃣</span>
+                        <span>انتظر حتى تتوقف العجلة</span>
+                    </div>
+                    <div class="instruction-item">
+                        <span class="instruction-icon">3️⃣</span>
+                        <span>احصل على كود الخصم الخاص بك</span>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Result Modal (Hidden by default) -->
+            <div class="result-modal" id="resultModal">
+                <div class="result-content">
+                    <div class="result-icon" id="resultIcon">🎉</div>
+                    <h2 class="result-title" id="resultTitle">مبروك!</h2>
+                    <p class="result-message" id="resultMessage">لقد حصلت على خصم 40%</p>
+                    <div class="result-code" id="resultCode">SPIN40</div>
+                    <button class="btn-use-code" id="useCodeBtn">استخدم الكود الآن</button>
+                    <button class="btn-close-modal" id="closeModalBtn">إغلاق</button>
+                </div>
+            </div>
+
+            <!-- Spin Counter -->
+            <div class="spin-counter" id="spinCounter">
+                <p>عدد المحاولات المتبقية: <strong id="attemptsLeft">1</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+    <div class="promo-section promo-hidden" id="promoSection">
         <div class="container">
             <div class="promo-container">
                 <!-- Header -->
