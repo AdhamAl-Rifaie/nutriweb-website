@@ -4,821 +4,270 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>باقات التغذية - د. أحمد أيمن</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --gold:#c9a84c; --gold-l:#f0d080; --gold-d:#8a6a1f;
+    --g1:#3db87a; /* health green */
+    --g2:#5b9ef0; /* weight blue */
+    --g3:#e06060; /* intensive red */
+    --g4:#a78bfa; /* 3-month purple */
+    --bg:#0c1e12; --bg2:#0a1810;
+    --white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Readex Pro',sans-serif;background:var(--bg);color:var(--white);overflow-x:hidden;}
 
-    <style>
-        :root {
-            --gold: #c9a84c;
-            --gold-light: #f0d080;
-            --gold-dark: #8a6a1f;
-            --green-deep: #1a4a2e;
-            --green-mid: #2d6e4e;
-            --green-light: #4a9e72;
-            --cream: #fdf8ee;
-            --white: #ffffff;
-            --text-dark: #1a1a1a;
-        }
+/* ── NAVBAR ── */
+.glass-navbar{position:fixed;top:0;width:100%;z-index:1000;background:rgba(12,30,18,0.9);backdrop-filter:blur(18px);border-bottom:1px solid rgba(201,168,76,0.18);padding:13px 24px;}
+.navbar-content{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:auto;}
+.navbar-logo img{height:42px;}
+.navbar-links{display:flex;gap:22px;align-items:center;}
+.nav-link{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.88rem;font-weight:500;transition:color .2s;}
+.nav-link:hover,.nav-link.active{color:var(--gold-l);}
+.mobile-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;}
+.mobile-toggle span{display:block;width:23px;height:2px;background:var(--gold);border-radius:2px;}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes starPulse{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:1;transform:scale(1.2)}}
+@keyframes sparkle{0%,100%{opacity:0;transform:scale(0)}50%{opacity:1;transform:scale(1)}}
+@keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(201,168,76,.35)}70%{box-shadow:0 0 0 10px rgba(201,168,76,0)}100%{box-shadow:0 0 0 0 rgba(201,168,76,0)}}
 
-        body {
-            font-family: 'Readex Pro', sans-serif;
-            background: #0f2318;
-            color: var(--white);
-            overflow-x: hidden;
-        }
+/* ── BANNER ── */
+.page-banner{margin-top:72px;background:linear-gradient(135deg,#1a4a2e 0%,#0c1e12 40%,#1a3a15 70%,#2d1a00 100%);padding:52px 20px 40px;text-align:center;position:relative;overflow:hidden;border-bottom:2px solid rgba(201,168,76,.3);}
+.page-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(201,168,76,.07) 0%,transparent 60%),radial-gradient(ellipse at 80% 50%,rgba(201,168,76,.07) 0%,transparent 60%);pointer-events:none;}
+.stars-bg{position:absolute;inset:0;pointer-events:none;}
+.star{position:absolute;width:3px;height:3px;background:var(--gold-l);border-radius:50%;animation:starPulse 2s ease-in-out infinite;}
+.banner-title{font-size:clamp(1.9rem,5vw,3.1rem);font-weight:700;background:linear-gradient(135deg,var(--gold-l),var(--gold),#e8c060,var(--gold-l));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite;margin-bottom:10px;position:relative;z-index:2;}
+.banner-sub{font-size:.95rem;color:rgba(255,255,255,.6);max-width:560px;margin:0 auto 22px;line-height:1.8;font-weight:300;position:relative;z-index:2;}
+.banner-badges{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;position:relative;z-index:2;}
+.banner-badge{background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.35);color:var(--gold-l);padding:5px 15px;border-radius:50px;font-size:.8rem;font-weight:500;}
 
-        /* ===== NAVBAR ===== */
-        .glass-navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(15, 35, 24, 0.85);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
-            padding: 14px 24px;
-        }
-        .navbar-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: auto;
-        }
-        .navbar-logo img { height: 44px; }
-        .navbar-links { display: flex; gap: 24px; align-items: center; }
-        .nav-link {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        .nav-link:hover, .nav-link.active { color: var(--gold-light); }
-        .mobile-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            flex-direction: column;
-            gap: 5px;
-        }
-        .mobile-toggle span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: var(--gold);
-            border-radius: 2px;
-        }
+/* ── QUIZ ── */
+.quiz-section{padding:44px 20px 32px;background:linear-gradient(180deg,#0c1e12,#0a1810);}
+.quiz-box{max-width:680px;margin:auto;background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.2);border-radius:22px;padding:36px 32px;position:relative;overflow:hidden;}
+.quiz-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.quiz-q{text-align:center;font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:6px;}
+.quiz-hint{text-align:center;font-size:.82rem;color:rgba(255,255,255,.45);margin-bottom:24px;}
+.quiz-opts{display:flex;flex-direction:column;gap:10px;}
+.quiz-opt{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.03);border:1.5px solid rgba(255,255,255,.1);border-radius:13px;padding:14px 18px;cursor:pointer;transition:all .25s;text-align:right;}
+.quiz-opt:hover{border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.05);}
+.quiz-opt.selected{border-color:var(--gold);background:rgba(201,168,76,.09);}
+.qo-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.qo-text{flex:1;}
+.qo-title{font-size:.92rem;font-weight:600;color:#fff;margin-bottom:2px;}
+.qo-sub{font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.4;}
+.qo-arrow{color:rgba(201,168,76,.5);font-size:.9rem;transition:all .25s;}
+.quiz-opt.selected .qo-arrow{color:var(--gold-l);transform:translateX(-4px);}
+.quiz-opt.selected .qo-icon{box-shadow:0 0 0 2px rgba(201,168,76,.4);}
+.btn-quiz-go{display:none;width:100%;margin-top:18px;padding:13px;background:linear-gradient(135deg,var(--gold-d),var(--gold));border:none;border-radius:12px;color:#1a0a00;font-family:'Readex Pro',sans-serif;font-size:.95rem;font-weight:700;cursor:pointer;transition:all .25s;animation:pulse-ring 2s infinite;}
+.btn-quiz-go:hover{background:linear-gradient(135deg,var(--gold),var(--gold-l));transform:translateY(-2px);}
+.btn-quiz-go.visible{display:block;}
 
-        /* ===== EID BANNER ===== */
-        @keyframes lanternSwing {
-            0%, 100% { transform: rotate(-8deg); }
-            50% { transform: rotate(8deg); }
-        }
-        @keyframes sparkle {
-            0%, 100% { opacity: 0; transform: scale(0); }
-            50% { opacity: 1; transform: scale(1); }
-        }
-        @keyframes fadeSlideDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes shimmer {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        @keyframes starPulse {
-            0%, 100% { opacity: 0.3; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
+/* ── SECTION HEADERS ── */
+.sec-head{text-align:center;margin-bottom:44px;}
+.sec-head h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;color:#fff;margin-bottom:8px;}
+.sec-head p{color:rgba(255,255,255,.52);font-size:.9rem;max-width:500px;margin:auto;line-height:1.75;font-weight:300;}
 
-        .eid-banner {
-            margin-top: 72px;
-            background: linear-gradient(135deg, #1a4a2e 0%, #0f2318 40%, #1a3a15 70%, #2d1a00 100%);
-            padding: 60px 20px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 2px solid rgba(201, 168, 76, 0.4);
-        }
+/* ── PACKAGES GRID ── */
+.packages-section{padding:60px 0 48px;background:linear-gradient(180deg,#0a1810,#080f08);}
+.transform-section{padding:48px 0 64px;background:linear-gradient(180deg,#080f08,#0c1e12);}
 
-        /* Decorative background elements */
-        .eid-banner::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.08) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.08) 0%, transparent 60%);
-            pointer-events: none;
-        }
+/* ── CARD ── */
+.pkg-card{border-radius:22px;padding:30px 26px;height:100%;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden;animation:fadeUp .6s ease both;}
+.pkg-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.pkg-card:hover{transform:translateY(-7px);}
 
-        .stars-bg {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-        }
-        .star {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--gold-light);
-            border-radius: 50%;
-            animation: starPulse 2s ease-in-out infinite;
-        }
+/* health */
+.card-health{background:rgba(61,184,122,.05);border:1px solid rgba(61,184,122,.25);}
+.card-health::after{background:linear-gradient(90deg,transparent,var(--g1),transparent);}
+.card-health:hover{box-shadow:0 20px 50px rgba(61,184,122,.12);}
+/* weight */
+.card-weight{background:rgba(91,158,240,.06);border:1px solid rgba(91,158,240,.28);}
+.card-weight::after{background:linear-gradient(90deg,transparent,var(--g2),transparent);}
+.card-weight:hover{box-shadow:0 20px 50px rgba(91,158,240,.12);}
+/* intensive */
+.card-intensive{background:rgba(224,96,96,.05);border:1px solid rgba(224,96,96,.25);}
+.card-intensive::after{background:linear-gradient(90deg,transparent,var(--g3),transparent);}
+.card-intensive:hover{box-shadow:0 20px 50px rgba(224,96,96,.12);}
+/* transform */
+.card-transform{background:rgba(167,139,250,.05);border:1px solid rgba(167,139,250,.28);}
+.card-transform::after{background:linear-gradient(90deg,transparent,var(--g4),transparent);}
+.card-transform:hover{box-shadow:0 20px 50px rgba(167,139,250,.12);}
 
-        .lanterns-row {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 24px;
-            position: relative;
-            z-index: 2;
-        }
-        .lantern {
-            font-size: 2.5rem;
-            animation: lanternSwing 3s ease-in-out infinite;
-            filter: drop-shadow(0 0 12px rgba(201,168,76,0.6));
-        }
-        .lantern:nth-child(2) { animation-delay: 0.5s; font-size: 3.2rem; }
-        .lantern:nth-child(3) { animation-delay: 1s; }
+/* tier badge */
+.tier-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:50px;font-size:.72rem;font-weight:700;letter-spacing:.6px;margin-bottom:12px;}
+.badge-health{background:rgba(61,184,122,.15);border:1px solid rgba(61,184,122,.35);color:var(--g1);}
+.badge-weight{background:rgba(91,158,240,.15);border:1px solid rgba(91,158,240,.35);color:var(--g2);}
+.badge-intensive{background:rgba(224,96,96,.15);border:1px solid rgba(224,96,96,.35);color:var(--g3);}
+.badge-transform{background:rgba(167,139,250,.15);border:1px solid rgba(167,139,250,.35);color:var(--g4);}
 
-        .eid-title-main {
-            font-size: clamp(2.2rem, 6vw, 4rem);
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--gold-light), var(--gold), #e8c060, var(--gold-light));
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: shimmer 3s linear infinite;
-            line-height: 1.2;
-            margin-bottom: 8px;
-            position: relative;
-            z-index: 2;
-        }
+.pkg-title{font-size:1.45rem;font-weight:700;color:#fff;margin-bottom:5px;}
+.pkg-sub{font-size:.85rem;color:rgba(255,255,255,.48);line-height:1.6;font-weight:300;margin-bottom:0;}
 
-        .eid-subtitle {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.75);
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 2;
-            font-weight: 300;
-        }
+/* price */
+.pkg-price{margin:18px 0 22px;}
+.price-row{display:flex;align-items:baseline;gap:5px;}
+.price-num{font-size:2.3rem;font-weight:700;line-height:1;}
+.card-health  .price-num{color:var(--g1);}
+.card-weight  .price-num{color:var(--g2);}
+.card-intensive .price-num{color:var(--g3);}
+.card-transform .price-num{color:var(--g4);}
+.price-cur{font-size:.95rem;font-weight:400;opacity:.85;}
+.price-per{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:3px;}
+.price-saving{display:inline-block;margin-top:7px;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.22);color:#4ade80;font-size:.73rem;font-weight:600;padding:2px 10px;border-radius:5px;}
 
-        .eid-badge-row {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 2;
-        }
-        .eid-badge {
-            background: rgba(201,168,76,0.15);
-            border: 1px solid rgba(201,168,76,0.4);
-            color: var(--gold-light);
-            padding: 6px 18px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            backdrop-filter: blur(8px);
-        }
+/* discount box */
+.price-discount{display:none;margin-top:11px;padding:11px 14px;background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.25);border-radius:10px;}
+.price-discount.visible{display:block;}
+.orig-p{font-size:.83rem;color:rgba(255,255,255,.32);text-decoration:line-through;}
+.disc-p{font-size:1.3rem;font-weight:700;color:var(--gold-l);}
+.disc-s{font-size:.73rem;color:#4ade80;margin-top:2px;font-weight:500;}
 
-        .crescent-deco {
-            position: absolute;
-            font-size: 8rem;
-            opacity: 0.04;
-            pointer-events: none;
-        }
-        .crescent-deco.left { left: -20px; top: 50%; transform: translateY(-50%) scaleX(-1); }
-        .crescent-deco.right { right: -20px; top: 50%; transform: translateY(-50%); }
+/* who-for */
+.who-for{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:14px 16px;margin-bottom:18px;}
+.who-for-title{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.who-tag{display:inline-block;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);font-size:.75rem;padding:3px 10px;border-radius:6px;margin:3px 3px 3px 0;line-height:1.5;}
+.card-health  .who-tag{background:rgba(61,184,122,.08);border-color:rgba(61,184,122,.2);color:rgba(61,184,122,.9);}
+.card-weight  .who-tag{background:rgba(91,158,240,.08);border-color:rgba(91,158,240,.2);color:rgba(91,158,240,.9);}
+.card-intensive .who-tag{background:rgba(224,96,96,.08);border-color:rgba(224,96,96,.2);color:rgba(224,96,96,.9);}
+.card-transform .who-tag{background:rgba(167,139,250,.08);border-color:rgba(167,139,250,.2);color:rgba(167,139,250,.9);}
 
-        /* ===== PACKAGES SECTION ===== */
-        .packages-section {
-            padding: 60px 0;
-            background: linear-gradient(180deg, #0f2318 0%, #0a1a10 100%);
-        }
+/* features */
+.features-list{flex:1;margin-bottom:20px;}
+.f-group-lbl{font-size:.7rem;font-weight:700;color:rgba(255,255,255,.32);text-transform:uppercase;letter-spacing:1px;margin:14px 0 8px;}
+.fi{display:flex;align-items:flex-start;gap:9px;margin-bottom:9px;}
+.fi-dot{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:700;flex-shrink:0;margin-top:2px;}
+.card-health   .fi-dot{background:rgba(61,184,122,.18);color:var(--g1);}
+.card-weight   .fi-dot{background:rgba(91,158,240,.18);color:var(--g2);}
+.card-intensive .fi-dot{background:rgba(224,96,96,.18);color:var(--g3);}
+.card-transform .fi-dot{background:rgba(167,139,250,.18);color:var(--g4);}
+.fi-txt{font-size:.85rem;color:rgba(255,255,255,.72);line-height:1.55;}
+.fi-txt strong{color:#fff;font-weight:600;}
+.fi-tag{display:inline-block;font-size:.64rem;font-weight:700;padding:1px 7px;border-radius:4px;margin-left:5px;vertical-align:middle;}
+.tag-green{background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.25);color:#4ade80;}
+.tag-gold{background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.25);color:var(--gold-l);}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 48px;
-            animation: fadeSlideDown 0.7s ease;
-        }
-        .section-title h1 {
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 12px;
-        }
-        .section-title p {
-            color: rgba(255,255,255,0.6);
-            font-size: 1rem;
-            font-weight: 300;
-            max-width: 520px;
-            margin: auto;
-            line-height: 1.7;
-        }
+.follow-up-pill{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:50px;font-size:.8rem;font-weight:600;margin-bottom:16px;}
+.fup-health{background:rgba(61,184,122,.12);border:1px solid rgba(61,184,122,.3);color:var(--g1);}
+.fup-weight{background:rgba(91,158,240,.12);border:1px solid rgba(91,158,240,.3);color:var(--g2);}
+.fup-intensive{background:rgba(224,96,96,.12);border:1px solid rgba(224,96,96,.3);color:var(--g3);}
+.fup-transform{background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.3);color:var(--g4);}
 
-        .package-card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 32px 28px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .package-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(201,168,76,0.5), transparent);
-        }
-        .package-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(201,168,76,0.35);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-        }
-        .package-card.featured {
-            background: rgba(201,168,76,0.08);
-            border-color: rgba(201,168,76,0.4);
-            box-shadow: 0 8px 32px rgba(201,168,76,0.12);
-        }
-        .package-card.featured::before {
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        }
+/* CTA */
+.btn-pkg{width:100%;padding:13px;border:none;border-radius:13px;font-family:'Readex Pro',sans-serif;font-size:.93rem;font-weight:700;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:auto;}
+.btn-health{background:linear-gradient(135deg,#1d7a4a,var(--g1));color:#021a0c;}
+.btn-health:hover{background:linear-gradient(135deg,var(--g1),#6ee7a8);transform:translateY(-2px);box-shadow:0 8px 24px rgba(61,184,122,.3);}
+.btn-weight{background:linear-gradient(135deg,#2a5db0,var(--g2));color:#04102a;}
+.btn-weight:hover{background:linear-gradient(135deg,var(--g2),#93c5fd);transform:translateY(-2px);box-shadow:0 8px 24px rgba(91,158,240,.3);}
+.btn-intensive{background:linear-gradient(135deg,#9a2424,var(--g3));color:#1a0202;}
+.btn-intensive:hover{background:linear-gradient(135deg,var(--g3),#fca5a5);transform:translateY(-2px);box-shadow:0 8px 24px rgba(224,96,96,.3);}
+.btn-transform{background:linear-gradient(135deg,#5b3fbe,var(--g4));color:#0d0420;}
+.btn-transform:hover{background:linear-gradient(135deg,var(--g4),#c4b5fd);transform:translateY(-2px);box-shadow:0 8px 24px rgba(167,139,250,.3);}
 
-        .package-header { margin-bottom: 24px; }
-        .package-badge {
-            display: inline-block;
-            background: rgba(201,168,76,0.15);
-            border: 1px solid rgba(201,168,76,0.4);
-            color: var(--gold-light);
-            padding: 4px 14px;
-            border-radius: 50px;
-            font-size: 0.78rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-        }
-        .package-card.featured .package-badge {
-            background: var(--gold);
-            color: #1a0000;
-            border-color: var(--gold);
-        }
-        .package-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 6px;
-        }
-        .package-subtitle {
-            font-size: 0.88rem;
-            color: rgba(255,255,255,0.55);
-            line-height: 1.5;
-            font-weight: 300;
-        }
+/* best value ribbon */
+.best-ribbon{position:absolute;top:14px;left:-2px;background:linear-gradient(135deg,#4ade80,#22c55e);color:#021a0c;font-size:.66rem;font-weight:800;padding:4px 14px 4px 10px;border-radius:0 6px 6px 0;letter-spacing:.5px;box-shadow:2px 2px 8px rgba(0,0,0,.3);}
 
-        .package-price {
-            margin-bottom: 28px;
-        }
-        .price-amount {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--gold-light);
-        }
-        .price-currency { font-size: 1rem; font-weight: 400; }
-        .price-period {
-            display: block;
-            font-size: 0.82rem;
-            color: rgba(255,255,255,0.5);
-            margin-top: 2px;
-        }
+/* transform highlights */
+.transform-highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px;}
+.th-item{background:rgba(167,139,250,.06);border:1px solid rgba(167,139,250,.15);border-radius:10px;padding:12px 10px;text-align:center;}
+.th-val{font-size:1.3rem;font-weight:700;color:var(--g4);display:block;margin-bottom:2px;}
+.th-lbl{font-size:.72rem;color:rgba(255,255,255,.45);}
 
-        /* Eid price discount display */
-        .price-discount {
-            display: none;
-            margin-top: 14px;
-            padding: 14px 16px;
-            background: rgba(201,168,76,0.08);
-            border: 1px solid rgba(201,168,76,0.3);
-            border-radius: 12px;
-            animation: fadeSlideDown 0.4s ease;
-        }
-        .price-discount.visible { display: block; }
-        .original-price {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.4);
-            text-decoration: line-through;
-        }
-        .discounted-price {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--gold-light);
-        }
-        .discount-amount {
-            font-size: 0.8rem;
-            color: #4ade80;
-            margin-top: 4px;
-            font-weight: 500;
-        }
+/* ── PROMO ── */
+.promo-section{padding:56px 20px;background:linear-gradient(135deg,#0a1810,#1a3a15,#2d1a00,#0c1e12);position:relative;overflow:hidden;}
+.promo-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 15% 50%,rgba(201,168,76,.05) 0%,transparent 55%),radial-gradient(ellipse at 85% 50%,rgba(201,168,76,.05) 0%,transparent 55%);}
+.promo-box{max-width:660px;margin:auto;background:rgba(255,255,255,.025);border:1px solid rgba(201,168,76,.2);border-radius:24px;padding:42px 36px;position:relative;z-index:2;backdrop-filter:blur(12px);}
+.promo-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);border-radius:24px 24px 0 0;}
+.promo-title{font-size:clamp(1.4rem,4vw,1.9rem);font-weight:700;background:linear-gradient(135deg,var(--gold-l),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:5px;}
+.promo-sub{color:rgba(255,255,255,.5);font-size:.86rem;text-align:center;line-height:1.65;margin-bottom:28px;}
+.code-display{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.25);border-radius:13px;padding:20px;text-align:center;cursor:pointer;transition:all .25s;position:relative;overflow:hidden;margin-bottom:26px;}
+.code-display::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(201,168,76,.1),transparent);transition:left .4s;}
+.code-display:hover::before{left:100%;}
+.code-display:hover{border-color:rgba(201,168,76,.45);background:rgba(201,168,76,.1);transform:translateY(-2px);}
+.cd-pct{position:absolute;top:7px;left:7px;background:var(--gold);color:#1a0000;font-size:.72rem;font-weight:700;padding:2px 9px;border-radius:5px;}
+.cd-val{font-family:monospace;font-size:1.25rem;color:var(--gold-l);font-weight:700;letter-spacing:3px;display:block;margin-bottom:4px;}
+.cd-desc{font-size:.8rem;color:rgba(255,255,255,.48);}
+.cd-hint{font-size:.72rem;color:rgba(255,255,255,.28);margin-top:5px;display:block;}
+.divider{display:flex;align-items:center;gap:12px;margin:22px 0;}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:rgba(201,168,76,.16);}
+.divider span{color:var(--gold);font-size:.85rem;}
+.sel-title{text-align:center;font-size:.8rem;color:rgba(255,255,255,.45);margin-bottom:11px;}
+.pkg-opts{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:22px;}
+.pkg-opt{flex:1;min-width:90px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:11px 6px;text-align:center;cursor:pointer;transition:all .2s;font-size:.82rem;color:rgba(255,255,255,.62);line-height:1.4;}
+.pkg-opt small{display:block;font-size:.7rem;color:rgba(255,255,255,.32);margin-top:2px;}
+.pkg-opt:hover{border-color:rgba(201,168,76,.35);color:#fff;}
+.pkg-opt.selected{background:rgba(201,168,76,.1);border-color:var(--gold);color:var(--gold-l);}
+.pkg-opt.selected small{color:var(--gold);}
+.code-input-grp{display:flex;gap:9px;margin-bottom:11px;}
+.promo-input{flex:1;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 15px;color:#fff;font-family:'Readex Pro',sans-serif;font-size:.9rem;text-align:right;direction:rtl;transition:border-color .2s;}
+.promo-input:focus{outline:none;border-color:var(--gold);background:rgba(201,168,76,.04);}
+.promo-input::placeholder{color:rgba(255,255,255,.25);}
+.btn-apply{background:linear-gradient(135deg,var(--gold-d),var(--gold));border:none;border-radius:10px;padding:12px 20px;color:#1a0a00;font-family:'Readex Pro',sans-serif;font-size:.88rem;font-weight:700;cursor:pointer;transition:all .25s;white-space:nowrap;}
+.btn-apply:hover{background:linear-gradient(135deg,var(--gold),var(--gold-l));transform:translateY(-2px);box-shadow:0 5px 16px rgba(201,168,76,.26);}
+.promo-msg{min-height:38px;border-radius:9px;padding:8px 13px;font-size:.84rem;text-align:center;display:none;}
+.promo-msg.success{display:block;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.25);color:#4ade80;}
+.promo-msg.error{display:block;background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.25);color:#f87171;}
+.promo-msg.info{display:block;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);color:var(--gold-l);}
+.disc-result{display:none;margin-top:16px;background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.24);border-radius:13px;padding:17px;}
+.disc-result.visible{display:block;}
+.dr-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;font-size:.87rem;}
+.dr-lbl{color:rgba(255,255,255,.48);}
+.dr-val{color:#fff;font-weight:600;}
+.dr-val.strike{text-decoration:line-through;color:rgba(255,255,255,.28);}
+.dr-val.green{color:#4ade80;}
+.dr-val.gold{color:var(--gold-l);font-size:1.1rem;}
+.dr-sep{height:1px;background:rgba(201,168,76,.13);margin:8px 0;}
+.btn-wa{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:13px;background:#25D366;border:none;border-radius:12px;color:#fff;font-family:'Readex Pro',sans-serif;font-size:.97rem;font-weight:700;cursor:pointer;text-decoration:none;transition:all .25s;margin-top:16px;}
+.btn-wa:hover{background:#20ba5a;transform:translateY(-2px);box-shadow:0 7px 20px rgba(37,211,102,.3);color:#fff;}
 
-        .package-features { flex: 1; margin-bottom: 24px; }
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 12px;
-        }
-        .feature-icon {
-            width: 20px;
-            height: 20px;
-            background: rgba(201,168,76,0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
-            color: var(--gold-light);
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-        .feature-text {
-            font-size: 0.88rem;
-            color: rgba(255,255,255,0.75);
-            line-height: 1.5;
-        }
+/* SPARKLES */
+.sparkle-container{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.sp{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--gold-l);animation:sparkle 4s ease-in-out infinite;}
 
-        .package-footer { margin-top: auto; }
-        .package-description {
-            font-size: 0.82rem;
-            color: rgba(255,255,255,0.45);
-            margin-bottom: 16px;
-            font-style: italic;
-            line-height: 1.5;
-        }
+/* FOOTER */
+.glass-footer{background:rgba(8,15,8,.96);border-top:1px solid rgba(201,168,76,.13);padding:46px 20px 22px;}
+.footer-container{max-width:1100px;margin:auto;text-align:center;}
+.footer-logo img{height:48px;margin-bottom:11px;}
+.footer-brand-name{font-size:1.1rem;font-weight:600;color:var(--gold-l);margin-bottom:4px;}
+.footer-tagline{font-size:.79rem;color:rgba(255,255,255,.4);margin-bottom:24px;}
+.contact-info{display:flex;flex-wrap:wrap;justify-content:center;gap:13px;margin-bottom:20px;}
+.contact-item{display:flex;align-items:center;gap:7px;color:rgba(255,255,255,.6);text-decoration:none;font-size:.83rem;transition:color .2s;}
+.contact-item:hover{color:var(--gold-l);}
+.social-links{display:flex;justify-content:center;gap:12px;margin-bottom:24px;}
+.social-link{width:37px;height:37px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.52);text-decoration:none;transition:all .2s;}
+.social-link:hover{background:rgba(201,168,76,.12);border-color:var(--gold);color:var(--gold-l);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.05);padding-top:16px;}
+.footer-copyright{font-size:.76rem;color:rgba(255,255,255,.28);margin-bottom:3px;}
+.footer-credits{font-size:.71rem;color:rgba(255,255,255,.2);}
+.footer-credits a{color:rgba(201,168,76,.42);text-decoration:none;}
 
-        .btn-package {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
-            border: none;
-            border-radius: 12px;
-            color: #1a0a00;
-            font-family: 'Readex Pro', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        .btn-package:hover {
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(201,168,76,0.35);
-        }
-
-        /* ===== EID PROMO SECTION ===== */
-        .eid-promo-section {
-            padding: 60px 20px;
-            background: linear-gradient(135deg, #0a1a10, #1a3a15, #2d1a00, #0f2318);
-            position: relative;
-            overflow: hidden;
-        }
-        .eid-promo-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse at 15% 50%, rgba(201,168,76,0.06) 0%, transparent 55%),
-                radial-gradient(ellipse at 85% 50%, rgba(201,168,76,0.06) 0%, transparent 55%);
-        }
-
-        .promo-container {
-            max-width: 700px;
-            margin: auto;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(201,168,76,0.25);
-            border-radius: 28px;
-            padding: 48px 40px;
-            position: relative;
-            z-index: 2;
-            backdrop-filter: blur(12px);
-        }
-        .promo-container::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            border-radius: 28px 28px 0 0;
-        }
-
-        .promo-header {
-            text-align: center;
-            margin-bottom: 36px;
-        }
-        .promo-eid-icon {
-            font-size: 3rem;
-            display: block;
-            margin-bottom: 16px;
-            animation: float 3s ease-in-out infinite;
-            filter: drop-shadow(0 0 16px rgba(201,168,76,0.4));
-        }
-        .promo-title-eid {
-            font-size: clamp(1.6rem, 4vw, 2.2rem);
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--gold-light), var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 8px;
-        }
-        .promo-subtitle-eid {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        /* Codes showcase */
-        .codes-showcase {
-            margin-bottom: 32px;
-        }
-        .codes-showcase-title {
-            text-align: center;
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.5);
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .codes-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-        }
-        .code-card {
-            background: rgba(201,168,76,0.06);
-            border: 1px solid rgba(201,168,76,0.2);
-            border-radius: 14px;
-            padding: 14px 10px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .code-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(201,168,76,0.1), transparent);
-            transition: left 0.4s ease;
-        }
-        .code-card:hover::before { left: 100%; }
-        .code-card:hover {
-            border-color: rgba(201,168,76,0.5);
-            background: rgba(201,168,76,0.1);
-            transform: translateY(-3px);
-        }
-        .code-card.eid-special {
-            border-color: rgba(201,168,76,0.45);
-            background: rgba(201,168,76,0.1);
-        }
-        .code-emoji { font-size: 1.4rem; display: block; margin-bottom: 6px; }
-        .code-text {
-            font-family: monospace;
-            font-size: 0.85rem;
-            color: var(--gold-light);
-            font-weight: 700;
-            letter-spacing: 1px;
-            display: block;
-            margin-bottom: 4px;
-        }
-        .code-desc {
-            font-size: 0.72rem;
-            color: rgba(255,255,255,0.5);
-        }
-        .code-discount-badge {
-            position: absolute;
-            top: 6px;
-            left: 6px;
-            background: var(--gold);
-            color: #1a0000;
-            font-size: 0.65rem;
-            font-weight: 700;
-            padding: 2px 6px;
-            border-radius: 6px;
-        }
-
-        /* Divider */
-        .promo-divider {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin: 28px 0;
-        }
-        .promo-divider::before, .promo-divider::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: rgba(201,168,76,0.2);
-        }
-        .promo-divider span {
-            color: var(--gold);
-            font-size: 1rem;
-        }
-
-        /* Package Selector */
-        .selector-title {
-            text-align: center;
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.6);
-            margin-bottom: 14px;
-        }
-        .package-options {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 28px;
-        }
-        .package-option {
-            flex: 1;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 12px;
-            padding: 14px 8px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 0.88rem;
-            color: rgba(255,255,255,0.7);
-            line-height: 1.5;
-        }
-        .package-option small {
-            display: block;
-            font-size: 0.75rem;
-            color: rgba(255,255,255,0.4);
-            margin-top: 2px;
-        }
-        .package-option:hover {
-            border-color: rgba(201,168,76,0.4);
-            color: var(--white);
-        }
-        .package-option.selected {
-            background: rgba(201,168,76,0.12);
-            border-color: var(--gold);
-            color: var(--gold-light);
-        }
-        .package-option.selected small { color: var(--gold); }
-
-        /* Input group */
-        .code-input-group {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 14px;
-        }
-        .promo-input {
-            flex: 1;
-            background: rgba(255,255,255,0.05);
-            border: 1.5px solid rgba(255,255,255,0.15);
-            border-radius: 12px;
-            padding: 14px 18px;
-            color: var(--white);
-            font-family: 'Readex Pro', sans-serif;
-            font-size: 0.95rem;
-            text-align: right;
-            transition: border-color 0.2s;
-            direction: rtl;
-        }
-        .promo-input:focus {
-            outline: none;
-            border-color: var(--gold);
-            background: rgba(201,168,76,0.05);
-        }
-        .promo-input::placeholder { color: rgba(255,255,255,0.35); }
-
-        .btn-apply {
-            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
-            border: none;
-            border-radius: 12px;
-            padding: 14px 24px;
-            color: #1a0a00;
-            font-family: 'Readex Pro', sans-serif;
-            font-size: 0.92rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            white-space: nowrap;
-        }
-        .btn-apply:hover {
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(201,168,76,0.3);
-        }
-
-        /* Message box */
-        .promo-message {
-            min-height: 44px;
-            border-radius: 10px;
-            padding: 10px 16px;
-            font-size: 0.88rem;
-            text-align: center;
-            display: none;
-            animation: fadeSlideDown 0.3s ease;
-        }
-        .promo-message.success {
-            display: block;
-            background: rgba(74, 222, 128, 0.1);
-            border: 1px solid rgba(74, 222, 128, 0.3);
-            color: #4ade80;
-        }
-        .promo-message.error {
-            display: block;
-            background: rgba(248, 113, 113, 0.1);
-            border: 1px solid rgba(248, 113, 113, 0.3);
-            color: #f87171;
-        }
-        .promo-message.info {
-            display: block;
-            background: rgba(201,168,76, 0.1);
-            border: 1px solid rgba(201,168,76, 0.3);
-            color: var(--gold-light);
-        }
-
-        /* Result card */
-        .discount-result {
-            display: none;
-            margin-top: 20px;
-            background: rgba(201,168,76,0.07);
-            border: 1px solid rgba(201,168,76,0.3);
-            border-radius: 16px;
-            padding: 20px;
-            animation: fadeSlideDown 0.4s ease;
-        }
-        .discount-result.visible { display: block; }
-        .result-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-        }
-        .result-row:last-child { margin-bottom: 0; }
-        .result-label { color: rgba(255,255,255,0.55); }
-        .result-value { color: var(--white); font-weight: 600; }
-        .result-value.strike { text-decoration: line-through; color: rgba(255,255,255,0.35); }
-        .result-value.green { color: #4ade80; }
-        .result-value.gold { color: var(--gold-light); font-size: 1.2rem; }
-        .result-divider { height: 1px; background: rgba(201,168,76,0.15); margin: 10px 0; }
-
-        /* Whatsapp button */
-        .btn-whatsapp {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            padding: 14px;
-            background: #25D366;
-            border: none;
-            border-radius: 14px;
-            color: white;
-            font-family: 'Readex Pro', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.25s ease;
-            margin-top: 20px;
-        }
-        .btn-whatsapp:hover {
-            background: #20ba5a;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(37,211,102,0.35);
-            color: white;
-        }
-
-        /* Eid countdown / info strip */
-        .eid-info-strip {
-            background: rgba(201,168,76,0.07);
-            border-top: 1px solid rgba(201,168,76,0.2);
-            border-bottom: 1px solid rgba(201,168,76,0.2);
-            padding: 10px 20px;
-            text-align: center;
-            font-size: 0.82rem;
-            color: rgba(201,168,76,0.85);
-            letter-spacing: 0.3px;
-        }
-
-        /* ===== FOOTER ===== */
-        .glass-footer {
-            background: rgba(10, 20, 12, 0.95);
-            border-top: 1px solid rgba(201,168,76,0.15);
-            padding: 48px 20px 24px;
-        }
-        .footer-container { max-width: 1100px; margin: auto; text-align: center; }
-        .footer-logo img { height: 50px; margin-bottom: 12px; }
-        .footer-brand-name { font-size: 1.2rem; font-weight: 600; color: var(--gold-light); margin-bottom: 6px; }
-        .footer-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.45); margin-bottom: 28px; }
-
-        .contact-info { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-bottom: 24px; }
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: rgba(255,255,255,0.65);
-            text-decoration: none;
-            font-size: 0.86rem;
-            transition: color 0.2s;
-        }
-        .contact-item:hover { color: var(--gold-light); }
-        .contact-icon { font-size: 1rem; }
-
-        .social-links { display: flex; justify-content: center; gap: 16px; margin-bottom: 28px; }
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255,255,255,0.6);
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-        .social-link:hover {
-            background: rgba(201,168,76,0.15);
-            border-color: var(--gold);
-            color: var(--gold-light);
-        }
-
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px; }
-        .footer-copyright { font-size: 0.8rem; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
-        .footer-credits { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
-        .footer-credits a { color: rgba(201,168,76,0.5); text-decoration: none; }
-
-        /* ===== FLOATING SPARKLES ===== */
-        .sparkle-container {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-        .sp {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            border-radius: 50%;
-            background: var(--gold-light);
-            animation: sparkle 4s ease-in-out infinite;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .navbar-links { display: none; flex-direction: column; position: absolute; top: 70px; right: 0; left: 0; background: rgba(10,26,16,0.97); padding: 20px; gap: 16px; border-bottom: 1px solid rgba(201,168,76,0.2); }
-            .navbar-links.open { display: flex; }
-            .mobile-toggle { display: flex; }
-            .promo-container { padding: 32px 24px; }
-            .codes-grid { grid-template-columns: 1fr 1fr; }
-            .package-options { flex-direction: column; }
-            .code-input-group { flex-direction: column; }
-            .btn-apply { width: 100%; }
-            .lanterns-row { gap: 20px; }
-        }
-    </style>
+/* RESPONSIVE */
+@media(max-width:768px){
+    .navbar-links{display:none;flex-direction:column;position:absolute;top:68px;right:0;left:0;background:rgba(8,20,10,.97);padding:18px;gap:14px;border-bottom:1px solid rgba(201,168,76,.16);}
+    .navbar-links.open{display:flex;}
+    .mobile-toggle{display:flex;}
+    .promo-box{padding:28px 18px;}
+    .code-input-grp{flex-direction:column;}
+    .btn-apply{width:100%;}
+    .pkg-opts{flex-wrap:wrap;}
+    .transform-highlights{grid-template-columns:repeat(3,1fr);}
+    .quiz-box{padding:26px 18px;}
+}
+@media(max-width:480px){.transform-highlights{grid-template-columns:1fr 1fr 1fr;}}
+</style>
 </head>
-
 <body>
 
-<!-- Floating sparkles background -->
 <div class="sparkle-container" id="sparkles"></div>
 
-<!-- Navigation -->
+<!-- NAVBAR -->
 <nav class="glass-navbar">
     <div class="navbar-content">
         <div class="navbar-links" id="navbarLinks">
@@ -828,292 +277,349 @@
             <a href="about.html" class="nav-link">About Me</a>
             <a href="index.html" class="nav-link">Home</a>
         </div>
-        <button class="mobile-toggle" id="mobileToggle">
-            <span></span><span></span><span></span>
-        </button>
+        <button class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
         <div class="navbar-logo">
-            <a href="index.html">
-                <img src="media/icon.png" alt="Logo" onerror="this.style.display='none';">
-            </a>
+            <a href="index.html"><img src="media/icon.png" alt="Logo" onerror="this.style.display='none';"></a>
         </div>
     </div>
 </nav>
 
-<!-- ═══════════ EID AL-ADHA BANNER ═══════════ -->
-<section class="eid-banner">
-    <!-- Star decorations -->
+<!-- BANNER -->
+<section class="page-banner">
     <div class="stars-bg" id="starsBg"></div>
-    <div class="crescent-deco left">☪</div>
-    <div class="crescent-deco right">☪</div>
-
-    <div class="lanterns-row">
-        <span class="lantern">🪔</span>
-        <span class="lantern">☪️</span>
-        <span class="lantern">🪔</span>
-    </div>
-
-    <h1 class="eid-title-main">عيد الأضحى المبارك</h1>
-    <p class="eid-subtitle">تقبّل الله منا ومنكم صالح الأعمال — هدية العيد من د. أحمد أيمن</p>
-
-    <div class="eid-badge-row">
-        <div class="eid-badge">🎁 كود خصم حصري 35%</div>
-        <div class="eid-badge">⚡ صالح لفترة محدودة</div>
-        <div class="eid-badge">💚 لجميع العملاء الجدد والقدامى</div>
+    <h1 class="banner-title">باقات التغذية</h1>
+    <p class="banner-sub">كل خطة مصممة على <strong style="-webkit-text-fill-color:var(--gold-l);color:var(--gold-l);">هدفك أنت</strong> — مش على اسم الباقة. اختار هدفك وهنوريك الخطة المناسبة ليك.</p>
+    <div class="banner-badges">
+        <div class="banner-badge">خطط قائمة على الهدف</div>
+        <div class="banner-badge">متابعة حسب احتياجك</div>
+        <div class="banner-badge">نتائج حقيقية وثابتة</div>
     </div>
 </section>
 
-<div class="eid-info-strip">
-    ✨ عروض العيد صالحة حتى نهاية شهر العيد — لا تفوت الفرصة
-</div>
+<!-- QUIZ -->
+<section class="quiz-section">
+    <div class="quiz-box">
+        <p class="quiz-q">ما هو هدفك الرئيسي؟</p>
+        <p class="quiz-hint">اختر الأقرب لوضعك وهنوجهك للخطة المناسبة فوراً</p>
+        <div class="quiz-opts">
 
-<!-- ═══════════ PACKAGES ═══════════ -->
-<section class="packages-section">
-    <div class="container">
-        <div class="section-title">
-            <h1>اختر الباقة المناسبة لك</h1>
-            <p>خطط غذائية مصممة خصيصاً لتحقيق أهدافك الصحية مع متابعة مهنية متخصصة</p>
+            <div class="quiz-opt" data-target="health" onclick="pickGoal(this)">
+                <div class="qo-icon" style="background:rgba(61,184,122,.15);">🩺</div>
+                <div class="qo-text">
+                    <div class="qo-title">تحسين الصحة والتحاليل</div>
+                    <div class="qo-sub">مقاومة الإنسولين، ضغط، سكر، نقص فيتامينات، مشاكل الجهاز الهضمي</div>
+                </div>
+                <i class="bi bi-arrow-left qo-arrow"></i>
+            </div>
+
+            <div class="quiz-opt" data-target="weight" onclick="pickGoal(this)">
+                <div class="qo-icon" style="background:rgba(91,158,240,.15);">⚖️</div>
+                <div class="qo-text">
+                    <div class="qo-title">إدارة الوزن (خسارة أو زيادة)</div>
+                    <div class="qo-sub">تخسيس، زيادة وزن صحية، إعادة تشكيل الجسم</div>
+                </div>
+                <i class="bi bi-arrow-left qo-arrow"></i>
+            </div>
+
+            <div class="quiz-opt" data-target="intensive" onclick="pickGoal(this)">
+                <div class="qo-icon" style="background:rgba(224,96,96,.15);">🔥</div>
+                <div class="qo-text">
+                    <div class="qo-title">نتائج سريعة ومتابعة يومية</div>
+                    <div class="qo-sub">مناسبة قادمة، محتاج دعم يومي قوي، أو جربت قبل ومش بتلتزم لوحدك</div>
+                </div>
+                <i class="bi bi-arrow-left qo-arrow"></i>
+            </div>
+
+            <div class="quiz-opt" data-target="transform" onclick="pickGoal(this)">
+                <div class="qo-icon" style="background:rgba(167,139,250,.15);">🚀</div>
+                <div class="qo-text">
+                    <div class="qo-title">تحول حقيقي في 3 أشهر</div>
+                    <div class="qo-sub">مستعد للالتزام لمدة 3 أشهر لنتيجة ثابتة ومش هترجع تاني</div>
+                </div>
+                <i class="bi bi-arrow-left qo-arrow"></i>
+            </div>
+
         </div>
+        <button class="btn-quiz-go" id="quizGoBtn" onclick="scrollToResult()">
+            اعرضلي الخطة المناسبة ←
+        </button>
+    </div>
+</section>
 
-        <div class="row">
-            <!-- Standard -->
-            <div class="col-lg-4 col-md-6 my-4">
-                <div class="package-card" data-package="standard">
-                    <div class="package-header">
-                        <div class="package-badge">Standard</div>
-                        <h3 class="package-title">الباقة الأساسية</h3>
-                        <p class="package-subtitle">بخطة بسيطة وفعالة</p>
-                    </div>
-                    <div class="package-price">
-                        <span class="price-amount" id="price-display-standard">599 <span class="price-currency">جنيه</span></span>
-                        <span class="price-period">شهرياً</span>
-                        <div class="price-discount" id="discount-standard">
-                            <div class="original-price" id="orig-standard">599 جنيه</div>
-                            <div class="discounted-price" id="final-standard">—</div>
-                            <div class="discount-amount" id="save-standard">—</div>
+<!-- MONTHLY PACKAGES -->
+<section class="packages-section" id="packages-anchor">
+    <div class="container">
+        <div class="sec-head">
+            <h2>الخطط الشهرية</h2>
+            <p>اشتراك مرن شهر بشهر — ابدأ بالخطة التي تناسب هدفك وغيّرها متى تطور وضعك</p>
+        </div>
+        <div class="row g-4">
+
+            <!-- HEALTH -->
+            <div class="col-lg-4 col-md-6" id="card-health">
+                <div class="pkg-card card-health" data-package="health">
+                    <div class="tier-badge badge-health"><i class="bi bi-heart-pulse-fill"></i> صحة وتغذية</div>
+                    <h3 class="pkg-title">خطة الصحة والتغذية</h3>
+                    <p class="pkg-sub">لمن هدفه تحسين التحاليل والمؤشرات الصحية لا الوزن فقط</p>
+
+                    <div class="pkg-price">
+                        <div class="price-row"><span class="price-num">499</span><span class="price-cur" style="color:var(--g1);">جنيه</span></div>
+                        <div class="price-per">شهرياً — متابعة مرة كل شهر</div>
+                        <div class="price-discount" id="discount-health">
+                            <div class="orig-p" id="orig-health"></div>
+                            <div class="disc-p" id="final-health"></div>
+                            <div class="disc-s" id="save-health"></div>
                         </div>
                     </div>
-                    <div class="package-features">
-                        <div class="feature-item"><span class="feature-icon">✓</span><span class="feature-text">برنامج غذائي محسوب بدقة لاحتياج جسمك وهدفك</span></div>
-                        <div class="feature-item"><span class="feature-icon">✓</span><span class="feature-text">نظام مرن يناسب طبيعة أكلك ويومك</span></div>
-                        <div class="feature-item"><span class="feature-icon">✓</span><span class="feature-text">تعديل كل أسبوعين حسب التقدم</span></div>
+
+                    <div class="follow-up-pill fup-health"><i class="bi bi-calendar-check"></i> متابعة مرة شهرياً</div>
+
+                    <div class="who-for">
+                        <div class="who-for-title">الأنسب لك لو عندك</div>
+                        <span class="who-tag">نقص فيتامينات</span>
+                        <span class="who-tag">مقاومة إنسولين</span>
+                        <span class="who-tag">ضغط / سكر</span>
+                        <span class="who-tag">مشاكل هضم</span>
+                        <span class="who-tag">تحسين التحاليل</span>
                     </div>
-                    <div class="package-footer">
-                        <p class="package-description">مثالية لأي شخص يريد أن يبدأ خطوة بخطوة من غير تعقيد</p>
-                        <button class="btn-package" onclick="contactPackage('standard')">
-                            <i class="bi bi-whatsapp"></i> احجز الآن
-                        </button>
+
+                    <div class="features-list">
+                        <div class="f-group-lbl">ما ستحصل عليه</div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt">خطة غذائية <strong>علاجية ووقائية</strong> مبنية على تحاليلك ووضعك الصحي</div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt">تعديل النظام <strong>مرة كل شهر</strong> بعد مراجعة التحسن في المؤشرات</div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt">نظام غذائي <strong>متوافق مع أدويتك وحالتك</strong> لو عندك أمراض مزمنة</div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt">إرشادات تفصيلية لـ<strong>الأكل الصح</strong> لكل وجبة</div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt">رد على استفساراتك <strong>خلال 48 ساعة</strong></div></div>
                     </div>
+
+                    <button class="btn-pkg btn-health" onclick="contactPackage('health')">
+                        <i class="bi bi-whatsapp"></i> احجز خطة الصحة
+                    </button>
                 </div>
             </div>
 
-            <!-- PRO -->
-            <div class="col-lg-4 col-md-6 my-4">
-                <div class="package-card featured" data-package="pro">
-                    <div class="package-header">
-                        <div class="package-badge">الأكثر شعبية</div>
-                        <h3 class="package-title">PRO</h3>
-                        <p class="package-subtitle">لو محتاج دعم حقيقي ومتابعة شخصية أسبوعية</p>
-                    </div>
-                    <div class="package-price">
-                        <span class="price-amount" id="price-display-pro">749 <span class="price-currency">جنيه</span></span>
-                        <span class="price-period">شهرياً</span>
-                        <div class="price-discount" id="discount-pro">
-                            <div class="original-price" id="orig-pro">749 جنيه</div>
-                            <div class="discounted-price" id="final-pro">—</div>
-                            <div class="discount-amount" id="save-pro">—</div>
+            <!-- WEIGHT -->
+            <div class="col-lg-4 col-md-6" id="card-weight">
+                <div class="pkg-card card-weight" data-package="weight">
+                    <div class="tier-badge badge-weight"><i class="bi bi-graph-up-arrow"></i> إدارة الوزن</div>
+                    <h3 class="pkg-title">خطة إدارة الوزن</h3>
+                    <p class="pkg-sub">خسارة أو زيادة وزن بطريقة صحية وأسرع — مع تعديل منتظم كل أسبوعين</p>
+
+                    <div class="pkg-price">
+                        <div class="price-row"><span class="price-num">599</span><span class="price-cur" style="color:var(--g2);">جنيه</span></div>
+                        <div class="price-per">شهرياً — متابعة كل أسبوعين</div>
+                        <div class="price-discount" id="discount-weight">
+                            <div class="orig-p" id="orig-weight"></div>
+                            <div class="disc-p" id="final-weight"></div>
+                            <div class="disc-s" id="save-weight"></div>
                         </div>
                     </div>
-                    <div class="package-features">
-                        <div class="feature-item"><span class="feature-icon">✓</span><span class="feature-text">برنامج غذائي محسوب حسب هدفك بدقة</span></div>
-                        <div class="feature-item"><span class="feature-icon">✓</span><span class="feature-text">مكالمة أسبوعية لمتابعة الوزن والقياسات</span></div>
-                        <div class="feature-item"><span class="feature-icon">✓</span><span class="feature-text">تعديل الخطة حسب تغيرات يومك أو حالتك النفسية</span></div>
+
+                    <div class="follow-up-pill fup-weight"><i class="bi bi-calendar2-week"></i> متابعة كل أسبوعين</div>
+
+                    <div class="who-for">
+                        <div class="who-for-title">الأنسب لك لو هدفك</div>
+                        <span class="who-tag">خسارة وزن</span>
+                        <span class="who-tag">زيادة وزن صحية</span>
+                        <span class="who-tag">إعادة تشكيل الجسم</span>
+                        <span class="who-tag">التخلص من الكرش</span>
                     </div>
-                    <div class="package-footer">
-                        <p class="package-description">هذه الباقة لك إذا كنت تقع بسرعة ومحتاج شخص معك خطوة بخطوة</p>
-                        <button class="btn-package" onclick="contactPackage('pro')">
-                            <i class="bi bi-whatsapp"></i> احجز الآن
-                        </button>
+
+                    <div class="features-list">
+                        <div class="f-group-lbl">ما ستحصل عليه</div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt">خطة غذائية <strong>محسوبة بدقة</strong> لهدفك سواء خسارة أو زيادة وزن</div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt">تعديل الخطة <strong>كل أسبوعين</strong> بناءً على تغيرات وزنك وقياساتك</div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt"><span class="fi-tag tag-green">إضافي</span>تواصل عبر <strong>واتساب</strong> لإرسال قياساتك كل أسبوعين</div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt">نظام مرن يتكيف مع أوقات عملك وطبيعة أكلك</div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt">رد على استفساراتك <strong>خلال 24 ساعة</strong></div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt">تعديل الخطة لو تغيرت ظروفك أو جدولك</div></div>
                     </div>
+
+                    <button class="btn-pkg btn-weight" onclick="contactPackage('weight')">
+                        <i class="bi bi-whatsapp"></i> احجز خطة الوزن
+                    </button>
                 </div>
             </div>
 
-            <!-- VIP -->
-            <div class="col-lg-4 col-md-6 my-4 mx-auto">
-                <div class="package-card" data-package="vip">
-                    <div class="package-header">
-                        <div class="package-badge">VIP</div>
-                        <h3 class="package-title">الباقة المميزة</h3>
-                        <p class="package-subtitle">لو عايز نتيجة سريعة وخدمة شخصية جداً</p>
-                    </div>
-                    <div class="package-price">
-                        <span class="price-amount" id="price-display-vip">899 <span class="price-currency">جنيه</span></span>
-                        <span class="price-period">شهرياً</span>
-                        <div class="price-discount" id="discount-vip">
-                            <div class="original-price" id="orig-vip">899 جنيه</div>
-                            <div class="discounted-price" id="final-vip">—</div>
-                            <div class="discount-amount" id="save-vip">—</div>
+            <!-- INTENSIVE -->
+            <div class="col-lg-4 col-md-6 mx-auto" id="card-intensive">
+                <div class="pkg-card card-intensive" data-package="intensive">
+                    <div class="tier-badge badge-intensive"><i class="bi bi-lightning-charge-fill"></i> كوتشينج مكثف</div>
+                    <h3 class="pkg-title">خطة الكوتشينج المكثف</h3>
+                    <p class="pkg-sub">لمن يحتاج دعم يومي قوي ومتابعة لصيقة لتحقيق نتائج سريعة</p>
+
+                    <div class="pkg-price">
+                        <div class="price-row"><span class="price-num">750</span><span class="price-cur" style="color:var(--g3);">جنيه</span></div>
+                        <div class="price-per">شهرياً — متابعة يومية / شبه يومية</div>
+                        <div class="price-discount" id="discount-intensive">
+                            <div class="orig-p" id="orig-intensive"></div>
+                            <div class="disc-p" id="final-intensive"></div>
+                            <div class="disc-s" id="save-intensive"></div>
                         </div>
                     </div>
-                    <div class="package-features">
-                        <div class="feature-item"><span class="feature-icon">✓</span><span class="feature-text">كل مزايا باقة PRO</span></div>
-                        <div class="feature-item"><span class="feature-icon">✓</span><span class="feature-text">متابعة يومية على واتساب</span></div>
-                        <div class="feature-item"><span class="feature-icon">✓</span><span class="feature-text">تعديل النظام أكثر من مرة أسبوعياً حسب استجابتك</span></div>
-                        <div class="feature-item"><span class="feature-icon">✓</span><span class="feature-text">تعليم مبسط لمفاهيم الأكل الصحي</span></div>
-                        <div class="feature-item"><span class="feature-icon">✓</span><span class="feature-text">تحفيز مستمر + حلول سريعة لأي طوارئ</span></div>
+
+                    <div class="follow-up-pill fup-intensive"><i class="bi bi-calendar-day"></i> متابعة يومية أو شبه يومية</div>
+
+                    <div class="who-for">
+                        <div class="who-for-title">الأنسب لك لو</div>
+                        <span class="who-tag">عندك مناسبة قريبة</span>
+                        <span class="who-tag">محتاج نتيجة سريعة</span>
+                        <span class="who-tag">بتقع في الالتزام</span>
+                        <span class="who-tag">محتاج متابعة يومية</span>
                     </div>
-                    <div class="package-footer">
-                        <button class="btn-package" onclick="contactPackage('vip')">
-                            <i class="bi bi-whatsapp"></i> احجز الآن
-                        </button>
+
+                    <div class="features-list">
+                        <div class="f-group-lbl">ما ستحصل عليه — كل شيء في خطة الوزن، بالإضافة إلى</div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt"><span class="fi-tag tag-green">حصري</span>تواصل <strong>يومي على واتساب</strong> — مش هتحس إنك لوحدك يوم واحد</div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt"><span class="fi-tag tag-green">حصري</span><strong>مكالمة أسبوعية</strong> لمراجعة تقدمك ومناقشة التعديلات</div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt"><span class="fi-tag tag-green">حصري</span>رد <strong>فوري</strong> على أي سؤال أو موقف طارئ</div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt">تعديل الخطة <strong>أكثر من مرة في الأسبوع</strong> حسب استجابة جسمك</div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt"><span class="fi-tag tag-green">حصري</span>خطة بديلة جاهزة لأي موقف — سفر، أفراح، ضغوط</div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt">تحفيز مستمر ومحاسبة حقيقية تساعدك تلتزم</div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt">تعليم مبسط لمفاهيم التغذية — <strong>تفهم مش بس تحفظ</strong></div></div>
                     </div>
+
+                    <button class="btn-pkg btn-intensive" onclick="contactPackage('intensive')">
+                        <i class="bi bi-whatsapp"></i> احجز الكوتشينج المكثف
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 3-MONTH TRANSFORM -->
+<section class="transform-section" id="card-transform">
+    <div class="container">
+        <div class="sec-head">
+            <h2>خطة التحول — 3 أشهر</h2>
+            <p>شهر واحد كافي للبداية — لكن 3 أشهر كافية للتحول الحقيقي الذي لن يعود</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-10">
+                <div class="pkg-card card-transform" data-package="transform">
+                    <div class="best-ribbon">الأوفر قيمة</div>
+                    <div class="tier-badge badge-transform"><i class="bi bi-stars"></i> خطة التحول الكاملة</div>
+                    <h3 class="pkg-title">تحول حقيقي في 3 أشهر</h3>
+                    <p class="pkg-sub">لمن قرر يأخذ صحته بجدية — خطة شاملة لإدارة الوزن والصحة معاً بمتابعة متصاعدة على مدار 3 أشهر</p>
+
+                    <div class="pkg-price">
+                        <div class="price-row"><span class="price-num">1,199</span><span class="price-cur" style="color:var(--g4);">جنيه</span></div>
+                        <div class="price-per">للـ 3 أشهر كاملة — دفعة واحدة</div>
+                        <span class="price-saving">وفّر 600 جنيه مقارنةً بخطة الوزن الشهرية × 3 (1,800 جنيه)</span>
+                        <div class="price-discount" id="discount-transform">
+                            <div class="orig-p" id="orig-transform"></div>
+                            <div class="disc-p" id="final-transform"></div>
+                            <div class="disc-s" id="save-transform"></div>
+                        </div>
+                    </div>
+
+                    <div class="transform-highlights">
+                        <div class="th-item"><span class="th-val">3</span><span class="th-lbl">أشهر متابعة</span></div>
+                        <div class="th-item"><span class="th-val">6+</span><span class="th-lbl">تعديل للخطة</span></div>
+                        <div class="th-item"><span class="th-val">3</span><span class="th-lbl">تقارير تقدم</span></div>
+                    </div>
+
+                    <div class="who-for" style="border-color:rgba(167,139,250,.2);background:rgba(167,139,250,.04);">
+                        <div class="who-for-title">الأنسب لك لو</div>
+                        <span class="who-tag">جربت قبل ومش وصلت</span>
+                        <span class="who-tag">عايز نتيجة ثابتة</span>
+                        <span class="who-tag">محتاج هدف واضح لـ 3 أشهر</span>
+                        <span class="who-tag">عايز تتعلم مش بس تتبع</span>
+                    </div>
+
+                    <div class="features-list">
+                        <div class="f-group-lbl">رحلة 3 أشهر خطوة بخطوة</div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt"><strong>الشهر الأول — التأسيس:</strong> جلسة تحليل شاملة، خطة مخصصة، وتعديل أسبوعي لحين استقرار الجسم</div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt"><strong>الشهر الثاني — التسارع:</strong> تعديل الخطة حسب النتائج، تحديات أسبوعية، ومتابعة تقدم مفصلة</div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt"><strong>الشهر الثالث — التثبيت:</strong> خطة للحفاظ على النتائج بعد انتهاء الباقة حتى لا ترجع للوراء</div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt"><span class="fi-tag tag-gold">حصري</span>تقرير تقدم <strong>شامل في نهاية كل شهر</strong> بالأرقام والقياسات</div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt"><span class="fi-tag tag-gold">حصري</span>تواصل عبر واتساب <strong>أسبوعياً</strong> مع رد خلال 24 ساعة على الاستفسارات</div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt">تعليم تغذوي متراكم — بنهاية الـ 3 أشهر هتعرف تأكل صح <strong>لوحدك من غير ما تحتاج برنامج</strong></div></div>
+                        <div class="fi"><div class="fi-dot">✓</div><div class="fi-txt">خطة غذائية تشمل الوزن والصحة معاً — <strong>نتيجة شاملة مش جزئية</strong></div></div>
+                    </div>
+
+                    <div style="background:rgba(167,139,250,.07);border:1px solid rgba(167,139,250,.18);border-radius:11px;padding:13px 16px;font-size:.83rem;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:20px;">
+                        <strong style="color:var(--g4);">لماذا 3 أشهر وليس شهراً واحداً؟</strong><br>
+                        الجسم يحتاج ٤–٦ أسابيع فقط للتكيف مع أي نظام جديد. بعدها يبدأ في الاستجابة الحقيقية. الشهر الثالث هو ما يفرق بين من يحافظ على النتيجة ومن يرجع لنقطة الصفر.
+                    </div>
+
+                    <button class="btn-pkg btn-transform" onclick="contactPackage('transform')">
+                        <i class="bi bi-whatsapp"></i> احجز خطة التحول الكاملة
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ═══════════ EID PROMO CODES SECTION ═══════════ -->
-<section class="eid-promo-section">
+<!-- PROMO -->
+<!-- <section class="promo-section">
     <div class="container">
-        <div class="promo-container">
+        <div class="promo-box">
+            <h2 class="promo-title">لديك كود خصم؟</h2>
+            <p class="promo-sub">اختر خطتك، أدخل الكود، واحجز بالسعر المخفض مباشرة</p>
 
-            <div class="promo-header">
-                <span class="promo-eid-icon">🐑</span>
-                <h2 class="promo-title-eid">هدية العيد من د. أحمد أيمن</h2>
-                <p class="promo-subtitle-eid">
-                    بمناسبة عيد الأضحى المبارك، استمتع بخصم 35%  على جميع باقاتنا<br>
-                    اختر باقتك، اضغط على الكود لنسخه، ثم احجز مع الخصم مباشرة!
-                </p>
+            <div class="code-display" onclick="copyAndApplyCode('EIDADHA35')">
+                <span class="cd-pct">35%</span>
+                <span class="cd-val">EIDADHA35</span>
+                <span class="cd-desc">خصم 35% على جميع الخطط</span>
+                <span class="cd-hint">اضغط لنسخ الكود وتطبيقه تلقائياً</span>
             </div>
 
-            <!-- Available Promo Codes Showcase -->
-            <!-- Single EID Promo Code -->
-            <div class="codes-showcase">
-                <p class="codes-showcase-title">كود الخصم  — اضغط للنسخ والتطبيق</p>
-                <div style="display:flex; justify-content:center;">
-                    <div class="code-card eid-special" onclick="copyAndApplyCode('EIDADHA35')" style="max-width:300px; width:100%; padding:28px 24px;">
-                        <span class="code-discount-badge" style="font-size:0.85rem; padding:4px 12px;">35%</span>
-                        <span class="code-emoji" style="font-size:2.4rem;">🐑</span>
-                        <span class="code-text" style="font-size:1.2rem; letter-spacing:2px; margin-bottom:8px;">EIDADHA35</span>
-                        <span class="code-desc" style="font-size:0.85rem;">خصم العيد  — على جميع الباقات</span>
-                    </div>
-                </div>
+            <div class="divider"><span>✦</span></div>
+            <p class="sel-title">اختر الخطة أولاً</p>
+            <div class="pkg-opts">
+                <div class="pkg-opt" data-package="health"     onclick="selectPackage('health')">صحة وتغذية<small>499 ج</small></div>
+                <div class="pkg-opt selected" data-package="weight"    onclick="selectPackage('weight')">إدارة وزن<small>599 ج</small></div>
+                <div class="pkg-opt" data-package="intensive"  onclick="selectPackage('intensive')">كوتشينج<small>750 ج</small></div>
+                <div class="pkg-opt" data-package="transform"  onclick="selectPackage('transform')">تحول 3م<small>1,199 ج</small></div>
             </div>
 
-            <div class="promo-divider"><span>✦</span></div>
+            <div class="divider"><span>✦</span></div>
+            <div class="code-input-grp">
+                <input type="text" class="promo-input" id="promoInput" placeholder="أدخل كود الخصم هنا..." maxlength="20" autocomplete="off" oninput="this.value=this.value.toUpperCase()">
+                <button class="btn-apply" onclick="applyPromoCode()">تطبيق</button>
+            </div>
+            <div class="promo-msg" id="promoMsg"></div>
 
-            <!-- Package Selector -->
-            <p class="selector-title">اختر الباقة أولاً</p>
-            <div class="package-options">
-                <div class="package-option" data-package="standard" onclick="selectPackage('standard')">
-                    الأساسية<small>599 جنيه</small>
-                </div>
-                <div class="package-option selected" data-package="pro" onclick="selectPackage('pro')">
-                    PRO<small>749 جنيه</small>
-                </div>
-                <div class="package-option" data-package="vip" onclick="selectPackage('vip')">
-                    VIP<small>899 جنيه</small>
-                </div>
+            <div class="disc-result" id="discResult">
+                <div class="dr-row"><span class="dr-lbl">الخطة</span><span class="dr-val" id="res-pkg">—</span></div>
+                <div class="dr-row"><span class="dr-lbl">الكود</span><span class="dr-val" id="res-code">—</span></div>
+                <div class="dr-sep"></div>
+                <div class="dr-row"><span class="dr-lbl">السعر الأصلي</span><span class="dr-val strike" id="res-orig">—</span></div>
+                <div class="dr-row"><span class="dr-lbl">الخصم</span><span class="dr-val green" id="res-saved">—</span></div>
+                <div class="dr-row"><span class="dr-lbl">السعر النهائي</span><span class="dr-val gold" id="res-final">—</span></div>
+                <a class="btn-wa" id="waBtn" href="#" target="_blank"><i class="bi bi-whatsapp fs-5"></i> احجز الآن مع الخصم</a>
             </div>
 
-            <!-- Promo Code Input -->
-            <div class="promo-divider"><span>✦</span></div>
-            <div class="code-input-group">
-                <input
-                    type="text"
-                    class="promo-input"
-                    id="promoInput"
-                    placeholder="EIDADHA35"
-                    maxlength="20"
-                    autocomplete="off"
-                    oninput="this.value = this.value.toUpperCase()"
-                >
-                <button class="btn-apply" onclick="applyPromoCode()">تطبيق الكود</button>
-            </div>
-
-            <!-- Message -->
-            <div class="promo-message" id="promoMessage"></div>
-
-            <!-- Discount Result Card -->
-            <div class="discount-result" id="discountResult">
-                <div class="result-row">
-                    <span class="result-label">الباقة</span>
-                    <span class="result-value" id="res-package">—</span>
-                </div>
-                <div class="result-row">
-                    <span class="result-label">الكود المطبق</span>
-                    <span class="result-value" id="res-code">—</span>
-                </div>
-                <div class="result-divider"></div>
-                <div class="result-row">
-                    <span class="result-label">السعر الأصلي</span>
-                    <span class="result-value strike" id="res-original">—</span>
-                </div>
-                <div class="result-row">
-                    <span class="result-label">قيمة الخصم</span>
-                    <span class="result-value green" id="res-saved">—</span>
-                </div>
-                <div class="result-row">
-                    <span class="result-label">السعر النهائي</span>
-                    <span class="result-value gold" id="res-final">—</span>
-                </div>
-
-                <a class="btn-whatsapp" id="whatsappBtn" href="#" target="_blank">
-                    <i class="bi bi-whatsapp fs-5"></i>
-                    احجز الآن مع الخصم
-                </a>
-            </div>
-
-            <!-- Fallback contact -->
             <div class="text-center mt-4">
-                <p style="color: rgba(255,255,255,0.45); font-size: 0.82rem; margin-bottom: 12px;">
-                    أو تواصل معنا مباشرة بدون كود
-                </p>
-                <button class="btn-package" style="max-width: 260px; margin: auto;" onclick="contactWithCurrentSelection()">
+                <p style="color:rgba(255,255,255,.35);font-size:.78rem;margin-bottom:10px;">أو تواصل معنا مباشرة بدون كود</p>
+                <button onclick="contactWithCurrentSelection()" style="background:linear-gradient(135deg,var(--gold-d),var(--gold));border:none;border-radius:11px;padding:12px 28px;color:#1a0a00;font-family:'Readex Pro',sans-serif;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .25s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
                     <i class="bi bi-whatsapp"></i> تواصل معنا الآن
                 </button>
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
-<!-- ═══════════ FOOTER ═══════════ -->
+<!-- FOOTER -->
 <footer class="glass-footer" id="footer">
     <div class="container footer-container">
-        <div class="footer-brand">
-            <div class="footer-logo">
-                <img src="media/icon.png" alt="Logo" onerror="this.style.display='none';">
-            </div>
-            <h3 class="footer-brand-name">DT. Ahmed Ayman</h3>
-            <p class="footer-tagline">Your Trusted Nutrition Partner for a Healthier Tomorrow</p>
-        </div>
+        <div><div class="footer-logo"><img src="media/icon.png" alt="Logo" onerror="this.style.display='none';"></div>
+        <h3 class="footer-brand-name">DT. Ahmed Ayman</h3>
+        <p class="footer-tagline">Your Trusted Nutrition Partner for a Healthier Tomorrow</p></div>
         <div class="contact-info">
-            <a href="mailto:ahmedaymaan101@email.com" class="contact-item">
-                <div class="contact-icon">✉</div>
-                <span>ahmedaymaan101@email.com</span>
-            </a>
-            <a href="https://wa.me/201093191277" class="contact-item">
-                <div class="contact-icon">📞</div>
-                <span>+20 109 319 1277</span>
-            </a>
-            <div class="contact-item">
-                <div class="contact-icon">📍</div>
-                <span>El-Mahlla El-Kubra, Egypt</span>
-            </div>
+            <a href="mailto:ahmedaymaan101@email.com" class="contact-item"><span>✉</span><span>ahmedaymaan101@email.com</span></a>
+            <a href="https://wa.me/201093191277" class="contact-item"><span>📞</span><span>+20 109 319 1277</span></a>
+            <div class="contact-item"><span>📍</span><span>El-Mahlla El-Kubra, Egypt</span></div>
         </div>
         <div class="social-links">
-            <a href="https://www.facebook.com/elgentel.ayman.7?locale=ar_AR" class="social-link" title="Facebook">
-                <i class="bi bi-facebook fs-5"></i>
-            </a>
-            <a href="https://www.instagram.com/dt.ahmedayman?igsh=NGlhbmRiNWM2eGV3" class="social-link" title="Instagram">
-                <i class="bi bi-instagram fs-5"></i>
-            </a>
-            <a href="https://wa.me/201093191277" class="social-link" title="WhatsApp">
-                <i class="bi bi-whatsapp fs-5"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/dt-ahmed-ayman-b19603341" class="social-link" title="LinkedIn">
-                <i class="bi bi-linkedin fs-5"></i>
-            </a>
+            <a href="https://www.facebook.com/elgentel.ayman.7?locale=ar_AR" class="social-link"><i class="bi bi-facebook fs-5"></i></a>
+            <a href="https://www.instagram.com/dt.ahmedayman?igsh=NGlhbmRiNWM2eGV3" class="social-link"><i class="bi bi-instagram fs-5"></i></a>
+            <a href="https://wa.me/201093191277" class="social-link"><i class="bi bi-whatsapp fs-5"></i></a>
+            <a href="https://www.linkedin.com/in/dt-ahmed-ayman-b19603341" class="social-link"><i class="bi bi-linkedin fs-5"></i></a>
         </div>
         <div class="footer-bottom">
             <p class="footer-copyright">© 2025 Dr. Ahmed Ayman - Certified Nutritionist & Dietitian</p>
@@ -1123,211 +629,154 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 <script>
-// ════════════════════════════════════════════════
-//  DATA
-// ════════════════════════════════════════════════
-const packages = {
-    standard: { name: 'الباقة الأساسية', price: 599 },
-    pro:      { name: 'باقة PRO',        price: 749 },
-    vip:      { name: 'الباقة المميزة VIP', price: 899 }
+/* ── DATA ── */
+const pkgData = {
+    health:    { name:'خطة الصحة والتغذية',    price:499,  waName:'خطة الصحة والتغذية (499 جنيه/شهر)' },
+    weight:    { name:'خطة إدارة الوزن',        price:599,  waName:'خطة إدارة الوزن (599 جنيه/شهر)' },
+    intensive: { name:'خطة الكوتشينج المكثف',  price:750,  waName:'خطة الكوتشينج المكثف (750 جنيه/شهر)' },
+    transform: { name:'خطة التحول — 3 أشهر',   price:1199, waName:'خطة التحول الكاملة — 3 أشهر (1,199 جنيه)' },
 };
 
-/*
-  Promo Code rules:
-  - global: applies to all packages
-  - restrict: array of allowed package keys (if set)
-  - type: 'percent' | 'fixed'
-  - value: discount amount
-  - label: display name
-*/
 const promoCodes = {
-    'EIDADHA35': { label: 'خصم عيد الأضحى المبارك', type: 'percent', value: 35, global: true },
+    'EIDADHA35': { label:'خصم 35%', type:'percent', value:35, global:true },
 };
 
-let selectedPackage = 'pro';
+/* quiz → package mapping */
+const quizMap = { health:'health', weight:'weight', intensive:'intensive', transform:'transform' };
+
+let selectedPackage = 'weight';
 let appliedDiscount  = null;
+let quizTarget       = null;
 
-// ════════════════════════════════════════════════
-//  STAR + SPARKLE GENERATION
-// ════════════════════════════════════════════════
+/* ── STARS + SPARKLES ── */
 function generateStars() {
-    const container = document.getElementById('starsBg');
-    for (let i = 0; i < 30; i++) {
-        const star = document.createElement('div');
-        star.className = 'star';
-        star.style.left  = Math.random() * 100 + '%';
-        star.style.top   = Math.random() * 100 + '%';
-        star.style.animationDelay = Math.random() * 4 + 's';
-        star.style.animationDuration = (2 + Math.random() * 3) + 's';
-        container.appendChild(star);
+    const c = document.getElementById('starsBg');
+    for (let i=0;i<30;i++){
+        const s=document.createElement('div'); s.className='star';
+        s.style.left=Math.random()*100+'%'; s.style.top=Math.random()*100+'%';
+        s.style.animationDelay=Math.random()*4+'s';
+        s.style.animationDuration=(2+Math.random()*3)+'s';
+        c.appendChild(s);
     }
 }
-
 function generateSparkles() {
-    const container = document.getElementById('sparkles');
-    for (let i = 0; i < 18; i++) {
-        const sp = document.createElement('div');
-        sp.className = 'sp';
-        sp.style.left = Math.random() * 100 + 'vw';
-        sp.style.top  = Math.random() * 100 + 'vh';
-        sp.style.animationDelay    = Math.random() * 5 + 's';
-        sp.style.animationDuration = (3 + Math.random() * 4) + 's';
-        sp.style.opacity = 0.4;
-        container.appendChild(sp);
+    const c = document.getElementById('sparkles');
+    for (let i=0;i<18;i++){
+        const sp=document.createElement('div'); sp.className='sp';
+        sp.style.left=Math.random()*100+'vw'; sp.style.top=Math.random()*100+'vh';
+        sp.style.animationDelay=Math.random()*5+'s';
+        sp.style.animationDuration=(3+Math.random()*4)+'s';
+        sp.style.opacity=0.35; c.appendChild(sp);
     }
 }
 
-// ════════════════════════════════════════════════
-//  PACKAGE SELECTION
-// ════════════════════════════════════════════════
+/* ── QUIZ ── */
+function pickGoal(el) {
+    document.querySelectorAll('.quiz-opt').forEach(o=>o.classList.remove('selected'));
+    el.classList.add('selected');
+    quizTarget = el.dataset.target;
+    document.getElementById('quizGoBtn').classList.add('visible');
+}
+function scrollToResult() {
+    if (!quizTarget) return;
+    const cardId = 'card-' + quizTarget;
+    const el = document.getElementById(cardId);
+    if (el) { el.scrollIntoView({behavior:'smooth', block:'center'}); }
+    /* also highlight */
+    const pkgKey = quizMap[quizTarget];
+    selectPackage(pkgKey);
+    /* flash highlight */
+    const card = el?.querySelector('.pkg-card');
+    if (card) {
+        card.style.transition='box-shadow .4s';
+        card.style.boxShadow='0 0 0 3px rgba(201,168,76,.7)';
+        setTimeout(()=>{ card.style.boxShadow=''; },2000);
+    }
+}
+
+/* ── PACKAGE SELECTION (promo) ── */
 function selectPackage(pkg) {
     selectedPackage = pkg;
-    document.querySelectorAll('.package-option').forEach(el => {
-        el.classList.toggle('selected', el.dataset.package === pkg);
-    });
-    // Re-apply discount if one is active
-    if (appliedDiscount) {
-        const code = document.getElementById('promoInput').value.trim().toUpperCase();
-        applyPromoCode(code);
-    } else {
-        hideResult();
-    }
+    document.querySelectorAll('.pkg-opt').forEach(el=>
+        el.classList.toggle('selected', el.dataset.package===pkg));
+    if (appliedDiscount) applyPromoCode(document.getElementById('promoInput').value.trim().toUpperCase());
+    else hideResult();
 }
 
-// ════════════════════════════════════════════════
-//  COPY CODE + AUTO-FILL
-// ════════════════════════════════════════════════
+/* ── PROMO ── */
 function copyAndApplyCode(code) {
-    navigator.clipboard.writeText(code).catch(() => {});
+    navigator.clipboard.writeText(code).catch(()=>{});
     document.getElementById('promoInput').value = code;
-    showMessage('info', `✓ تم نسخ الكود: ${code} — اضغط "تطبيق الكود"`);
+    showMsg('info','تم نسخ الكود — اضغط "تطبيق"');
 }
 
-// ════════════════════════════════════════════════
-//  APPLY PROMO CODE
-// ════════════════════════════════════════════════
-function applyPromoCode(forcedCode) {
-    const rawCode = (forcedCode || document.getElementById('promoInput').value).trim().toUpperCase();
-
-    if (!rawCode) {
-        showMessage('error', '⚠️ الرجاء إدخال كود الخصم أولاً');
-        return;
-    }
-
-    const promo = promoCodes[rawCode];
-    if (!promo) {
-        showMessage('error', '❌ كود الخصم غير صحيح — تحقق من الكود وحاول مرة أخرى');
-        hideResult();
-        appliedDiscount = null;
-        return;
-    }
-
-    // Check restriction
+function applyPromoCode(forced) {
+    const raw = (forced || document.getElementById('promoInput').value).trim().toUpperCase();
+    if (!raw) { showMsg('error','الرجاء إدخال كود الخصم أولاً'); return; }
+    const promo = promoCodes[raw];
+    if (!promo) { showMsg('error','كود الخصم غير صحيح — تحقق من الكود وحاول مرة أخرى'); hideResult(); appliedDiscount=null; return; }
     if (promo.restrict && !promo.restrict.includes(selectedPackage)) {
-        const allowed = promo.restrict.map(k => packages[k].name).join('، ');
-        showMessage('error', `⚠️ هذا الكود يعمل فقط مع: ${allowed}`);
-        hideResult();
-        appliedDiscount = null;
-        return;
+        showMsg('error','هذا الكود لا يعمل مع الخطة المختارة'); hideResult(); appliedDiscount=null; return;
     }
-
-    const pkg  = packages[selectedPackage];
+    const pkg  = pkgData[selectedPackage];
     const orig = pkg.price;
-    let   discountAmt;
-
-    if (promo.type === 'percent') {
-        discountAmt = Math.round(orig * promo.value / 100);
-    } else {
-        discountAmt = Math.min(promo.value, orig);
-    }
-
-    const finalPrice = orig - discountAmt;
-    const pct = Math.round(discountAmt / orig * 100);
-
-    appliedDiscount = { code: rawCode, package: selectedPackage, originalPrice: orig, finalPrice, discountAmt, pct };
-
-    // Update UI
-    showMessage('success', `🎉 تم تطبيق كود "${rawCode}" — وفّرت ${discountAmt} جنيه!`);
-    showResult(pkg.name, rawCode, orig, discountAmt, finalPrice, pct);
-
-    // Update card discount display
-    updateCardDiscount(selectedPackage, orig, finalPrice, discountAmt);
-
-    // Save to sessionStorage for contactPackage()
+    const disc = promo.type==='percent' ? Math.round(orig*promo.value/100) : Math.min(promo.value,orig);
+    const final= orig-disc;
+    const pct  = Math.round(disc/orig*100);
+    appliedDiscount = {code:raw, package:selectedPackage, originalPrice:orig, finalPrice:final, discountAmt:disc, pct};
+    showMsg('success',`تم تطبيق الكود "${raw}" — وفّرت ${disc.toLocaleString()} جنيه`);
+    showResult(pkg.name, raw, orig, disc, final, pct);
+    updateCardDiscount(selectedPackage, orig, final, disc);
     sessionStorage.setItem('appliedDiscount', JSON.stringify(appliedDiscount));
 }
 
 function updateCardDiscount(pkg, orig, final, saved) {
-    const el = document.getElementById(`discount-${pkg}`);
+    const el = document.getElementById('discount-'+pkg);
     if (!el) return;
-    el.querySelector('.original-price').textContent   = orig + ' جنيه';
-    el.querySelector('.discounted-price').textContent = final + ' جنيه';
-    el.querySelector('.discount-amount').textContent  = `وفّرت ${saved} جنيه`;
+    el.querySelector('.orig-p').textContent = orig.toLocaleString()+' جنيه';
+    el.querySelector('.disc-p').textContent = final.toLocaleString()+' جنيه';
+    el.querySelector('.disc-s').textContent = 'وفّرت '+saved.toLocaleString()+' جنيه';
     el.classList.add('visible');
 }
 
 function showResult(pkgName, code, orig, saved, final, pct) {
-    document.getElementById('res-package').textContent  = pkgName;
-    document.getElementById('res-code').textContent     = code;
-    document.getElementById('res-original').textContent = orig + ' جنيه';
-    document.getElementById('res-saved').textContent    = `- ${saved} جنيه (${pct}%)`;
-    document.getElementById('res-final').textContent    = final + ' جنيه';
-
-    // WhatsApp link
-    const msg = `السلام عليكم، أريد الاشتراك في ${pkgName}\n\nكود العيد المطبق: ${code}\nالسعر الأصلي: ${orig} جنيه\nالخصم: ${saved} جنيه (${pct}%)\nالسعر النهائي: ${final} جنيه\n\n🎊 عيد أضحى مبارك!`;
-    document.getElementById('whatsappBtn').href = `https://wa.me/201093191277?text=${encodeURIComponent(msg)}`;
-
-    document.getElementById('discountResult').classList.add('visible');
+    document.getElementById('res-pkg').textContent   = pkgName;
+    document.getElementById('res-code').textContent  = code;
+    document.getElementById('res-orig').textContent  = orig.toLocaleString()+' جنيه';
+    document.getElementById('res-saved').textContent = '- '+saved.toLocaleString()+' جنيه ('+pct+'%)';
+    document.getElementById('res-final').textContent = final.toLocaleString()+' جنيه';
+    const msg = `السلام عليكم، أريد الاشتراك في ${pkgName}\n\nكود الخصم: ${code}\nالسعر الأصلي: ${orig.toLocaleString()} جنيه\nالخصم: ${saved.toLocaleString()} جنيه (${pct}%)\nالسعر النهائي: ${final.toLocaleString()} جنيه`;
+    document.getElementById('waBtn').href = 'https://wa.me/201093191277?text='+encodeURIComponent(msg);
+    document.getElementById('discResult').classList.add('visible');
 }
 
-function hideResult() {
-    document.getElementById('discountResult').classList.remove('visible');
-}
-
-function showMessage(type, text) {
-    const el = document.getElementById('promoMessage');
-    el.className = `promo-message ${type}`;
+function hideResult() { document.getElementById('discResult').classList.remove('visible'); }
+function showMsg(type, text) {
+    const el = document.getElementById('promoMsg');
+    el.className = 'promo-msg '+type;
     el.textContent = text;
 }
 
-// ════════════════════════════════════════════════
-//  CONTACT PACKAGE (from card buttons)
-// ════════════════════════════════════════════════
-function contactPackage(packageType) {
-    const pkg = packages[packageType];
-    let msg   = `السلام عليكم، أريد الاشتراك في ${pkg.name} بسعر ${pkg.price} جنيه شهرياً`;
-
+function contactPackage(pkgKey) {
+    const pkg = pkgData[pkgKey];
+    let msg = `السلام عليكم، أريد الاشتراك في ${pkg.waName}`;
     const stored = sessionStorage.getItem('appliedDiscount');
     if (stored) {
         const d = JSON.parse(stored);
-        if (d.package === packageType) {
-            msg += `\n\nكود الخصم المطبق: ${d.code}`;
-            msg += `\nالسعر الأصلي: ${d.originalPrice} جنيه`;
-            msg += `\nالخصم: ${d.discountAmt} جنيه (${d.pct}%)`;
-            msg += `\nالسعر النهائي: ${d.finalPrice} جنيه`;
-            msg += `\n\n🎊 عيد أضحى مبارك!`;
+        if (d.package===pkgKey) {
+            msg += `\n\nكود الخصم: ${d.code}\nالسعر الأصلي: ${d.originalPrice.toLocaleString()} جنيه\nالخصم: ${d.discountAmt.toLocaleString()} جنيه (${d.pct}%)\nالسعر النهائي: ${d.finalPrice.toLocaleString()} جنيه`;
         }
     }
-
-    window.open(`https://wa.me/201093191277?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open('https://wa.me/201093191277?text='+encodeURIComponent(msg),'_blank');
 }
+function contactWithCurrentSelection() { contactPackage(selectedPackage); }
 
-function contactWithCurrentSelection() {
-    contactPackage(selectedPackage);
-}
-
-// ════════════════════════════════════════════════
-//  NAVBAR MOBILE TOGGLE
-// ════════════════════════════════════════════════
-document.getElementById('mobileToggle').addEventListener('click', () => {
+/* ── NAVBAR ── */
+document.getElementById('mobileToggle').addEventListener('click',()=>{
     document.getElementById('navbarLinks').classList.toggle('open');
 });
 
-// ════════════════════════════════════════════════
-//  INIT
-// ════════════════════════════════════════════════
 generateStars();
 generateSparkles();
 </script>
