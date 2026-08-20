@@ -2,336 +2,906 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- مهم جدا للموبايل -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- عنوان الموقع في جوجل -->
   <title>Ahmed Ayman | Online Nutrition & Sports Nutrition</title>
-
-  <!-- وصف الموقع -->
   <meta name="description" content="Online nutrition coaching with personalized diet plans, sports nutrition, weight loss, and lifestyle coaching.">
-
   <meta name="author" content="Nutriahmed">
   <meta name="robots" content="index, follow">
 
-    <!-- Bootstrap CSS CDN -->
-     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-     <link rel="stylesheet" href="css/bootstrap.min (1).css">
-     <link rel="stylesheet" href="css/style.css">
-     <!-- Font Awesome 5 (Free) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Font Awesome 6 (Free) -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/bootstrap.min (1).css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="media/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="media/logo.png">
 
 </head>
-   <!-- Navigation -->
-   <nav class="glass-navbar">
-            <div class="navbar-content">
-                <!-- Logo -->
-                    <div class="navbar-logo">
-                        <a href="index.html" class="logo-link">
-                            <img src="media/icon.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                            <span style="display:none; color: #fbbf24; font-size: 1.5rem;">🌱</span>
-                        </a>
-                    </div>
-                    
-                <!-- Navigation Links in Glass Container -->
-                <div class="navbar-links" id="navbarLinks">
-                    <a href="index.html" class="nav-link active">Home</a>
-                    <a href="about.html" class="nav-link">About Me</a>
-                    <a href="packages.html" class="nav-link">Packages</a>
-                    <a href="clients.html" class="nav-link">Clients</a>
-                    <a href="#footer" class="nav-link">Contact Me</a>
-                </div>
-                <!-- Mobile Menu Toggle -->
-                <button class="mobile-toggle" id="mobileToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+<body class="index-redesign">
+  <nav class="glass-navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <a href="index.html" class="logo-link">
+                    <img src="media/logo.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span style="display:none; color: #0969da; font-size: 1.5rem;">Logo</span>
+                </a>
             </div>
-                
-            </nav>
-            
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section mt-4">
-        <div class="bg-shapes"></div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="hero-content fade-in-up">
-                        <h1 class="hero-title readex-pro">
-                            Your Nutrition,<br> Your Lifestyle <br> "Anywhere, Anytime"
-                        </h1>
-                        <p class="hero-subtitle">
-                            Experience the future of healthcare with our innovative platform. 
-                            Personalized solutions, expert guidance, and cutting-edge technology 
-                            all in one place.
-                        </p>
-                        <div class="cta-buttons">
-                                <a href="packages.html" class="btn"> <button class="btn btn-primary-custom"> احجز مكانك الان</button></a>                         
-                                <a href="clients.html" class="btn">  <button class="btn btn-secondary-custom">FeedBacks</button></a>
-                         
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="hero-visual fade-in-up" style="animation-delay: 0.3s;">
-                        <div class="text-center">
-                <div class="profile-container" id="ahmed">
-                    <img src="media/me1.png" alt="Profile Picture"
-                         onerror="this.onerror=null;this.src='https://placehold.co/300x400/227186/FFFFFF?text=Profile+Photo';">
-                </div>
-
-                        </div>
-                    </div>
-                </div>
+            <div class="navbar-links" id="navbarLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About Me</a>
+                <a href="packages.html" class="nav-link">Packages</a>
+                <a href="clients.html" class="nav-link">Clients</a>
+                <a href="#footer" class="nav-link">Contact Me</a>
             </div>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation menu" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
+    </nav>
+
+  <main>
+    <section id="home" class="hero-section coach-hero">
+      <div class="bg-shapes"></div>
+      <div class="container">
+        <div class="coach-hero-grid">
+          <div class="hero-content fade-in-up" data-aos="fade-right">
+            <div class="hero-kicker">
+              <i class="bi bi-person-badge"></i>
+              Meet Your Online Dietitian
+            </div>
+            <h1 class="hero-title readex-pro">
+              DT. Ahmed Ayman,<br> your nutrition coach <br> anywhere.
+            </h1>
+            <p class="hero-subtitle">
+              Your Trusted Nutrition Partner for a Healthier Tomorrow. Get personalized nutrition plans, support, follow-up, and expert guidance from anywhere, anytime.
+            </p>
+            <div class="cta-buttons">
+              <a href="packages.html" class="btn btn-primary-custom">احجز مكانك الان</a>
+              <a href="about.html" class="btn btn-secondary-custom">About Me</a>
+            </div>
+            <div class="hero-proof" aria-label="Client proof">
+              <div class="avatar-stack" aria-hidden="true">
+                <span>A</span>
+                <span>M</span>
+                <span>N</span>
+                <span>+</span>
+              </div>
+              <div class="proof-copy">
+                <strong>350+ Happy Patients</strong> with <strong>98% Satisfaction Rate</strong>
+              </div>
+            </div>
+
+            <div class="hero-bio-panel" aria-label="Coaching system highlights">
+              <div class="bio-row">
+                <div class="bio-node"><i class="bi bi-clipboard2-pulse"></i></div>
+                <div>
+                  <strong>Personalized nutrition strategy</strong>
+                  <span>Plans adapted to your goal, lifestyle, and schedule.</span>
+                </div>
+                <div class="bio-tag">01</div>
+              </div>
+              <div class="bio-row">
+                <div class="bio-node"><i class="bi bi-graph-up-arrow"></i></div>
+                <div>
+                  <strong>Evidence-based follow-up</strong>
+                  <span>Progress reviews, adjustments, and direct support.</span>
+                </div>
+                <div class="bio-tag">02</div>
+              </div>
+              <div class="bio-row">
+                <div class="bio-node"><i class="bi bi-phone"></i></div>
+                <div>
+                  <strong>Online-first coaching</strong>
+                  <span>All guidance and follow-up designed for your phone.</span>
+                </div>
+                <div class="bio-tag">03</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="coach-portrait fade-in-up" data-aos="fade-left">
+            <div class="portrait-halo"></div>
+            <div class="orbit-chip orbit-chip-1">
+              <i class="bi bi-shield-check"></i>
+              <div>
+                <strong>Private</strong>
+                <span>Secure coaching</span>
+              </div>
+            </div>
+            <div class="orbit-chip orbit-chip-2">
+              <i class="bi bi-activity"></i>
+              <div>
+                <strong>Adaptive</strong>
+                <span>Plan updates</span>
+              </div>
+            </div>
+            <div class="orbit-chip orbit-chip-3">
+              <i class="bi bi-chat-dots"></i>
+              <div>
+                <strong>Online</strong>
+                <span>Direct support</span>
+              </div>
+            </div>
+            <div class="portrait-frame">
+              <img src="media/me1-optimized.jpg" alt="DT. Ahmed Ayman" decoding="async" fetchpriority="high" onerror="this.onerror=null;this.src='https://placehold.co/460x620/0969da/FFFFFF?text=DT.+Ahmed+Ayman';">
+            </div>
+            <div class="portrait-console" aria-label="Dietitian performance highlights">
+              <div class="console-metric">
+                <strong>350+</strong>
+                <span>Patients</span>
+              </div>
+              <div class="console-metric">
+                <strong>98%</strong>
+                <span>Satisfaction</span>
+              </div>
+              <div class="console-metric">
+                <strong>2+</strong>
+                <span>Years</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Stats Section -->
     <section class="stats-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-6" data-aos="fade-right">
-                    <div class="stat-item fade-in-up mb-3 ">
-                        <span class="stat-number">350+</span>
-                        <span class="stat-label">Happy Patients</span>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6" data-aos="fade-left">
-                    <div class="stat-item fade-in-up mb-3" style="animation-delay: 0.1s;">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label">Support Available</span>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6" data-aos="fade-right">
-                    <div class="stat-item fade-in-up mb-3" style="animation-delay: 0.2s;">
-                        <span class="stat-number">98%</span>
-                        <span class="stat-label">Satisfaction Rate</span>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6" data-aos="fade-left">
-                    <div class="stat-item fade-in-up mb-3" style="animation-delay: 0.3s;">
-                        <span class="stat-number">2+</span>
-                        <span class="stat-label">Years of Experience</span>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="stats-ribbon">
+          <div class="stat-item fade-in-up" data-aos="fade-up">
+            <span class="stat-number">350+</span>
+            <span class="stat-label">Happy Patients</span>
+          </div>
+          <div class="stat-item fade-in-up" data-aos="fade-up" style="animation-delay: 0.1s;">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Support Available</span>
+          </div>
+          <div class="stat-item fade-in-up" data-aos="fade-up" style="animation-delay: 0.2s;">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">Satisfaction Rate</span>
+          </div>
+          <div class="stat-item fade-in-up" data-aos="fade-up" style="animation-delay: 0.3s;">
+            <span class="stat-number">2+</span>
+            <span class="stat-label">Years of Experience</span>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Features Section -->
     <section id="features" class="features-section">
-        <div class="container">
-            <div class="row mb-5" data-aos="zoom-in-up">
-                <div class="col-12">
-                    <h2 class="section-title fade-in-up">Why Choose Me?</h2>
-                    <p class="section-subtitle fade-in-up">
-                        Personalized nutrition plans. <br> Support & follow-up anytime, anywhere.
-                    </p>
-                </div>
-            </div>
-            <div class="row g-4 " >
-                <div class="col-lg-4 col-md-6 "  data-aos="fade-right">
-                    <div class="feature-card fade-in-up">
-                        <div class="feature-icon">
-                            <i class="fas fa-user-md"></i>
-                        </div>
-                        <h3 class="feature-title"> خطة شخصية</h3>
-                        <p class="feature-description">
-                           لكل شخص نظامه الغذائي الخاص اللي يناسب هدفه وظروفه.
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6"  data-aos="fade-left">
-                    <div class="feature-card fade-in-up" style="animation-delay: 0.1s;">
-                        <div class="feature-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3 class="feature-title">  متابعة دقيقة خطوة بخطوة</h3>
-                        <p class="feature-description">
-                            مش بس هسلمك نظام وأسكت! هنتابع مع بعض بشكل مستمر، نراجع التقدم، ونعدل الخطة عند الحاجة علشان نوصل لأفضل نتيجة..
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6"  data-aos="fade-right">
-                    <div class="feature-card fade-in-up" style="animation-delay: 0.2s;">
-                        <div class="feature-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3 class="feature-title">سهولة ومرونة في المتابعة</h3>
-                        <p class="feature-description">
-                            كل التفاصيل متاحة على موبايلك، تقدر تتابع نظامك في أي وقت ومن أي مكان، من غير ما تضيع وقتك في مشاوير أو ورق
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6"  data-aos="fade-left">
-                    <div class="feature-card fade-in-up" style="animation-delay: 0.3s;">
-                        <div class="feature-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3 class="feature-title"> خصوصية وأمان كامل</h3>
-                        <p class="feature-description">
-                            بياناتك الطبية والشخصية في أمان تام، مفيش أي حد يطلع عليها غيري.
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6"  data-aos="fade-right">
-                    <div class="feature-card fade-in-up" style="animation-delay: 0.4s;">
-                        <div class="feature-icon">
-                            <i class="fas fa-calendar-check"></i>
-                        </div>
-                        <h3 class="feature-title"> مواعيد استشارة تناسبك</h3>
-                        <p class="feature-description">
-                           تقدر تختار وقت يناسب يومك عشان نعمل استشارة أونلاين من غير ما تعطل جدولك.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6"  data-aos="fade-left">
-                    <div class="feature-card fade-in-up" style="animation-delay: 0.5s;">
-                        <div class="feature-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3 class="feature-title"> دعم وتحفيز مستمر</h3>
-                        <p class="feature-description">
-                           أنا مش بديك خطة وبسيبك، أنا معاك في كل خطوة علشان تلاقي الدافع وتكمل لحد ما توصل لهدفك
-                        </p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row mb-5" data-aos="zoom-in-up">
+          <div class="col-12">
+            <h2 class="section-title fade-in-up">Why Choose Me?</h2>
+            <p class="section-subtitle fade-in-up">
+              Personalized nutrition plans. <br> Support & follow-up anytime, anywhere.
+            </p>
+          </div>
         </div>
+
+        <div class="feature-system">
+          <div class="feature-column">
+            <div class="feature-card fade-in-up" data-aos="fade-right">
+              <div class="feature-icon">
+                <i class="fas fa-user-md"></i>
+              </div>
+              <h3 class="feature-title"> خطة شخصية</h3>
+              <p class="feature-description">لكل شخص نظامه الغذائي الخاص اللي يناسب هدفه وظروفه.</p>
+            </div>
+            <div class="feature-card fade-in-up" data-aos="fade-right" style="animation-delay: 0.1s;">
+              <div class="feature-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3 class="feature-title">متابعة دقيقة خطوة بخطوة</h3>
+              <p class="feature-description">مش بس هسلمك نظام وأسكت! هنتابع مع بعض بشكل مستمر، نراجع التقدم، ونعدل الخطة عند الحاجة علشان نوصل لأفضل نتيجة..</p>
+            </div>
+            <div class="feature-card fade-in-up" data-aos="fade-right" style="animation-delay: 0.2s;">
+              <div class="feature-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h3 class="feature-title">سهولة ومرونة في المتابعة</h3>
+              <p class="feature-description">كل التفاصيل متاحة على موبايلك، تقدر تتابع نظامك في أي وقت ومن أي مكان، من غير ما تضيع وقتك في مشاوير أو ورق</p>
+            </div>
+          </div>
+
+          <div class="feature-core" data-aos="zoom-in">
+            <div class="core-ring">
+              <div class="core-pulse">
+                <i class="bi bi-cpu"></i>
+              </div>
+            </div>
+            <h3>Adaptive Nutrition System</h3>
+            <p>Plans, progress, privacy, scheduling, and motivation working together around your day.</p>
+          </div>
+
+          <div class="feature-column">
+            <div class="feature-card fade-in-up" data-aos="fade-left" style="animation-delay: 0.3s;">
+              <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3 class="feature-title">خصوصية وأمان كامل</h3>
+              <p class="feature-description">بياناتك الطبية والشخصية في أمان تام، مفيش أي حد يطلع عليها غيري.</p>
+            </div>
+            <div class="feature-card fade-in-up" data-aos="fade-left" style="animation-delay: 0.4s;">
+              <div class="feature-icon">
+                <i class="fas fa-calendar-check"></i>
+              </div>
+              <h3 class="feature-title">مواعيد استشارة تناسبك</h3>
+              <p class="feature-description">تقدر تختار وقت يناسب يومك عشان نعمل استشارة أونلاين من غير ما تعطل جدولك.</p>
+            </div>
+            <div class="feature-card fade-in-up" data-aos="fade-left" style="animation-delay: 0.5s;">
+              <div class="feature-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3 class="feature-title">دعم وتحفيز مستمر</h3>
+              <p class="feature-description">أنا مش بديك خطة وبسيبك، أنا معاك في كل خطوة علشان تلاقي الدافع وتكمل لحد ما توصل لهدفك</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <!-- <section class="testimonials-section py-5">
-        <div class="container">
-            <div class="row mb-5"  data-aos="fade-up">
-                <div class="col-12">
-                    <h2 class="section-title fade-in-up">What Our Users Say</h2>
-                    <p class="section-subtitle fade-in-up">
-                        Real stories from real people who transformed their health with our platform.
-                    </p>
-                </div>
+    <section id="about" class="about-section about-lab">
+      <div class="container">
+        <div class="about-layout">
+          <div class="about-copy" data-aos="fade-right">
+            <div class="hero-kicker">
+              <i class="bi bi-person-vcard"></i>
+              About The Coach
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4"  data-aos="fade-up">
-                    <div class="testimonial-card fade-in-up">
-                        <p class="testimonial-text">
-                            "This platform completely changed how I approach my health. The personalized insights are incredible!"
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">S</div>
-                            <div class="author-info">
-                                <h6>Sarah Johnson</h6>
-                                <small>Health Enthusiast</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4"  data-aos="fade-up">
-                    <div class="testimonial-card fade-in-up" style="animation-delay: 0.1s;">
-                        <p class="testimonial-text">
-                            "The expert consultations helped me understand my health better than ever before. Highly recommended!"
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">M</div>
-                            <div class="author-info">
-                                <h6>Michael Chen</h6>
-                                <small>Software Engineer</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
-                    <div class="testimonial-card fade-in-up" style="animation-delay: 0.2s;">
-                        <p class="testimonial-text">
-                            "Amazing user experience and the mobile app makes it so convenient to track my progress daily."
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">E</div>
-                            <div class="author-info">
-                                <h6>Emily Rodriguez</h6>
-                                <small>Fitness Coach</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <h2 class="about-title readex-pro">
+              You're not following a diet.<br> You're building a system.
+            </h2>
+            <p class="about-text">
+              DT. Ahmed Ayman combines personalized nutrition planning, sports nutrition thinking, and close online follow-up into one calm, practical coaching experience.
+            </p>
+            <p class="about-text">
+              The goal is simple: a plan that fits your real life, then improves with you through tracking, feedback, and consistent support.
+            </p>
+          </div>
+
+          <div class="about-identity-card" data-aos="fade-up">
+            <div class="identity-portrait">
+              <img src="media/me1-optimized.jpg" alt="DT. Ahmed Ayman" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/420x500/0969da/FFFFFF?text=DT.+Ahmed+Ayman';">
             </div>
+            <div class="identity-nameplate">
+              <h3>DT. Ahmed Ayman</h3>
+              <p>Online Nutrition & Sports Nutrition</p>
+            </div>
+            <div class="identity-stats" aria-label="Coach highlights">
+              <div class="identity-stat">
+                <strong>350+</strong>
+                <span>Patients</span>
+              </div>
+              <div class="identity-stat">
+                <strong>98%</strong>
+                <span>Satisfaction</span>
+              </div>
+              <div class="identity-stat">
+                <strong>2+</strong>
+                <span>Years</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-command-deck" data-aos="fade-up" data-aos-delay="120">
+            <div class="method-switcher" aria-label="About me method controls">
+              <button class="method-button active" type="button" data-method-title="Personal Plan Architecture" data-method-copy="Your nutrition plan is built around your goal, preferences, schedule, measurements, and lifestyle instead of forcing you into a generic template.">
+                <span class="method-number">01</span>
+                <span class="method-summary">
+                  <strong>Personalized plan architecture</strong>
+                  <span>Goals, lifestyle, food preferences, and measurements.</span>
+                </span>
+                <i class="bi bi-arrow-right"></i>
+              </button>
+              <button class="method-button" type="button" data-method-title="Continuous Progress Intelligence" data-method-copy="Progress is reviewed step by step, then the plan is adjusted when needed so your nutrition keeps matching your body and routine.">
+                <span class="method-number">02</span>
+                <span class="method-summary">
+                  <strong>Step-by-step follow-up</strong>
+                  <span>Review progress, adjust, and keep moving forward.</span>
+                </span>
+                <i class="bi bi-arrow-right"></i>
+              </button>
+              <button class="method-button" type="button" data-method-title="Online Coaching Flow" data-method-copy="Your check-ins, guidance, and support are designed to work from your phone so the coaching stays flexible, private, and easy to follow.">
+                <span class="method-number">03</span>
+                <span class="method-summary">
+                  <strong>Online-first support</strong>
+                  <span>Flexible coaching from anywhere, anytime.</span>
+                </span>
+                <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+
+            <div class="about-console">
+              <div class="console-rail"></div>
+              <div class="console-header">
+                <img class="console-avatar" src="media/me1-optimized.jpg" alt="DT. Ahmed Ayman" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/120x120/0969da/FFFFFF?text=AA';">
+                <div>
+                  <h3>DT. Ahmed Ayman</h3>
+                  <p>Online Nutrition & Sports Nutrition</p>
+                </div>
+                <div class="online-pill">Online</div>
+              </div>
+
+              <div class="method-display" aria-live="polite">
+                <small id="methodLabel">Selected Method</small>
+                <h3 id="methodTitle">Personal Plan Architecture</h3>
+                <p id="methodCopy">Your nutrition plan is built around your goal, preferences, schedule, measurements, and lifestyle instead of forcing you into a generic template.</p>
+              </div>
+
+              <div class="journey-map" aria-label="Coaching journey">
+                <div class="journey-node">
+                  <strong>Listen</strong>
+                  <span>Understand your lifestyle and goal.</span>
+                </div>
+                <div class="journey-node">
+                  <strong>Design</strong>
+                  <span>Create a practical nutrition plan.</span>
+                </div>
+                <div class="journey-node">
+                  <strong>Track</strong>
+                  <span>Monitor progress and habits.</span>
+                </div>
+                <div class="journey-node">
+                  <strong>Adjust</strong>
+                  <span>Improve the plan with feedback.</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </section> -->
+      </div>
+    </section>
 
-    <!-- Footer -->
-      <footer class="glass-footer" id="footer">
-        <div class="container footer-container">
-            <!-- Footer Brand Section -->
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <img src="media/icon.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                    <span style="display:none; font-size: 1.5rem;">🌱</span>
-                </div>
-                <h3 class="footer-brand-name">DT. Ahmed Ayman</h3>
-                <p class="footer-tagline">Your Trusted Nutrition Partner for a Healthier Tomorrow</p>
+    <section class="client-preview-section" id="client-transformations">
+      <div class="container">
+        <div class="client-preview-head">
+          <div class="client-preview-copy" data-aos="fade-right">
+            <div class="hero-kicker">
+              <i class="bi bi-activity"></i>
+              Client Transformations
             </div>
+            <h2 class="section-title readex-pro">Real progress, tracked with care.</h2>
+            <p class="section-subtitle">
+              A quick look at five client journeys from the full reviews page, redesigned as a futuristic progress slider.
+            </p>
+          </div>
 
-            <!-- Contact Information -->
-            <div class="contact-info">
-                <a href="mailto:dt.ahmedayman@email.com" class="contact-item">
-                    <div class="contact-icon">✉</div>
-                    <span class="contact-text">ahmedaymaan101@email.com</span>
-                </a>
-                <a href="https://wa.me/201093191277" class="contact-item">
-                    <div class="contact-icon">📞</div>
-                    <span class="contact-text" >+20 109 319 1277</span>
-                </a>
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <span class="contact-text">El-Mahlla El-Kubra, Egypt</span>
-                </div>
+          <div class="client-data-panel" aria-label="Client review statistics" data-aos="fade-left">
+            <div class="client-data-item">
+              <strong>150+</strong>
+              <span>Happy Clients</span>
             </div>
-
-            <!-- Social Media Links -->
-            <div class="social-links">
-                <a href="https://www.facebook.com/elgentel.ayman.7?locale=ar_AR" class="social-link" title="Facebook">
-                    <i class="bi bi-facebook fs-4"></i>
-                </a>
-                <a href="https://www.instagram.com/dt.ahmedayman?igsh=NGlhbmRiNWM2eGV3&utm_source=qr" class="social-link" title="Instagram">
-                    <i class="bi bi-instagram fs-4"></i>
-                </a>
-                <a href="https://wa.me/201093191277" class="social-link" title="WhatsApp">
-                    <i class="bi bi-whatsapp fs-4"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/dt-ahmed-ayman-b19603341?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link" title="LinkedIn">
-                    <i class="bi bi-linkedin fs-4"></i>
-                </a>
+            <div class="client-data-item">
+              <strong>4.9</strong>
+              <span>Avg Rating</span>
             </div>
-
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <p class="footer-copyright">
-                    © 2024 Dr. Ahmed Ayman - Certified Nutritionist & Dietitian
-                </p>
-                <p class="footer-credits">
-                    Professional Nutrition Services • <a href="#privacy">Privacy Policy</a> • <a href="#terms">Terms of Service</a>
-                </p>
+            <div class="client-data-item">
+              <strong>99%</strong>
+              <span>Success Rate</span>
             </div>
+          </div>
         </div>
-    </footer>
+
+        <div class="client-slider-shell" data-aos="zoom-in-up">
+          <div class="client-slider-viewport">
+            <div class="client-slider-track" id="clientSlider">
+              <article class="client-preview-card">
+                <div class="client-case-visual">
+                  <div class="client-initial">R</div>
+                  <span class="case-tag">Weight Loss</span>
+                </div>
+                <div class="client-case-body">
+                  <div class="client-case-topline">
+                    <h3>Mrs. Rahma</h3>
+                    <span class="client-rating-chip"><i class="bi bi-star-fill"></i> 5.0</span>
+                  </div>
+                  <p class="client-case-copy">
+                    Started a practical diet plan with daily follow-up and finished feeling lighter, more comfortable, and motivated to continue.
+                  </p>
+                  <div class="client-case-meta">
+                    <span>2 weeks ago</span>
+                    <span>Health Improvement</span>
+                  </div>
+                  <div class="client-case-progress" aria-label="Progress preview"><span style="--case-progress: 92%;"></span></div>
+                </div>
+              </article>
+
+              <article class="client-preview-card">
+                <div class="client-case-visual">
+                  <img src="media/photo_2025-10-08_14-22-33.jpg" alt="Mostafa transformation preview">
+                  <span class="case-tag">Muscle Gain</span>
+                </div>
+                <div class="client-case-body">
+                  <div class="client-case-topline">
+                    <h3>C: Mostafa Desha</h3>
+                    <span class="client-rating-chip"><i class="bi bi-star-fill"></i> 5.0</span>
+                  </div>
+                  <p class="client-case-copy">
+                    Strength and technique improved with a clear nutrition approach, moving from lighter chest work to stronger, controlled sets.
+                  </p>
+                  <div class="client-case-meta">
+                    <span>1 month ago</span>
+                    <span>Muscle Gain</span>
+                  </div>
+                  <div class="client-case-progress" aria-label="Progress preview"><span style="--case-progress: 86%;"></span></div>
+                </div>
+              </article>
+
+              <article class="client-preview-card">
+                <div class="client-case-visual">
+                  <div class="client-initial">M</div>
+                  <span class="case-tag">Health</span>
+                </div>
+                <div class="client-case-body">
+                  <div class="client-case-topline">
+                    <h3>Merna</h3>
+                    <span class="client-rating-chip"><i class="bi bi-star-fill"></i> 5.0</span>
+                  </div>
+                  <p class="client-case-copy">
+                    Reported clearer energy, better health feeling, and a more controlled routine through the Standard Package.
+                  </p>
+                  <div class="client-case-meta">
+                    <span>3 weeks ago</span>
+                    <span>Standard Package</span>
+                  </div>
+                  <div class="client-case-progress" aria-label="Progress preview"><span style="--case-progress: 82%;"></span></div>
+                </div>
+              </article>
+
+              <article class="client-preview-card">
+                <div class="client-case-visual">
+                  <div class="client-initial">R</div>
+                  <span class="case-tag">VIP Package</span>
+                </div>
+                <div class="client-case-body">
+                  <div class="client-case-topline">
+                    <h3>Rahma</h3>
+                    <span class="client-rating-chip"><i class="bi bi-star-fill"></i> 5.0</span>
+                  </div>
+                  <p class="client-case-copy">
+                    Strong early weight-loss momentum with close meal-by-meal support, coaching, and consistent accountability.
+                  </p>
+                  <div class="client-case-meta">
+                    <span>5 days ago</span>
+                    <span>Weight Loss</span>
+                  </div>
+                  <div class="client-case-progress" aria-label="Progress preview"><span style="--case-progress: 88%;"></span></div>
+                </div>
+              </article>
+
+              <article class="client-preview-card">
+                <div class="client-case-visual">
+                  <div class="client-initial">Y</div>
+                  <span class="case-tag">PRO Package</span>
+                </div>
+                <div class="client-case-body">
+                  <div class="client-case-topline">
+                    <h3>Youssef El-Helaly</h3>
+                    <span class="client-rating-chip"><i class="bi bi-star-fill"></i> 5.0</span>
+                  </div>
+                  <p class="client-case-copy">
+                    Noticed better overall shape and reduced waist/side measurements by staying consistent with the plan.
+                  </p>
+                  <div class="client-case-meta">
+                    <span>3 weeks ago</span>
+                    <span>Health Improvement</span>
+                  </div>
+                  <div class="client-case-progress" aria-label="Progress preview"><span style="--case-progress: 84%;"></span></div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="client-slider-footer">
+            <div class="client-slider-controls" aria-label="Client slider controls">
+              <button class="client-slider-btn" type="button" data-client-prev aria-label="Previous transformation">
+                <i class="bi bi-arrow-left"></i>
+              </button>
+              <button class="client-slider-btn" type="button" data-client-next aria-label="Next transformation">
+                <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+
+            <div class="client-slider-dots" aria-label="Client slider position">
+              <button class="client-slider-dot active" type="button" data-client-dot="0" aria-label="Go to transformation 1"></button>
+              <button class="client-slider-dot" type="button" data-client-dot="1" aria-label="Go to transformation 2"></button>
+              <button class="client-slider-dot" type="button" data-client-dot="2" aria-label="Go to transformation 3"></button>
+              <button class="client-slider-dot" type="button" data-client-dot="3" aria-label="Go to transformation 4"></button>
+              <button class="client-slider-dot" type="button" data-client-dot="4" aria-label="Go to transformation 5"></button>
+            </div>
+
+            <a href="clients.html" class="client-show-more">
+              Show More
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="package-preview-section" id="home-packages">
+      <div class="container">
+        <div class="package-preview-head" data-aos="zoom-in-up">
+          <div class="hero-kicker">
+            <i class="bi bi-grid-1x2"></i>
+            Online Packages
+          </div>
+          <h2 class="section-title readex-pro">Choose the coaching level that fits your goal.</h2>
+          <p class="section-subtitle">
+            Three focused plans from the packages page, presented as a smooth slider so you can compare quickly.
+          </p>
+        </div>
+
+        <div class="client-slider-shell package-slider-shell" data-aos="zoom-in-up">
+          <div class="client-slider-viewport">
+            <div class="package-slider-track" id="packageSlider">
+
+              <article class="package-preview-card weight" dir="rtl">
+                <div class="package-visual-grid" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+                <div class="package-card-top">
+                  <div class="package-orb"><i class="bi bi-graph-up-arrow"></i></div>
+                  <div>
+                    <div class="package-badge">إدارة الوزن</div>
+                    <h3>خطة إدارة الوزن</h3>
+                  </div>
+                </div>
+                <p>خسارة أو زيادة وزن بطريقة صحية وأسرع — مع تعديل منتظم كل أسبوعين</p>
+                <div class="package-price-console">
+                  <div class="package-price"><strong>599</strong><span>جنيه</span></div>
+                  <div class="package-period">شهرياً — متابعة كل أسبوعين</div>
+                </div>
+                <div class="package-follow"><i class="bi bi-calendar2-week"></i> متابعة كل أسبوعين</div>
+                <div class="package-chip-cloud" aria-label="الأنسب لك لو هدفك">
+                  <span>خسارة وزن</span>
+                  <span>زيادة وزن صحية</span>
+                  <span>إعادة تشكيل الجسم</span>
+                  <span>التخلص من الكرش</span>
+                </div>
+                <ul class="package-feature-list">
+                  <li><i class="bi bi-check-circle-fill"></i><span>خطة غذائية <strong>محسوبة بدقة</strong> لهدفك سواء خسارة أو زيادة وزن</span></li>
+                  <li><i class="bi bi-check-circle-fill"></i><span>تعديل الخطة <strong>كل أسبوعين</strong> بناءً على تغيرات وزنك وقياساتك</span></li>
+                  <li><i class="bi bi-check-circle-fill"></i><span><em>إضافي</em> تواصل عبر <strong>واتساب</strong> لإرسال قياساتك كل أسبوعين</span></li>
+                  <li><i class="bi bi-check-circle-fill"></i><span>نظام مرن يتكيف مع أوقات عملك وطبيعة أكلك</span></li>
+                  <li><i class="bi bi-check-circle-fill"></i><span>رد على استفساراتك <strong>خلال 24 ساعة</strong></span></li>
+                  <li><i class="bi bi-check-circle-fill"></i><span>تعديل الخطة لو تغيرت ظروفك أو جدولك</span></li>
+                </ul>
+                <a class="package-cta" href="packages.html#card-weight">تفاصيل الباقة <i class="bi bi-arrow-up-left"></i></a>
+              </article>
+
+              <article class="package-preview-card transform" dir="rtl">
+                <div class="package-visual-grid" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+                <div class="best-ribbon-home">الأوفر قيمة</div>
+                <div class="package-card-top">
+                  <div class="package-orb"><i class="bi bi-stars"></i></div>
+                  <div>
+                    <div class="package-badge">خطة التحول الكاملة</div>
+                    <h3>تحول حقيقي في 3 أشهر</h3>
+                  </div>
+                </div>
+                <p>لمن قرر يأخذ صحته بجدية — خطة شاملة لإدارة الوزن والصحة معاً بمتابعة متصاعدة على مدار 3 أشهر</p>
+                <div class="package-price-console">
+                  <div class="package-price"><strong>1,199</strong><span>جنيه</span></div>
+                  <div class="package-period">للـ 3 أشهر كاملة — دفعة واحدة</div>
+                  <div class="package-saving">وفّر 600 جنيه مقارنةً بخطة الوزن الشهرية × 3 (1,800 جنيه)</div>
+                </div>
+                <div class="package-highlight-grid">
+                  <div><strong>3</strong><span>أشهر متابعة</span></div>
+                  <div><strong>6+</strong><span>تعديل للخطة</span></div>
+                  <div><strong>3</strong><span>تقارير تقدم</span></div>
+                </div>
+                <div class="package-chip-cloud" aria-label="الأنسب لك لو">
+                  <span>جربت قبل ومش وصلت</span>
+                  <span>عايز نتيجة ثابتة</span>
+                  <span>محتاج هدف واضح لـ 3 أشهر</span>
+                  <span>عايز تتعلم مش بس تتبع</span>
+                </div>
+                <ul class="package-feature-list">
+                  <li><i class="bi bi-check-circle-fill"></i><span><strong>الشهر الأول — التأسيس:</strong> جلسة تحليل شاملة، خطة مخصصة، وتعديل أسبوعي لحين استقرار الجسم</span></li>
+                  <li><i class="bi bi-check-circle-fill"></i><span><strong>الشهر الثاني — التسارع:</strong> تعديل الخطة حسب النتائج، تحديات أسبوعية، ومتابعة تقدم مفصلة</span></li>
+                  <li><i class="bi bi-check-circle-fill"></i><span><strong>الشهر الثالث — التثبيت:</strong> خطة للحفاظ على النتائج بعد انتهاء الباقة حتى لا ترجع للوراء</span></li>
+                  <li><i class="bi bi-check-circle-fill"></i><span><em>حصري</em> تقرير تقدم <strong>شامل في نهاية كل شهر</strong> بالأرقام والقياسات</span></li>
+                  <li><i class="bi bi-check-circle-fill"></i><span><em>حصري</em> تواصل عبر واتساب <strong>أسبوعياً</strong> مع رد خلال 24 ساعة على الاستفسارات</span></li>
+                  <li><i class="bi bi-check-circle-fill"></i><span>تعليم تغذوي متراكم — بنهاية الـ 3 أشهر هتعرف تأكل صح <strong>لوحدك من غير ما تحتاج برنامج</strong></span></li>
+                  <li><i class="bi bi-check-circle-fill"></i><span>خطة غذائية تشمل الوزن والصحة معاً — <strong>نتيجة شاملة مش جزئية</strong></span></li>
+                </ul>
+                <a class="package-cta" href="packages.html#card-transform">تفاصيل الباقة <i class="bi bi-arrow-up-left"></i></a>
+              </article>
+
+              <article class="package-preview-card intensive" dir="rtl">
+                <div class="package-visual-grid" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+                <div class="package-card-top">
+                  <div class="package-orb"><i class="bi bi-lightning-charge-fill"></i></div>
+                  <div>
+                    <div class="package-badge">كوتشينج مكثف</div>
+                    <h3>خطة الكوتشينج المكثف</h3>
+                  </div>
+                </div>
+                <p>لمن يحتاج دعم يومي قوي ومتابعة لصيقة لتحقيق نتائج سريعة</p>
+                <div class="package-price-console">
+                  <div class="package-price"><strong>750</strong><span>جنيه</span></div>
+                  <div class="package-period">شهرياً — متابعة يومية / شبه يومية</div>
+                </div>
+                <div class="package-follow"><i class="bi bi-calendar-day"></i> متابعة يومية أو شبه يومية</div>
+                <div class="package-chip-cloud" aria-label="الأنسب لك لو">
+                  <span>عندك مناسبة قريبة</span>
+                  <span>محتاج نتيجة سريعة</span>
+                  <span>بتقع في الالتزام</span>
+                  <span>محتاج متابعة يومية</span>
+                </div>
+                <ul class="package-feature-list">
+                  <li><i class="bi bi-check-circle-fill"></i><span><em>حصري</em> تواصل <strong>يومي على واتساب</strong> — مش هتحس إنك لوحدك يوم واحد</span></li>
+                  <li><i class="bi bi-check-circle-fill"></i><span><em>حصري</em> <strong>مكالمة أسبوعية</strong> لمراجعة تقدمك ومناقشة التعديلات</span></li>
+                  <li><i class="bi bi-check-circle-fill"></i><span><em>حصري</em> رد <strong>فوري</strong> على أي سؤال أو موقف طارئ</span></li>
+                  <li><i class="bi bi-check-circle-fill"></i><span>تعديل الخطة <strong>أكثر من مرة في الأسبوع</strong> حسب استجابة جسمك</span></li>
+                  <li><i class="bi bi-check-circle-fill"></i><span><em>حصري</em> خطة بديلة جاهزة لأي موقف — سفر، أفراح، ضغوط</span></li>
+                  <li><i class="bi bi-check-circle-fill"></i><span>تحفيز مستمر ومحاسبة حقيقية تساعدك تلتزم</span></li>
+                  <li><i class="bi bi-check-circle-fill"></i><span>تعليم مبسط لمفاهيم التغذية — <strong>تفهم مش بس تحفظ</strong></span></li>
+                </ul>
+                <a class="package-cta" href="packages.html#card-intensive">تفاصيل الباقة <i class="bi bi-arrow-up-left"></i></a>
+              </article>
+
+            </div>
+          </div>
+
+          <div class="client-slider-footer">
+            <div class="client-slider-controls" aria-label="Package slider controls">
+              <button class="client-slider-btn" type="button" data-package-prev aria-label="Previous package">
+                <i class="bi bi-arrow-left"></i>
+              </button>
+              <button class="client-slider-btn" type="button" data-package-next aria-label="Next package">
+                <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+
+            <div class="client-slider-dots" aria-label="Package slider position">
+              <button class="client-slider-dot active" type="button" data-package-dot="0" aria-label="Go to package 1"></button>
+              <button class="client-slider-dot" type="button" data-package-dot="1" aria-label="Go to package 2"></button>
+              <button class="client-slider-dot" type="button" data-package-dot="2" aria-label="Go to package 3"></button>
+            </div>
+
+            <a href="packages.html" class="client-show-more">
+              All Packages
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="glass-footer" id="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="media/logo.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+          <span style="display:none; font-size: 1.5rem;">🌱</span>
+        </div>
+        <h3 class="footer-brand-name">DT. Ahmed Ayman</h3>
+        <p class="footer-tagline">Your Trusted Nutrition Partner for a Healthier Tomorrow</p>
+      </div>
+
+      <div class="contact-info">
+        <a href="mailto:dt.ahmedayman@email.com" class="contact-item">
+          <div class="contact-icon"><i class="bi bi-envelope"></i></div>
+          <span class="contact-text">ahmedaymaan101@email.com</span>
+        </a>
+        <a href="https://wa.me/201093191277" class="contact-item">
+          <div class="contact-icon"><i class="bi bi-telephone"></i></div>
+          <span class="contact-text">+20 109 319 1277</span>
+        </a>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="bi bi-geo-alt"></i></div>
+          <span class="contact-text">El-Mahlla El-Kubra, Egypt</span>
+        </div>
+      </div>
+
+      <div class="social-links">
+        <a href="https://www.facebook.com/elgentel.ayman.7?locale=ar_AR" class="social-link" title="Facebook">
+          <i class="bi bi-facebook fs-4"></i>
+        </a>
+        <a href="https://www.instagram.com/dt.ahmedayman?igsh=NGlhbmRiNWM2eGV3&utm_source=qr" class="social-link" title="Instagram">
+          <i class="bi bi-instagram fs-4"></i>
+        </a>
+        <a href="https://wa.me/201093191277" class="social-link" title="WhatsApp">
+          <i class="bi bi-whatsapp fs-4"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/dt-ahmed-ayman-b19603341?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link" title="LinkedIn">
+          <i class="bi bi-linkedin fs-4"></i>
+        </a>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">Dt. Ahmed Ayman - Certified Nutritionist & Dietitian</p>
+
+      </div>
+    </div>
+  </footer>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-  AOS.init();
-</script>
-    <script src="js/javascript.js"></script>
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    if (window.AOS) {
+      AOS.init({
+        duration: 520,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 50,
+        disable: () => window.innerWidth < 768 || reduceMotion
+      });
+    }
+
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navbarLinks = document.getElementById('navbarLinks');
+    const portraitFrame = document.querySelector('.coach-hero .portrait-frame');
+    const methodButtons = document.querySelectorAll('.method-button');
+    const methodTitle = document.getElementById('methodTitle');
+    const methodCopy = document.getElementById('methodCopy');
+
+    if (portraitFrame && !reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      portraitFrame.addEventListener('pointermove', (event) => {
+        const rect = portraitFrame.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+        const y = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+
+        portraitFrame.style.setProperty('--tilt-y', `${x * 7}deg`);
+        portraitFrame.style.setProperty('--tilt-x', `${y * -7}deg`);
+      });
+
+      portraitFrame.addEventListener('pointerleave', () => {
+        portraitFrame.style.setProperty('--tilt-x', '0deg');
+        portraitFrame.style.setProperty('--tilt-y', '0deg');
+      });
+    }
+
+    if (methodButtons.length && methodTitle && methodCopy) {
+      methodButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          methodButtons.forEach((item) => item.classList.remove('active'));
+          button.classList.add('active');
+          methodTitle.textContent = button.dataset.methodTitle;
+          methodCopy.textContent = button.dataset.methodCopy;
+        });
+      });
+    }
+
+    const setupSlider = ({ trackId, cardSelector, dotSelector, prevSelector, nextSelector, dotDataset }) => {
+      const track = document.getElementById(trackId);
+      if (!track) return;
+
+      const viewport = track.closest('.client-slider-viewport');
+      const cards = Array.from(track.querySelectorAll(cardSelector));
+      const dots = Array.from(document.querySelectorAll(dotSelector));
+      const prev = document.querySelector(prevSelector);
+      const next = document.querySelector(nextSelector);
+      let step = 0;
+      let ticking = false;
+
+      const measure = () => {
+        const firstCard = cards[0];
+        if (!firstCard) return;
+        const styles = window.getComputedStyle(track);
+        const gap = parseFloat(styles.columnGap || styles.gap || 0);
+        step = firstCard.getBoundingClientRect().width + gap;
+      };
+
+      const updateDots = () => {
+        ticking = false;
+        if (!viewport || !step) return;
+        const index = Math.max(0, Math.min(cards.length - 1, Math.round(viewport.scrollLeft / step)));
+        dots.forEach((dot, dotIndex) => {
+          dot.classList.toggle('active', dotIndex === index);
+        });
+      };
+
+      const requestDotUpdate = () => {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(updateDots);
+      };
+
+      const goToSlide = (index) => {
+        if (!viewport || !step) measure();
+        if (!viewport || !step) return;
+        const safeIndex = Math.max(0, Math.min(cards.length - 1, index));
+        viewport.scrollTo({ left: step * safeIndex, behavior: 'smooth' });
+      };
+
+      prev?.addEventListener('click', () => {
+        const current = step ? Math.round(viewport.scrollLeft / step) : 0;
+        goToSlide(current - 1);
+      });
+
+      next?.addEventListener('click', () => {
+        const current = step ? Math.round(viewport.scrollLeft / step) : 0;
+        goToSlide(current + 1);
+      });
+
+      dots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+          goToSlide(Number(dot.dataset[dotDataset] || 0));
+        });
+      });
+
+      viewport?.addEventListener('scroll', requestDotUpdate, { passive: true });
+      window.addEventListener('resize', () => {
+        measure();
+        requestDotUpdate();
+      });
+
+      measure();
+      updateDots();
+    };
+
+    setupSlider({
+      trackId: 'clientSlider',
+      cardSelector: '.client-preview-card',
+      dotSelector: '[data-client-dot]',
+      prevSelector: '[data-client-prev]',
+      nextSelector: '[data-client-next]',
+      dotDataset: 'clientDot'
+    });
+
+    setupSlider({
+      trackId: 'packageSlider',
+      cardSelector: '.package-preview-card',
+      dotSelector: '[data-package-dot]',
+      prevSelector: '[data-package-prev]',
+      nextSelector: '[data-package-next]',
+      dotDataset: 'packageDot'
+    });
+
+    if (!reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      document.querySelectorAll('.package-preview-card').forEach((card) => {
+        card.addEventListener('pointermove', (event) => {
+          const rect = card.getBoundingClientRect();
+          const x = (event.clientX - rect.left) / rect.width;
+          const y = (event.clientY - rect.top) / rect.height;
+          card.style.setProperty('--pkg-tilt-y', `${(x - 0.5) * 8}deg`);
+          card.style.setProperty('--pkg-tilt-x', `${(0.5 - y) * 8}deg`);
+          card.style.setProperty('--pkg-glow-x', `${x * 100}%`);
+          card.style.setProperty('--pkg-glow-y', `${y * 100}%`);
+        });
+
+        card.addEventListener('pointerleave', () => {
+          card.style.setProperty('--pkg-tilt-x', '0deg');
+          card.style.setProperty('--pkg-tilt-y', '0deg');
+          card.style.setProperty('--pkg-glow-x', '50%');
+          card.style.setProperty('--pkg-glow-y', '15%');
+        });
+      });
+    }
+
+    if (mobileToggle && navbarLinks) {
+      mobileToggle.addEventListener('click', () => {
+        mobileToggle.classList.toggle('active');
+        navbarLinks.classList.toggle('active');
+        navbarLinks.classList.toggle('open');
+      });
+
+      navbarLinks.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileToggle.classList.remove('active');
+          navbarLinks.classList.remove('active');
+          navbarLinks.classList.remove('open');
+        });
+      });
+    }
+  </script>
+</body>
 </html>

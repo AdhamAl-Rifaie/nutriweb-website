@@ -3,7 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Healthy Food Landing Page - Bootstrap</title>
+    <title>About DT. Ahmed Ayman | Certified Online Nutritionist & Dietitian</title>
+    <meta name="description" content="Learn about DT. Ahmed Ayman's clinical nutrition training, dietitian certifications, lifestyle medicine credentials, and online nutrition coaching approach.">
+    <meta name="author" content="Nutriahmed">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="Ahmed Ayman dietitian, certified nutritionist Egypt, clinical nutrition training, lifestyle medicine nutritionist, online dietitian">
+    <meta name="theme-color" content="#0969da">
+    <link rel="canonical" href="https://www.nutriahmed.online/about.html">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="About DT. Ahmed Ayman | Certified Online Nutritionist">
+    <meta property="og:description" content="Clinical nutrition training, dietitian certifications, lifestyle medicine credentials, and personalized online nutrition coaching.">
+    <meta property="og:url" content="https://www.nutriahmed.online/about.html">
+    <meta property="og:image" content="https://www.nutriahmed.online/media/me1-optimized.jpg">
+    <meta property="og:site_name" content="NutriAhmed">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About DT. Ahmed Ayman | Certified Online Nutritionist">
+    <meta name="twitter:description" content="Clinical nutrition training, certifications, and personalized online nutrition coaching.">
+    <meta name="twitter:image" content="https://www.nutriahmed.online/media/me1-optimized.jpg">
+    <link rel="icon" href="media/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="media/logo.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "DT. Ahmed Ayman",
+      "jobTitle": "Certified Nutritionist and Dietitian",
+      "url": "https://www.nutriahmed.online/about.html",
+      "image": "https://www.nutriahmed.online/media/me1-optimized.jpg",
+      "email": "ahmedaymaan101@email.com",
+      "telephone": "+201093191277",
+      "knowsAbout": ["Clinical nutrition", "Sports nutrition", "Weight management", "Lifestyle medicine", "Online nutrition coaching"],
+      "sameAs": [
+        "https://www.facebook.com/elgentel.ayman.7?locale=ar_AR",
+        "https://www.instagram.com/dt.ahmedayman?igsh=NGlhbmRiNWM2eGV3&utm_source=qr",
+        "https://www.linkedin.com/in/dt-ahmed-ayman-b19603341?utm_source=share_via&utm_content=profile&utm_medium=android_app"
+      ]
+    }
+    </script>
     <!-- Bootstrap CSS CDN -->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -13,116 +49,1260 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-       
+    <style>
+        body.about-redesign {
+            --medical-blue: #0969da;
+            --deep-blue: #063970;
+            --aqua: #00b8ff;
+            --soft-blue: #e7f5ff;
+            --mint: #28c7a1;
+            --ink: #102033;
+            --muted: #62748a;
+            --glass: rgba(255, 255, 255, 0.76);
+            --shadow: 0 24px 70px rgba(8, 61, 119, 0.16);
+            background:
+                linear-gradient(90deg, rgba(9, 105, 218, 0.055) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(9, 105, 218, 0.055) 1px, transparent 1px),
+                linear-gradient(115deg, rgba(0, 184, 255, 0.12) 0 14%, transparent 14% 58%, rgba(40, 199, 161, 0.1) 58% 70%, transparent 70%),
+                linear-gradient(180deg, #f8fcff 0%, #eef8ff 48%, #ffffff 100%);
+            background-size: 48px 48px, 48px 48px, auto, auto;
+            color: var(--ink);
+            font-family: "Inter", sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-top: 112px;
+            position: relative;
+        }
+
+        body.about-redesign::before {
+            background:
+                linear-gradient(115deg, transparent 0 41%, rgba(255, 255, 255, 0.72) 45%, transparent 49% 100%),
+                linear-gradient(180deg, rgba(255, 255, 255, 0.5), transparent 34%);
+            content: "";
+            inset: 0;
+            opacity: 0.68;
+            pointer-events: none;
+            position: fixed;
+            z-index: -1;
+            animation: aboutPageScan 9s ease-in-out infinite;
+        }
+
+        .about-redesign a {
+            text-decoration: none;
+        }
+
+        .about-redesign .content-wrapper {
+            display: none;
+        }
+
+        .about-redesign .container-fluid {
+            background: transparent;
+            min-height: auto;
+            padding: 0;
+        }
+
+        .about-redesign .glass-navbar {
+            filter: drop-shadow(0 18px 34px rgba(9, 105, 218, 0.14));
+            left: 50%;
+            max-width: calc(100% - 32px);
+            padding: 0;
+            position: fixed;
+            top: 18px;
+            transform: translateX(-50%);
+            width: max-content;
+            z-index: 1000;
+        }
+
+        .about-redesign .navbar-content {
+            align-items: center;
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(234, 247, 255, 0.72)),
+                linear-gradient(90deg, rgba(9, 105, 218, 0.14), rgba(0, 184, 255, 0.12));
+            border: 1px solid rgba(255, 255, 255, 0.88);
+            border-radius: 999px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95), 0 18px 50px rgba(6, 57, 112, 0.14);
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            overflow: visible;
+            padding: 0.45rem 0.75rem;
+            position: relative;
+            backdrop-filter: blur(22px) saturate(170%);
+            -webkit-backdrop-filter: blur(22px) saturate(170%);
+        }
+
+        .about-redesign .navbar-content::before {
+            background: linear-gradient(110deg, transparent 0 22%, rgba(255, 255, 255, 0.72) 35%, transparent 48% 100%);
+            border-radius: inherit;
+            content: "";
+            inset: 0;
+            pointer-events: none;
+            position: absolute;
+            transform: translateX(-78%);
+            animation: aboutLiquidSweep 6s ease-in-out infinite;
+        }
+
+        .about-redesign .navbar-logo,
+        .about-redesign .navbar-links,
+        .about-redesign .mobile-toggle {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-redesign .navbar-logo img {
+            filter: drop-shadow(0 12px 18px rgba(9, 105, 218, 0.16));
+            height: 4rem;
+            transition: transform 0.35s ease;
+            width: auto;
+        }
+
+        .about-redesign .navbar-logo:hover img {
+            transform: translateY(-2px) scale(1.06);
+        }
+
+        .about-redesign .navbar-links {
+            background: rgba(255, 255, 255, 0.46);
+            border: 1px solid rgba(9, 105, 218, 0.12);
+            border-radius: 999px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+            display: flex;
+            gap: 0.25rem;
+            padding: 0.35rem;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .about-redesign .navbar-links .nav-link {
+            border-radius: 999px;
+            color: #2d4d70 !important;
+            font-size: 0.94rem;
+            font-weight: 800;
+            padding: 0.65rem 1rem;
+            transition: color 0.25s ease, background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .about-redesign .navbar-links .nav-link:hover,
+        .about-redesign .navbar-links .nav-link.active {
+            background: linear-gradient(135deg, rgba(9, 105, 218, 0.96), rgba(0, 184, 255, 0.86));
+            box-shadow: 0 12px 28px rgba(9, 105, 218, 0.22);
+            color: #ffffff !important;
+            transform: translateY(-1px);
+        }
+
+        .about-redesign .mobile-toggle {
+            align-items: center;
+            background: rgba(255, 255, 255, 0.68);
+            border: 1px solid rgba(9, 105, 218, 0.16);
+            border-radius: 18px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 12px 24px rgba(9, 105, 218, 0.12);
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            height: 48px;
+            justify-content: center;
+            width: 48px;
+        }
+
+        .about-redesign .mobile-toggle span {
+            background: var(--medical-blue);
+            border-radius: 999px;
+            display: block;
+            height: 3px;
+            transition: all 0.3s ease;
+            width: 22px;
+        }
+
+        .about-redesign .about-page {
+            padding: 2.8rem 0 6rem;
+            position: relative;
+        }
+
+        .about-redesign .about-page::before,
+        .about-redesign .about-page::after {
+            content: "";
+            pointer-events: none;
+            position: absolute;
+            z-index: 0;
+        }
+
+        .about-redesign .about-page::before {
+            border: 1px solid rgba(9, 105, 218, 0.1);
+            height: 36rem;
+            left: -13rem;
+            top: 3rem;
+            transform: rotate(18deg);
+            width: 36rem;
+            animation: aboutSlowRotate 28s linear infinite;
+        }
+
+        .about-redesign .about-page::after {
+            background: repeating-linear-gradient(90deg, rgba(9, 105, 218, 0.12) 0 1px, transparent 1px 18px);
+            height: 12rem;
+            opacity: 0.28;
+            right: -4rem;
+            top: 9rem;
+            transform: skewY(-12deg);
+            width: 34rem;
+            animation: aboutDataDrift 7s ease-in-out infinite;
+        }
+
+        .about-redesign .about-page > .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-redesign .about-hero {
+            align-items: center;
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+            margin-bottom: 4rem;
+        }
+
+        .about-redesign .about-copy {
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(245, 251, 255, 0.65)) padding-box,
+                linear-gradient(135deg, rgba(9, 105, 218, 0.18), rgba(0, 184, 255, 0.2), rgba(255, 255, 255, 0.78)) border-box;
+            border: 1px solid transparent;
+            border-radius: 32px;
+            box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            overflow: hidden;
+            padding: clamp(1.4rem, 3vw, 2.5rem);
+            position: relative;
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .about-redesign .about-copy::before {
+            background: linear-gradient(180deg, rgba(0, 184, 255, 0.24), rgba(9, 105, 218, 0));
+            content: "";
+            inset: 0 auto 0 0;
+            position: absolute;
+            width: 5px;
+        }
+
+        .about-redesign .about-kicker {
+            align-items: center;
+            color: var(--medical-blue);
+            display: inline-flex;
+            font-size: 0.82rem;
+            font-weight: 900;
+            gap: 0.45rem;
+            letter-spacing: 0.04em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .about-redesign .about-kicker::before {
+            background: var(--medical-blue);
+            border-radius: 999px;
+            box-shadow: 0 0 16px rgba(0, 184, 255, 0.55);
+            content: "";
+            height: 8px;
+            width: 8px;
+        }
+
+        .about-redesign .about-title {
+            background: linear-gradient(135deg, #062a56 0%, #0969da 48%, #00a7ec 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: clamp(2.45rem, 5vw, 4.9rem);
+            font-weight: 900;
+            letter-spacing: 0;
+            line-height: 0.98;
+            margin-bottom: 1.1rem;
+        }
+
+        .about-redesign .about-lead {
+            color: var(--muted);
+            font-size: clamp(1rem, 1.35vw, 1.14rem);
+            line-height: 1.82;
+            margin: 0 0 1.5rem;
+            max-width: 650px;
+        }
+
+        .about-redesign .about-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.4rem;
+        }
+
+        .about-redesign .about-btn {
+            align-items: center;
+            border-radius: 999px;
+            display: inline-flex;
+            font-weight: 900;
+            gap: 0.45rem;
+            min-height: 50px;
+            padding: 0.8rem 1.1rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .about-redesign .about-btn.primary {
+            background: linear-gradient(135deg, #0969da, #00b8ff);
+            box-shadow: 0 18px 38px rgba(9, 105, 218, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.34);
+            color: #ffffff;
+        }
+
+        .about-redesign .about-btn.secondary {
+            background: rgba(255, 255, 255, 0.76);
+            border: 1px solid rgba(9, 105, 218, 0.16);
+            box-shadow: 0 16px 32px rgba(6, 57, 112, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            color: var(--deep-blue);
+        }
+
+        .about-redesign .about-btn:hover {
+            transform: translateY(-4px);
+        }
+
+        .about-redesign .about-btn.primary:hover {
+            color: #ffffff;
+        }
+
+        .about-redesign .about-metrics {
+            display: grid;
+            gap: 0.7rem;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            margin-top: 1.7rem;
+        }
+
+        .about-redesign .metric-chip {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(9, 105, 218, 0.12);
+            border-radius: 20px;
+            box-shadow: 0 14px 28px rgba(8, 61, 119, 0.09);
+            padding: 0.9rem;
+        }
+
+        .about-redesign .metric-chip strong {
+            color: var(--medical-blue);
+            display: block;
+            font-size: 1.25rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 0.35rem;
+        }
+
+        .about-redesign .metric-chip span {
+            color: var(--muted);
+            font-size: 0.78rem;
+            font-weight: 800;
+        }
+
+        .about-redesign .about-visual {
+            min-height: 560px;
+            position: relative;
+        }
+
+        .about-redesign .profile-container {
+            align-items: center;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            margin: 0;
+            min-height: 560px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-redesign .profile-container::before,
+        .about-redesign .profile-container::after {
+            content: "";
+            pointer-events: none;
+            position: absolute;
+        }
+
+        .about-redesign .profile-container::before {
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.84)) padding-box,
+                linear-gradient(135deg, rgba(9, 105, 218, 0.78), rgba(0, 184, 255, 0.52), rgba(40, 199, 161, 0.5)) border-box;
+            border: 1px solid transparent;
+            border-radius: 42px;
+            box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+            height: min(76vw, 492px);
+            transform: rotate(-4deg);
+            width: min(68vw, 362px);
+            z-index: 0;
+        }
+
+        .about-redesign .profile-container::after {
+            background: linear-gradient(180deg, rgba(0, 184, 255, 0), rgba(0, 184, 255, 0.55), rgba(0, 184, 255, 0));
+            border-radius: 999px;
+            height: min(70vw, 458px);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(22deg);
+            width: 2px;
+            z-index: 3;
+            animation: aboutScannerLine 3.8s ease-in-out infinite;
+        }
+
+        .about-redesign .profile-container img {
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 38px;
+            box-shadow: 0 28px 70px rgba(9, 105, 218, 0.22);
+            height: min(73vw, 468px);
+            object-fit: cover;
+            position: relative;
+            transform: rotate(3deg);
+            transition: transform 0.45s ease, box-shadow 0.45s ease;
+            width: min(64vw, 342px);
+            z-index: 2;
+        }
+
+        .about-redesign .profile-container:hover img {
+            box-shadow: 0 34px 82px rgba(9, 105, 218, 0.3);
+            transform: rotate(0deg) translateY(-8px);
+        }
+
+        .about-redesign .orbit-card {
+            background: rgba(255, 255, 255, 0.78);
+            border: 1px solid rgba(9, 105, 218, 0.12);
+            border-radius: 20px;
+            box-shadow: 0 16px 36px rgba(8, 61, 119, 0.12);
+            color: var(--deep-blue);
+            font-size: 0.78rem;
+            font-weight: 900;
+            min-width: 142px;
+            padding: 0.75rem 0.9rem;
+            position: absolute;
+            z-index: 4;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            animation: aboutFloat 4.8s ease-in-out infinite;
+        }
+
+        .about-redesign .orbit-card i {
+            color: var(--medical-blue);
+            margin-right: 0.35rem;
+        }
+
+        .about-redesign .orbit-card.one {
+            left: 0.6rem;
+            top: 5.5rem;
+        }
+
+        .about-redesign .orbit-card.two {
+            right: 0;
+            top: 13rem;
+            animation-delay: 0.8s;
+        }
+
+        .about-redesign .orbit-card.three {
+            bottom: 5.4rem;
+            left: 2.2rem;
+            animation-delay: 1.4s;
+        }
+
+        .about-redesign .experience-section {
+            margin-top: 0;
+            position: relative;
+        }
+
+        .about-redesign .section-header {
+            background: linear-gradient(135deg, #062a56 0%, #0969da 56%, #00a7ec 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            font-weight: 900;
+            letter-spacing: 0;
+            line-height: 1;
+            margin: 0 auto 2rem;
+            max-width: 780px;
+            text-align: center;
+        }
+
+        .about-redesign .credential-grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+        }
+
+        .about-redesign .credential-card {
+            grid-column: span 2;
+        }
+
+        .about-redesign .credential-card.wide {
+            grid-column: span 3;
+        }
+
+        .about-redesign .experience-card {
+            --tilt-x: 0deg;
+            --tilt-y: 0deg;
+            --lift: 0px;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(245, 251, 255, 0.76)) padding-box,
+                linear-gradient(135deg, rgba(9, 105, 218, 0.22), rgba(0, 184, 255, 0.2), rgba(255, 255, 255, 0.76)) border-box;
+            border: 1px solid transparent;
+            border-radius: 24px;
+            box-shadow: 0 20px 54px rgba(8, 61, 119, 0.11);
+            cursor: pointer;
+            height: 100%;
+            min-height: 270px;
+            overflow: hidden;
+            padding: 1.45rem;
+            position: relative;
+            transform: translateY(var(--lift)) perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+            transform-style: preserve-3d;
+            transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+            will-change: transform;
+        }
+
+        .about-redesign .experience-card::before {
+            background:
+                linear-gradient(90deg, rgba(9, 105, 218, 0.07) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(9, 105, 218, 0.07) 1px, transparent 1px),
+                linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.72), transparent);
+            background-size: 26px 26px, 26px 26px, auto;
+            content: "";
+            inset: 0;
+            opacity: 0.62;
+            pointer-events: none;
+            position: absolute;
+            transform: translateX(-58%);
+            transition: transform 0.55s ease;
+        }
+
+        .about-redesign .experience-card::after {
+            background: linear-gradient(180deg, rgba(0, 184, 255, 0.2), rgba(9, 105, 218, 0));
+            content: "";
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 5px;
+        }
+
+        .about-redesign .experience-card:hover {
+            --lift: -8px;
+            border-color: rgba(0, 184, 255, 0.24);
+            box-shadow: 0 30px 76px rgba(9, 105, 218, 0.18);
+        }
+
+        .about-redesign .experience-card:hover::before {
+            transform: translateX(44%);
+        }
+
+        .about-redesign .credential-icon,
+        .about-redesign .experience-card h5,
+        .about-redesign .experience-card .institution,
+        .about-redesign .experience-card p,
+        .about-redesign .credential-action {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-redesign .credential-icon {
+            align-items: center;
+            background: linear-gradient(135deg, #0969da, #00b8ff);
+            border-radius: 18px;
+            box-shadow: 0 16px 34px rgba(9, 105, 218, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            display: flex;
+            font-size: 1.45rem;
+            height: 58px;
+            justify-content: center;
+            margin-bottom: 1rem;
+            width: 58px;
+        }
+
+        .about-redesign .experience-card h5 {
+            color: var(--deep-blue);
+            font-size: clamp(1.08rem, 1.8vw, 1.35rem);
+            font-weight: 900;
+            line-height: 1.28;
+            margin-bottom: 0.55rem;
+        }
+
+        .about-redesign .institution {
+            color: var(--medical-blue);
+            font-size: 0.86rem;
+            font-weight: 900;
+            margin-bottom: 0.85rem;
+        }
+
+        .about-redesign .experience-card p {
+            color: var(--muted);
+            font-size: 0.94rem;
+            line-height: 1.7;
+            margin: 0 0 1.2rem;
+        }
+
+        .about-redesign .credential-action {
+            align-items: center;
+            color: var(--deep-blue);
+            display: inline-flex;
+            font-size: 0.82rem;
+            font-weight: 900;
+            gap: 0.35rem;
+        }
+
+        .about-redesign .modal-content {
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(245, 251, 255, 0.9)) padding-box,
+                linear-gradient(135deg, rgba(9, 105, 218, 0.28), rgba(0, 184, 255, 0.22), rgba(255, 255, 255, 0.8)) border-box;
+            border: 1px solid transparent;
+            border-radius: 26px;
+            box-shadow: 0 28px 80px rgba(8, 61, 119, 0.22);
+            overflow: hidden;
+        }
+
+        .about-redesign .modal-header,
+        .about-redesign .modal-footer {
+            border-color: rgba(9, 105, 218, 0.12);
+        }
+
+        .about-redesign .modal-title,
+        .about-redesign .modal-body h6 {
+            color: var(--deep-blue);
+            font-weight: 900;
+        }
+
+        .about-redesign .modal-body {
+            color: #425b77;
+        }
+
+        .about-redesign .certificate-image {
+            border: 1px solid rgba(9, 105, 218, 0.12);
+            border-radius: 18px;
+            box-shadow: 0 18px 42px rgba(8, 61, 119, 0.12);
+            display: block;
+            margin: 0 auto 1.2rem;
+            max-height: 460px;
+            max-width: 100%;
+            object-fit: contain;
+            width: auto;
+        }
+
+        .about-redesign .text-yellow {
+            color: var(--medical-blue) !important;
+        }
+
+        .about-redesign .btn-yellow {
+            background: linear-gradient(135deg, #0969da, #00b8ff);
+            border: 0;
+            border-radius: 999px;
+            color: #ffffff;
+            font-weight: 900;
+            padding: 0.7rem 1.25rem;
+        }
+
+        .about-redesign .glass-footer {
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(232, 246, 255, 0.82)),
+                linear-gradient(90deg, rgba(9, 105, 218, 0.08), rgba(40, 199, 161, 0.08));
+            border-top: 1px solid rgba(9, 105, 218, 0.12);
+            box-shadow: 0 -24px 70px rgba(8, 61, 119, 0.1);
+            margin-top: 0;
+            overflow: hidden;
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+
+        .about-redesign .glass-footer::before {
+            background: repeating-linear-gradient(90deg, rgba(9, 105, 218, 0.1) 0 1px, transparent 1px 26px);
+            content: "";
+            inset: 0;
+            opacity: 0.48;
+            position: absolute;
+        }
+
+        .about-redesign .footer-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-redesign .footer-brand {
+            margin-bottom: 1.6rem;
+            text-align: center;
+        }
+
+        .about-redesign .footer-logo {
+            align-items: center;
+            background: rgba(255, 255, 255, 0.74);
+            border: 1px solid rgba(9, 105, 218, 0.12);
+            border-radius: 24px;
+            box-shadow: 0 18px 42px rgba(9, 105, 218, 0.14);
+            display: inline-flex;
+            height: 86px;
+            justify-content: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            width: 86px;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .about-redesign .footer-logo img {
+            height: 48px;
+            width: 48px;
+        }
+
+        .about-redesign .footer-brand-name {
+            color: var(--deep-blue);
+            font-size: 1.65rem;
+            font-weight: 900;
+            margin-bottom: 0.45rem;
+        }
+
+        .about-redesign .footer-tagline {
+            color: var(--muted);
+            margin-bottom: 0;
+        }
+
+        .about-redesign .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .about-redesign .contact-item {
+            align-items: center;
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(9, 105, 218, 0.12);
+            border-radius: 999px;
+            box-shadow: 0 14px 30px rgba(8, 61, 119, 0.09);
+            color: #2d4d70;
+            display: flex;
+            gap: 0.75rem;
+            min-height: 48px;
+            padding: 0.75rem 1.15rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+        }
+
+        .about-redesign .contact-item:hover {
+            box-shadow: 0 18px 38px rgba(9, 105, 218, 0.16);
+            color: var(--medical-blue);
+            transform: translateY(-3px);
+        }
+
+        .about-redesign .contact-icon {
+            align-items: center;
+            background: linear-gradient(135deg, #0969da, #00b8ff);
+            border-radius: 999px;
+            color: #ffffff;
+            display: flex;
+            flex: 0 0 auto;
+            font-size: 0;
+            height: 32px;
+            justify-content: center;
+            width: 32px;
+        }
+
+        .about-redesign .contact-icon::before {
+            font-family: "bootstrap-icons";
+            font-size: 0.95rem;
+            line-height: 1;
+        }
+
+        .about-redesign .contact-item:nth-child(1) .contact-icon::before {
+            content: "\F32F";
+        }
+
+        .about-redesign .contact-item:nth-child(2) .contact-icon::before {
+            content: "\F5C1";
+        }
+
+        .about-redesign .contact-item:nth-child(3) .contact-icon::before {
+            content: "\F3E7";
+        }
+
+        .about-redesign .social-links {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .about-redesign .social-link {
+            align-items: center;
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(9, 105, 218, 0.12);
+            border-radius: 18px;
+            box-shadow: 0 12px 24px rgba(8, 61, 119, 0.09);
+            color: var(--medical-blue);
+            display: flex;
+            height: 48px;
+            justify-content: center;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+            width: 48px;
+        }
+
+        .about-redesign .social-link:hover {
+            background: linear-gradient(135deg, #0969da, #00b8ff);
+            box-shadow: 0 18px 36px rgba(9, 105, 218, 0.2);
+            color: #ffffff;
+            transform: translateY(-5px);
+        }
+
+        .about-redesign .footer-bottom {
+            border-top: 1px solid rgba(9, 105, 218, 0.12);
+            color: var(--muted);
+            font-size: 0.92rem;
+            padding-top: 1.5rem;
+            text-align: center;
+        }
+
+        .about-redesign .footer-bottom a {
+            color: var(--medical-blue);
+            font-weight: 800;
+        }
+
+        .about-redesign .developer-credit {
+            align-items: center;
+            border-top: 1px solid rgba(9, 105, 218, 0.12);
+            color: var(--muted);
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 0.86rem;
+            gap: 0.55rem;
+            justify-content: center;
+            margin: 0.85rem auto 0;
+            max-width: 560px;
+            padding-top: 0.85rem;
+        }
+
+        .about-redesign .developer-credit a {
+            align-items: center;
+            background: rgba(255, 255, 255, 0.68);
+            border: 1px solid rgba(9, 105, 218, 0.12);
+            border-radius: 999px;
+            display: inline-flex;
+            gap: 0.35rem;
+            padding: 0.34rem 0.62rem;
+            transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+        }
+
+        .about-redesign .developer-credit a:hover {
+            background: rgba(9, 105, 218, 0.1);
+            transform: translateY(-2px);
+        }
+
+        @keyframes aboutPageScan {
+            0%, 100% { transform: translateX(-12%); }
+            50% { transform: translateX(12%); }
+        }
+
+        @keyframes aboutLiquidSweep {
+            0%, 42%, 100% { transform: translateX(-78%); }
+            64% { transform: translateX(78%); }
+        }
+
+        @keyframes aboutSlowRotate {
+            to { transform: rotate(378deg); }
+        }
+
+        @keyframes aboutDataDrift {
+            0%, 100% { transform: translateX(0) skewY(-12deg); }
+            50% { transform: translateX(-28px) skewY(-12deg); }
+        }
+
+        @keyframes aboutScannerLine {
+            0% {
+                opacity: 0;
+                transform: translate(-180px, -50%) rotate(22deg);
+            }
+            45%, 55% { opacity: 1; }
+            100% {
+                opacity: 0;
+                transform: translate(180px, -50%) rotate(22deg);
+            }
+        }
+
+        @keyframes aboutFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .about-redesign *,
+            .about-redesign *::before,
+            .about-redesign *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.001ms !important;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            body.about-redesign {
+                padding-top: 98px;
+            }
+
+            .about-redesign .about-hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-redesign .about-lead {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .about-redesign .about-actions {
+                justify-content: center;
+            }
+
+            .about-redesign .credential-card,
+            .about-redesign .credential-card.wide {
+                grid-column: span 3;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body.about-redesign {
+                padding-top: 92px;
+            }
+
+            .about-redesign .glass-navbar {
+                top: 12px;
+                width: calc(100% - 24px);
+            }
+
+            .about-redesign .navbar-content {
+                border-radius: 28px;
+                justify-content: space-between;
+                padding: 0.45rem 0.55rem;
+            }
+
+            .about-redesign .navbar-logo img {
+                height: 3.55rem;
+            }
+
+            .about-redesign .mobile-toggle {
+                display: flex;
+            }
+
+            .about-redesign .navbar-links {
+                background: rgba(255, 255, 255, 0.92);
+                border-radius: 24px;
+                box-shadow: 0 26px 58px rgba(8, 61, 119, 0.18);
+                flex-direction: column;
+                gap: 0.35rem;
+                opacity: 0;
+                padding: 0.8rem;
+                position: absolute;
+                right: 0.5rem;
+                top: calc(100% + 12px);
+                transform: translateY(-12px);
+                visibility: hidden;
+                width: min(270px, calc(100vw - 36px));
+            }
+
+            .about-redesign .navbar-links.active {
+                opacity: 1;
+                transform: translateY(0);
+                visibility: visible;
+            }
+
+            .about-redesign .navbar-links.open {
+                opacity: 1;
+                transform: translateY(0);
+                visibility: visible;
+            }
+
+            .about-redesign .navbar-links .nav-link {
+                text-align: center;
+                width: 100%;
+            }
+
+            .about-redesign .mobile-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .about-redesign .mobile-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .about-redesign .mobile-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            .about-redesign .about-page {
+                padding: 1.25rem 0 3.25rem;
+            }
+
+            .about-redesign .about-hero {
+                gap: 1.25rem;
+            }
+
+            .about-redesign .about-copy {
+                border-radius: 24px;
+                padding: 1.15rem;
+            }
+
+            .about-redesign .about-title {
+                font-size: clamp(2rem, 10vw, 3rem);
+                line-height: 1.03;
+            }
+
+            .about-redesign .about-lead {
+                font-size: 0.96rem;
+                line-height: 1.7;
+            }
+
+            .about-redesign .about-metrics {
+                grid-template-columns: 1fr;
+                gap: 0.55rem;
+                margin-top: 1rem;
+            }
+
+            .about-redesign .about-visual,
+            .about-redesign .profile-container {
+                min-height: auto;
+            }
+
+            .about-redesign .profile-container {
+                display: grid;
+                gap: 0.55rem;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                padding: 0.75rem 0 0;
+            }
+
+            .about-redesign .profile-container img {
+                grid-column: 1 / -1;
+                margin: 0 auto 0.4rem;
+            }
+
+            .about-redesign .orbit-card {
+                display: inline-flex;
+                font-size: 0.68rem;
+                justify-content: center;
+                left: auto !important;
+                margin: 0;
+                min-width: 0;
+                padding: 0.6rem 0.45rem;
+                position: relative;
+                right: auto !important;
+                text-align: center;
+                top: auto !important;
+                bottom: auto !important;
+                width: 100%;
+                animation: none;
+            }
+
+            .about-redesign .credential-grid {
+                grid-template-columns: 1fr;
+                gap: 0.85rem;
+            }
+
+            .about-redesign .credential-card,
+            .about-redesign .credential-card.wide {
+                grid-column: auto;
+            }
+
+            .about-redesign .experience-card {
+                min-height: auto;
+                padding: 1.15rem;
+            }
+
+            .about-redesign .section-header {
+                font-size: clamp(1.75rem, 9vw, 2.45rem);
+                margin-bottom: 1.25rem;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .about-redesign .about-title {
+                font-size: clamp(1.9rem, 10vw, 2.7rem);
+            }
+
+            .about-redesign .about-copy {
+                border-radius: 22px;
+            }
+
+            .about-redesign .about-btn {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .about-redesign .profile-container::before {
+                height: 300px;
+                width: min(76vw, 238px);
+            }
+
+            .about-redesign .profile-container img {
+                height: 282px;
+                width: min(70vw, 220px);
+            }
+
+            .about-redesign .profile-container::after {
+                height: 282px;
+            }
+
+            .about-redesign .profile-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-redesign .orbit-card {
+                margin: 0 auto;
+                max-width: 280px;
+            }
+
+            .about-redesign .contact-info {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .about-redesign .contact-item {
+                border-radius: 20px;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .about-redesign .developer-credit {
+                flex-direction: column;
+            }
+        }
+    </style>
+
 </head>
-<body class="antialiased" >
-    <div class="content-wrapper">
-        <!-- Header & Hero Section Container -->
-        <div class="container-fluid">
-            <div class="container py-5">
-                <!-- Header: Logo and Navigation -->
-             <nav class="glass-navbar">
-            <div class="navbar-content">
-                <!-- Logo -->
-                    <div class="navbar-logo">
-                        <a href="index.html" class="logo-link">
-                            <img src="media/icon.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                            <span style="display:none; color: #fbbf24; font-size: 1.5rem;">🌱</span>
+<body class="about-redesign antialiased" >
+    <nav class="glass-navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <a href="index.html" class="logo-link">
+                    <img src="media/logo.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <span style="display:none; color: #0969da; font-size: 1.5rem;">Logo</span>
+                </a>
+            </div>
+
+            <div class="navbar-links" id="navbarLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About Me</a>
+                <a href="packages.html" class="nav-link">Packages</a>
+                <a href="clients.html" class="nav-link">Clients</a>
+                <a href="#footer" class="nav-link">Contact Me</a>
+            </div>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation menu" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="about-page">
+        <div class="container">
+            <section class="about-hero">
+                <div class="about-copy" data-aos="fade-right">
+                    <span class="about-kicker">About The Coach</span>
+                    <h1 class="about-title">Clinical knowledge with online coaching that fits real life.</h1>
+                    <p class="about-lead">
+                        I am Ahmed Ayman, a certified nutritionist and dietitian focused on building realistic nutrition systems for fat loss, muscle gain, performance, and healthier daily habits. My work combines clinical nutrition training, lifestyle medicine, and digital follow-up so each client gets structure without losing flexibility.
+                    </p>
+                    <div class="about-actions">
+                        <a href="packages.html" class="about-btn primary">
+                            <i class="bi bi-calendar2-check"></i>
+                            View Packages
+                        </a>
+                        <a href="#credentials" class="about-btn secondary">
+                            <i class="bi bi-patch-check"></i>
+                            Explore Credentials
                         </a>
                     </div>
-                    
-                <!-- Navigation Links in Glass Container -->
-                       <div class="navbar-links" id="navbarLinks">
-                    <a href="index.html" class="nav-link ">Home</a>
-                    <a href="about.html" class="nav-link active">About Me</a>
-                    <a href="packages.html" class="nav-link">Packages</a>
-                    <a href="clients.html" class="nav-link">Clients</a>
-                    <a href="#footer" class="nav-link">Contact Me</a>
-                </div>
-                
-                <!-- Mobile Menu Toggle -->
-                <button class="mobile-toggle" id="mobileToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-            </nav>
-
-
-                <!-- Profile Image Section -->
-                <div class="profile-container" data-aos="zoom-out-up">
-                    <img src="media/me1.png" alt="Profile Picture" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/300x400/227186/FFFFFF?text=Profile+Photo';">
-                </div>
-
-                <!-- Experience Section -->
-                <div class="experience-section">
-                    <h2 class="section-header" data-aos="zoom-out-up">Professional Experience & Credentials</h2>
-                    
-                    <!-- First Row -->
-                    <div class="row mb-4">
-                        <div class="col-lg-4 col-md-6 mb-3"  data-aos="zoom-out-up">
-                            <div class="experience-card" data-bs-toggle="modal" data-bs-target="#clinicalModal">
-                                <div class="card-icon">🏥</div>
-                                <h5>Clinical Nutrition Training</h5>
-                                <div class="institution">Al Moalmeen Hospital</div>
-                                <p>Completed 150 working hours in ICUs focusing on clinical nutrition protocols and patient care management.</p>
-                            </div>
+                    <div class="about-metrics">
+                        <div class="metric-chip">
+                            <strong>150h</strong>
+                            <span>ICU clinical training</span>
                         </div>
-                        
-                        <div class="col-lg-4 col-md-6 mb-3"  data-aos="zoom-out-up">
-                            <div class="experience-card" data-bs-toggle="modal" data-bs-target="#nutritionistModal">
-                                <div class="card-icon">🎓</div>
-                                <h5>Certified Nutritionist</h5>
-                                <div class="institution">British University in Egypt (BUE)</div>
-                                <p>Comprehensive nutrition science certification covering metabolic processes, dietary planning, and health optimization.</p>
-                            </div>
+                        <div class="metric-chip">
+                            <strong>6</strong>
+                            <span>Credentials and certificates</span>
                         </div>
-                        
-                        <div class="col-lg-4 col-md-6 mb-3" data-aos="zoom-out-up">
-                            <div class="experience-card" data-bs-toggle="modal" data-bs-target="#dietitianModal">
-                                <div class="card-icon">📊</div>
-                                <h5>Certified Dietitian</h5>
-                                <div class="institution">IAO University (MU)</div>
-                                <p>Advanced dietetic practice certification focusing on therapeutic nutrition and clinical applications.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Second Row -->
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 mb-3" data-aos="zoom-out-up">
-                            <div class="experience-card" data-bs-toggle="modal" data-bs-target="#technologyModal">
-                                <div class="card-icon">💻</div>
-                                <h5>Technology Specialization</h5>
-                                <div class="institution">American Council</div>
-                                <p>Certified in technological applications for nutrition, including digital health tools and nutrition software.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-4 col-md-6 mb-3" data-aos="zoom-out-up">
-                            <div class="experience-card" data-bs-toggle="modal" data-bs-target="#conferenceModal">
-                                <div class="card-icon">🎯</div>
-                                <h5>PHocus Conference</h5>
-                                <div class="institution">EPSF 2023-2024</div>
-                                <p>Active participation in professional healthcare conferences focusing on latest nutrition research and practices.</p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-3" data-aos="zoom-out-up">
-                            <div class="experience-card" data-bs-toggle="modal" data-bs-target="#AclmModal">
-                                <div class="card-icon">📊</div>
-                                <h5> Certified Lifestyle Medicine</h5>
-                                <div class="institution">Professional Nutrition Services</div>
-                                <p>Let's work together to achieve your health and nutrition goals with personalized care and expertise.</p>
-                            </div>
+                        <div class="metric-chip">
+                            <strong>24/7</strong>
+                            <span>Online follow-up mindset</span>
                         </div>
                     </div>
                 </div>
-            </div>
+
+                <div class="about-visual" data-aos="fade-left">
+                    <div class="profile-container">
+                        <img src="media/me1-optimized.jpg" alt="Profile Picture" decoding="async" fetchpriority="high" onerror="this.onerror=null;this.src='https://placehold.co/300x400/227186/FFFFFF?text=Profile+Photo';">
+                        <div class="orbit-card one"><i class="bi bi-heart-pulse"></i> Clinical Nutrition</div>
+                        <div class="orbit-card two"><i class="bi bi-phone"></i> Digital Follow-up</div>
+                        <div class="orbit-card three"><i class="bi bi-shield-check"></i> Evidence Based</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="experience-section" id="credentials">
+                <h2 class="section-header" data-aos="zoom-out-up">Professional Experience & Credentials</h2>
+
+                <div class="credential-grid">
+                    <div class="credential-card wide" data-aos="fade-up">
+                        <div class="experience-card" data-bs-toggle="modal" data-bs-target="#clinicalModal">
+                            <div class="credential-icon"><i class="bi bi-hospital"></i></div>
+                            <h5>Clinical Nutrition Training</h5>
+                            <div class="institution">Al Moalmeen Hospital</div>
+                            <p>Completed 150 working hours in ICUs focusing on clinical nutrition protocols and patient care management.</p>
+                            <span class="credential-action">Open certificate <i class="bi bi-arrow-up-right"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="credential-card" data-aos="fade-up" data-aos-delay="80">
+                        <div class="experience-card" data-bs-toggle="modal" data-bs-target="#nutritionistModal">
+                            <div class="credential-icon"><i class="bi bi-mortarboard"></i></div>
+                            <h5>Certified Nutritionist</h5>
+                            <div class="institution">British University in Egypt (BUE)</div>
+                            <p>Comprehensive nutrition science certification covering metabolic processes, dietary planning, and health optimization.</p>
+                            <span class="credential-action">Open certificate <i class="bi bi-arrow-up-right"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="credential-card" data-aos="fade-up" data-aos-delay="160">
+                        <div class="experience-card" data-bs-toggle="modal" data-bs-target="#dietitianModal">
+                            <div class="credential-icon"><i class="bi bi-clipboard2-pulse"></i></div>
+                            <h5>Certified Dietitian</h5>
+                            <div class="institution">IAO University (MU)</div>
+                            <p>Advanced dietetic practice certification focusing on therapeutic nutrition and clinical applications.</p>
+                            <span class="credential-action">Open certificate <i class="bi bi-arrow-up-right"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="credential-card" data-aos="fade-up">
+                        <div class="experience-card" data-bs-toggle="modal" data-bs-target="#technologyModal">
+                            <div class="credential-icon"><i class="bi bi-cpu"></i></div>
+                            <h5>Technology Specialization</h5>
+                            <div class="institution">American Council</div>
+                            <p>Certified in technological applications for nutrition, including digital health tools and nutrition software.</p>
+                            <span class="credential-action">Open certificate <i class="bi bi-arrow-up-right"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="credential-card" data-aos="fade-up" data-aos-delay="80">
+                        <div class="experience-card" data-bs-toggle="modal" data-bs-target="#conferenceModal">
+                            <div class="credential-icon"><i class="bi bi-broadcast"></i></div>
+                            <h5>PHocus Conference</h5>
+                            <div class="institution">EPSF 2023-2024</div>
+                            <p>Active participation in professional healthcare conferences focusing on latest nutrition research and practices.</p>
+                            <span class="credential-action">Open certificate <i class="bi bi-arrow-up-right"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="credential-card wide" data-aos="fade-up" data-aos-delay="160">
+                        <div class="experience-card" data-bs-toggle="modal" data-bs-target="#AclmModal">
+                            <div class="credential-icon"><i class="bi bi-activity"></i></div>
+                            <h5>Certified Lifestyle Medicine</h5>
+                            <div class="institution">Professional Nutrition Services</div>
+                            <p>Let's work together to achieve your health and nutrition goals with personalized care and expertise.</p>
+                            <span class="credential-action">Open certificate <i class="bi bi-arrow-up-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </div>
+    </main>
 
     <!-- MODALS -->
     <!-- Modal for Clinical Training -->
@@ -134,7 +1314,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="media/ICUs.png" class="certificate-image" alt="Clinical Training Certificate">
+                    <img src="media/ICUs.png" class="certificate-image" loading="lazy" decoding="async" alt="Clinical Training Certificate">
                     <h6 class="text-yellow">Al Moalmeen Hospital - ICU Department</h6>
                     <p><strong>Duration:</strong> 150 working hours</p>
                     <p><strong>Focus Areas:</strong></p>
@@ -163,7 +1343,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="media/Bue.jpg" class="certificate-image" alt="BUE Nutritionist Certificate">
+                    <img src="media/Bue.jpg" class="certificate-image" loading="lazy" decoding="async" alt="BUE Nutritionist Certificate">
                     <h6 class="text-yellow">British University in Egypt (BUE)</h6>
                     <p><strong>Program Highlights:</strong></p>
                     <ul>
@@ -191,7 +1371,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="media/IAO.jpg" class="certificate-image" alt="MU Dietitian Certificate">
+                    <img src="media/IAO.jpg" class="certificate-image" loading="lazy" decoding="async" alt="MU Dietitian Certificate">
                     <h6 class="text-yellow">IAO University (MU)</h6>
                     <p><strong>Specialization Areas:</strong></p>
                     <ul>
@@ -219,7 +1399,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="media/AEMRICAN COUNCIL.JPG" class="certificate-image" alt="American Council Technology Certificate">
+                    <img src="media/AEMRICAN COUNCIL.JPG" class="certificate-image" loading="lazy" decoding="async" alt="American Council Technology Certificate">
                     <h6 class="text-yellow">American Council - Technological Apps for Nutrition</h6>
                     <p><strong>Technology Integration:</strong></p>
                     <ul>
@@ -247,7 +1427,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="media/PHOCUS.JPG" class="certificate-image" alt="PHocus Conference Certificate">
+                    <img src="media/PHOCUS.JPG" class="certificate-image" loading="lazy" decoding="async" alt="PHocus Conference Certificate">
                     <h6 class="text-yellow">EPSF - PHocus Conference 2023-2024</h6>
                     <p><strong>Conference Highlights:</strong></p>
                     <ul>
@@ -276,7 +1456,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="media/ACLM.png" class="certificate-image" alt="Clinical Training Certificate">
+                    <img src="media/ACLM.png" class="certificate-image" loading="lazy" decoding="async" alt="Clinical Training Certificate">
                     <h6 class="text-yellow">Lifestyle Medicine & Food as Medicine Essentials Course Bundle</h6>
                     <!-- <p><strong>Duration:</strong> 150 working hours</p> -->
                     <p><strong>Specialization Areas:</strong></p>
@@ -296,68 +1476,109 @@
         </div>
     </div>
     <!-- Glass Footer -->
-    <footer class="glass-footer" id="footer">
-        <div class="container footer-container">
-            <!-- Footer Brand Section -->
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <img src="media/icon.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                    <span style="display:none; font-size: 1.5rem;">🌱</span>
-                </div>
-                <h3 class="footer-brand-name">DT. Ahmed Ayman</h3>
-                <p class="footer-tagline">Your Trusted Nutrition Partner for a Healthier Tomorrow</p>
-            </div>
-
-            <!-- Contact Information -->
-            <div class="contact-info">
-                <a href="mailto:dt.ahmedayman@email.com" class="contact-item">
-                    <div class="contact-icon">✉</div>
-                    <span class="contact-text">ahmedaymaan101@email.com</span>
-                </a>
-                <a href="https://wa.me/201093191277" class="contact-item">
-                    <div class="contact-icon">📞</div>
-                    <span class="contact-text" >+20 109 319 1277</span>
-                </a>
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <span class="contact-text">El-Mahlla El-Kubra, Egypt</span>
-                </div>
-            </div>
-
-            <!-- Social Media Links -->
-            <div class="social-links">
-                <a href="https://www.facebook.com/elgentel.ayman.7?locale=ar_AR" class="social-link" title="Facebook">
-                    <i class="bi bi-facebook fs-4"></i>
-                </a>
-                <a href="https://www.instagram.com/dt.ahmedayman?igsh=NGlhbmRiNWM2eGV3&utm_source=qr" class="social-link" title="Instagram">
-                    <i class="bi bi-instagram fs-4"></i>
-                </a>
-                <a href="https://wa.me/201093191277" class="social-link" title="WhatsApp">
-                    <i class="bi bi-whatsapp fs-4"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/dt-ahmed-ayman-b19603341?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link" title="LinkedIn">
-                    <i class="bi bi-linkedin fs-4"></i>
-                </a>
-            </div>
-
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <p class="footer-copyright">
-                    © 2024 Dr. Ahmed Ayman - Certified Nutritionist & Dietitian
-                </p>
-                <p class="footer-credits">
-                    Professional Nutrition Services • <a href="#privacy">Privacy Policy</a> • <a href="#terms">Terms of Service</a>
-                </p>
-            </div>
+  <footer class="glass-footer" id="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="media/logo.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+          <span style="display:none; font-size: 1.5rem;">🌱</span>
         </div>
-    </footer>
+        <h3 class="footer-brand-name">DT. Ahmed Ayman</h3>
+        <p class="footer-tagline">Your Trusted Nutrition Partner for a Healthier Tomorrow</p>
+      </div>
+
+      <div class="contact-info">
+        <a href="mailto:dt.ahmedayman@email.com" class="contact-item">
+          <div class="contact-icon"><i class="bi bi-envelope"></i></div>
+          <span class="contact-text">ahmedaymaan101@email.com</span>
+        </a>
+        <a href="https://wa.me/201093191277" class="contact-item">
+          <div class="contact-icon"><i class="bi bi-telephone"></i></div>
+          <span class="contact-text">+20 109 319 1277</span>
+        </a>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="bi bi-geo-alt"></i></div>
+          <span class="contact-text">El-Mahlla El-Kubra, Egypt</span>
+        </div>
+      </div>
+
+      <div class="social-links">
+        <a href="https://www.facebook.com/elgentel.ayman.7?locale=ar_AR" class="social-link" title="Facebook">
+          <i class="bi bi-facebook fs-4"></i>
+        </a>
+        <a href="https://www.instagram.com/dt.ahmedayman?igsh=NGlhbmRiNWM2eGV3&utm_source=qr" class="social-link" title="Instagram">
+          <i class="bi bi-instagram fs-4"></i>
+        </a>
+        <a href="https://wa.me/201093191277" class="social-link" title="WhatsApp">
+          <i class="bi bi-whatsapp fs-4"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/dt-ahmed-ayman-b19603341?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link" title="LinkedIn">
+          <i class="bi bi-linkedin fs-4"></i>
+        </a>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">Dt. Ahmed Ayman - Certified Nutritionist & Dietitian</p>
+
+      </div>
+    </div>
+  </footer>
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-  AOS.init();
-</script>
-    <script src="js/javascript.js"></script>
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (window.AOS) {
+            AOS.init({
+                duration: 520,
+                easing: 'ease-out-cubic',
+                once: true,
+                offset: 50,
+                disable: () => window.innerWidth < 768 || reduceMotion
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileToggle = document.getElementById('mobileToggle');
+            const navbarLinks = document.getElementById('navbarLinks');
+            const cards = document.querySelectorAll('.about-page .experience-card');
+
+            if (mobileToggle && navbarLinks) {
+                mobileToggle.addEventListener('click', () => {
+                    mobileToggle.classList.toggle('active');
+                    navbarLinks.classList.toggle('active');
+                    navbarLinks.classList.toggle('open');
+                });
+
+                navbarLinks.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', () => {
+                        mobileToggle.classList.remove('active');
+                        navbarLinks.classList.remove('active');
+                        navbarLinks.classList.remove('open');
+                    });
+                });
+            }
+
+            if (!reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+                cards.forEach((card) => {
+                    card.addEventListener('pointermove', (event) => {
+                        const bounds = card.getBoundingClientRect();
+                        const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+                        const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+
+                        card.style.setProperty('--tilt-x', `${(-y * 5).toFixed(2)}deg`);
+                        card.style.setProperty('--tilt-y', `${(x * 5).toFixed(2)}deg`);
+                    });
+
+                    card.addEventListener('pointerleave', () => {
+                        card.style.setProperty('--tilt-x', '0deg');
+                        card.style.setProperty('--tilt-y', '0deg');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
