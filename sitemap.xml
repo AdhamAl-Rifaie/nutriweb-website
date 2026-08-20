@@ -2,23 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://nutriahmed.online/</loc>
-    <lastmod>2026-01-01</lastmod>
+    <loc>https://www.nutriahmed.online/</loc>
+    <lastmod>2026-08-19</lastmod>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://nutriahmed.online/about.html</loc>
+    <loc>https://www.nutriahmed.online/about.html</loc>
+    <lastmod>2026-08-19</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://nutriahmed.online/packages.html</loc>
+    <loc>https://www.nutriahmed.online/packages.html</loc>
+    <lastmod>2026-08-19</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://nutriahmed.online/clients.html</loc>
+    <loc>https://www.nutriahmed.online/clients.html</loc>
+    <lastmod>2026-08-19</lastmod>
     <priority>0.7</priority>
   </url>
 
