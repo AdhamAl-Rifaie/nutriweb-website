@@ -749,11 +749,17 @@
 
     if (window.AOS) {
       AOS.init({
-        duration: 520,
+        duration: 900,
         easing: 'ease-out-cubic',
         once: true,
-        offset: 50,
-        disable: () => window.innerWidth < 768 || reduceMotion
+        offset: 70,
+        disable: () => reduceMotion
+      });
+
+      window.addEventListener('load', () => {
+        if (!reduceMotion) {
+          AOS.refreshHard();
+        }
       });
     }
 
