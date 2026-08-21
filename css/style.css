@@ -1779,7 +1779,7 @@
       scroll-behavior: smooth;
       scroll-snap-type: x mandatory;
       scrollbar-width: none;
-      touch-action: pan-x;
+      touch-action: pan-x pan-y pinch-zoom;
       z-index: 1;
     }
 
@@ -3041,10 +3041,33 @@
       transform: translateY(-3px);
     }
 
-    .index-redesign .fade-in-up {
+    .index-redesign .fade-in-up:not([data-aos]) {
       animation: fadeInUpSoft 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
       opacity: 0;
       transform: translateY(28px);
+    }
+
+    .index-redesign .fade-in-up[data-aos] {
+      animation: none;
+    }
+
+    body.index-redesign [data-aos][data-aos] {
+      transition-duration: 900ms !important;
+      transition-property: opacity, transform !important;
+      transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+      will-change: opacity, transform;
+    }
+
+    body.index-redesign [data-aos][data-aos][data-aos^="fade"],
+    body.index-redesign [data-aos][data-aos][data-aos^="zoom"] {
+      opacity: 0;
+      transform: translate3d(0, 18px, 0) scale(0.985);
+    }
+
+    body.index-redesign [data-aos][data-aos][data-aos^="fade"].aos-animate,
+    body.index-redesign [data-aos][data-aos][data-aos^="zoom"].aos-animate {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
     }
 
     @keyframes fadeInUpSoft {
@@ -4049,28 +4072,6 @@
     }
 
     @media (max-width: 768px) {
-      [data-aos] {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-
-      .index-redesign *,
-      .index-redesign *::before,
-      .index-redesign *::after,
-      .about-redesign *,
-      .about-redesign *::before,
-      .about-redesign *::after,
-      .clients-redesign *,
-      .clients-redesign *::before,
-      .clients-redesign *::after {
-        animation-duration: 0.001ms !important;
-        animation-iteration-count: 1 !important;
-      }
-
-      .index-redesign .client-preview-card,
-      .index-redesign .package-preview-card,
-      .about-redesign .experience-card,
       .clients-redesign .review-card {
         transform: none !important;
       }

@@ -41,6 +41,7 @@
     }
     </script>
     <!-- Bootstrap CSS CDN -->
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
      <link rel="stylesheet" href="css/bootstrap.min (1).css">
     <!-- Google Fonts: Inter -->
@@ -74,6 +75,7 @@
         }
 
         body.about-redesign::before {
+            animation: aboutPageScan 9s ease-in-out infinite;
             background:
                 linear-gradient(115deg, transparent 0 41%, rgba(255, 255, 255, 0.72) 45%, transparent 49% 100%),
                 linear-gradient(180deg, rgba(255, 255, 255, 0.5), transparent 34%);
@@ -130,6 +132,7 @@
         }
 
         .about-redesign .navbar-content::before {
+            animation: aboutLiquidSweep 6s ease-in-out infinite;
             background: linear-gradient(110deg, transparent 0 22%, rgba(255, 255, 255, 0.72) 35%, transparent 48% 100%);
             border-radius: inherit;
             content: "";
@@ -224,6 +227,7 @@
         }
 
         .about-redesign .about-page::before {
+            animation: aboutSlowRotate 28s linear infinite;
             border: 1px solid rgba(9, 105, 218, 0.1);
             height: 36rem;
             left: -13rem;
@@ -233,6 +237,7 @@
         }
 
         .about-redesign .about-page::after {
+            animation: aboutDataDrift 7s ease-in-out infinite;
             background: repeating-linear-gradient(90deg, rgba(9, 105, 218, 0.12) 0 1px, transparent 1px 18px);
             height: 12rem;
             opacity: 0.28;
@@ -425,6 +430,7 @@
         }
 
         .about-redesign .profile-container::after {
+            animation: aboutScannerLine 3.8s ease-in-out infinite;
             background: linear-gradient(180deg, rgba(0, 184, 255, 0), rgba(0, 184, 255, 0.55), rgba(0, 184, 255, 0));
             border-radius: 999px;
             height: min(70vw, 458px);
@@ -454,6 +460,7 @@
         }
 
         .about-redesign .orbit-card {
+            animation: aboutFloat 4.8s ease-in-out infinite;
             background: rgba(255, 255, 255, 0.78);
             border: 1px solid rgba(9, 105, 218, 0.12);
             border-radius: 20px;
@@ -893,19 +900,23 @@
             50% { transform: translateY(-10px); }
         }
 
-        .about-redesign [data-aos] {
-            opacity: 1 !important;
-            transform: none !important;
-            transition: none !important;
+        body.about-redesign [data-aos][data-aos] {
+            transition-duration: 900ms !important;
+            transition-property: opacity, transform !important;
+            transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+            will-change: opacity, transform;
         }
 
-        body.about-redesign::before,
-        .about-redesign .navbar-content::before,
-        .about-redesign .about-page::before,
-        .about-redesign .about-page::after,
-        .about-redesign .profile-container::after,
-        .about-redesign .orbit-card {
-            animation: none !important;
+        body.about-redesign [data-aos][data-aos][data-aos^="fade"],
+        body.about-redesign [data-aos][data-aos][data-aos^="zoom"] {
+            opacity: 0;
+            transform: translate3d(0, 18px, 0) scale(0.985);
+        }
+
+        body.about-redesign [data-aos][data-aos][data-aos^="fade"].aos-animate,
+        body.about-redesign [data-aos][data-aos][data-aos^="zoom"].aos-animate {
+            opacity: 1;
+            transform: translate3d(0, 0, 0) scale(1);
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -1073,7 +1084,6 @@
                 top: auto !important;
                 bottom: auto !important;
                 width: 100%;
-                animation: none;
             }
 
             .about-redesign .credential-grid {
@@ -1342,6 +1352,12 @@
             transform: translateY(-3px);
         }
 
+        html,
+        body.about-redesign {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
         @media (max-width: 575.98px) {
             .about-redesign .contact-info {
                 align-items: stretch;
@@ -1356,6 +1372,24 @@
 
             .about-redesign .developer-credit {
                 flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-redesign .about-page,
+            .about-redesign .about-hero,
+            .about-redesign .experience-section,
+            .about-redesign .glass-footer {
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
+            .about-redesign .section-header::before {
+                display: none;
+            }
+
+            .about-redesign .container {
+                max-width: 100%;
             }
         }
     </style>
@@ -1733,7 +1767,26 @@
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (window.AOS) {
+            AOS.init({
+                duration: 900,
+                easing: 'ease-out-cubic',
+                once: true,
+                offset: 70,
+                disable: () => reduceMotion
+            });
+
+            window.addEventListener('load', () => {
+                if (!reduceMotion) {
+                    AOS.refreshHard();
+                }
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const mobileToggle = document.getElementById('mobileToggle');
             const navbarLinks = document.getElementById('navbarLinks');
